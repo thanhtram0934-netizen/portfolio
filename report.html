@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Đơn Hủy/Hoàn - Mỹ Phẩm Mai Hân | Shopee</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        shopee: { 50: '#fff5f2', 100: '#ffe8e0', 200: '#ffd1c2', 300: '#ffb09a', 400: '#ff8461', 500: '#EE4D2D', 600: '#d63a1d', 700: '#b52e16', 800: '#962818', 900: '#7d2419' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- CountUp.js -->
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.min.js"></script>
+    
+    <style>
+        * { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #EE4D2D; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d63a1d; }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #EE4D2D, #ff8461);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(238, 77, 45, 0.15);
+        }
+        
+        /* Pulse animation for KPI */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(238, 77, 45, 0.2); }
+            50% { box-shadow: 0 0 20px 10px rgba(238, 77, 45, 0.05); }
+        }
+        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+        
+        /* Wave divider */
+        .wave-divider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+        
+        /* Table responsive */
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Nav active state */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #EE4D2D;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print { display: none !important; }
+            .card-hover:hover { transform: none; box-shadow: none; }
+            body { font-size: 11px; }
+        }
+        
+        /* Loading skeleton */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        /* Floating particles */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float linear infinite;
+            pointer-events: none;
+        }
+
+        /* Fade in animation for sections */
+        .section-enter {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .section-enter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-sm z-50 no-print" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-14 md:h-16">
+                <a href="#hero" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-shopee-500 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <span class="font-bold text-sm md:text-base text-shopee-600 hidden sm:inline">Mỹ Phẩm Mai Hân</span>
+                </a>
+                
+                <!-- Desktop nav -->
+                <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-600">
+                    <a href="#overview" class="nav-link hover:text-shopee-500">Tổng quan</a>
+                    <a href="#trends" class="nav-link hover:text-shopee-500">Xu hướng</a>
+                    <a href="#causes" class="nav-link hover:text-shopee-500">Nguyên nhân</a>
+                    <a href="#products" class="nav-link hover:text-shopee-500">Sản phẩm</a>
+                    <a href="#details" class="nav-link hover:text-shopee-500">Chi tiết</a>
+                    <a href="#insights" class="nav-link hover:text-shopee-500">Đề xuất</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="lg:hidden p-2 rounded-md hover:bg-gray-100" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-gray-100 mt-2 pt-3">
+                <div class="flex flex-col gap-2 text-sm font-medium text-gray-600">
+                    <a href="#overview" class="py-2 px-3 rounded hover:bg-shopee-50 hover:text-shopee-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">📊 Tổng quan</a>
+                    <a href="#trends" class="py-2 px-3 rounded hover:bg-shopee-50 hover:text-shopee-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">📈 Xu hướng</a>
+                    <a href="#causes" class="py-2 px-3 rounded hover:bg-shopee-50 hover:text-shopee-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">🔍 Nguyên nhân</a>
+                    <a href="#products" class="py-2 px-3 rounded hover:bg-shopee-50 hover:text-shopee-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">📦 Sản phẩm</a>
+                    <a href="#details" class="py-2 px-3 rounded hover:bg-shopee-50 hover:text-shopee-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">📋 Chi tiết</a>
+                    <a href="#insights" class="py-2 px-3 rounded hover:bg-shopee-50 hover:text-shopee-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">💡 Đề xuất</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-[50vh] md:min-h-[60vh] flex items-center overflow-hidden" style="background: linear-gradient(135deg, #EE4D2D 0%, #ff6b45 30%, #ff8461 60%, #ffb09a 100%);">
+        <!-- Floating particles -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="particle bg-white/10 w-4 h-4" style="top:20%;left:10%;animation-duration:6s"></div>
+            <div class="particle bg-white/10 w-6 h-6" style="top:60%;left:80%;animation-duration:8s;animation-delay:1s"></div>
+            <div class="particle bg-white/10 w-3 h-3" style="top:40%;left:50%;animation-duration:7s;animation-delay:2s"></div>
+            <div class="particle bg-white/10 w-5 h-5" style="top:80%;left:30%;animation-duration:9s;animation-delay:0.5s"></div>
+            <div class="particle bg-white/10 w-4 h-4" style="top:30%;left:70%;animation-duration:5s;animation-delay:3s"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-24 text-white text-center w-full">
+            <div data-aos="fade-down" data-aos-duration="800">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-6">
+                    <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    Shopee Seller Report
+                </div>
+            </div>
+            
+            <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
+                Báo Cáo Đơn Hủy<br class="sm:hidden"> / Hoàn Hàng
+            </h1>
+            
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" class="text-lg md:text-xl text-white/90 mb-2 font-light">
+                Shop: <strong class="font-semibold">Mỹ Phẩm Mai Hân</strong>
+            </p>
+            
+            <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500" class="flex flex-wrap justify-center gap-3 md:gap-4 mt-6">
+                <div class="bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3 text-center">
+                    <p class="text-xs text-white/70 uppercase tracking-wider">Kỳ báo cáo</p>
+                    <p class="text-lg font-bold">10/2025 – 02/2026</p>
+                </div>
+                <div class="bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3 text-center">
+                    <p class="text-xs text-white/70 uppercase tracking-wider">Tổng đơn hàng</p>
+                    <p class="text-lg font-bold">24,949</p>
+                </div>
+                <div class="bg-white/15 backdrop-blur-sm rounded-xl px-5 py-3 text-center">
+                    <p class="text-xs text-white/70 uppercase tracking-wider">Ngày xuất</p>
+                    <p class="text-lg font-bold">18/03/2026</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave divider -->
+        <div class="absolute bottom-0 left-0 right-0 wave-divider">
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#f9fafb"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- KPI Overview -->
+    <section id="overview" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Tổng Quan Hiệu Suất</h2>
+            <p class="text-gray-500">Số liệu tổng hợp 5 tháng (10/2025 – 02/2026)</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+            <!-- KPI Card 1: Total Cancelled -->
+            <div class="card-hover pulse-glow bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-red-100" data-aos="fade-up" data-aos-delay="0">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </div>
+                    <span class="text-xs font-medium text-red-500 uppercase tracking-wider">Đơn hủy</span>
+                </div>
+                <p class="text-2xl md:text-3xl font-black text-gray-900" id="kpi-cancelled">5,907</p>
+                <p class="text-xs text-gray-500 mt-1">23.68% tổng đơn</p>
+            </div>
+            
+            <!-- KPI Card 2: Total Returns -->
+            <div class="card-hover pulse-glow bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-amber-100" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                    </div>
+                    <span class="text-xs font-medium text-amber-600 uppercase tracking-wider">Đơn hoàn</span>
+                </div>
+                <p class="text-2xl md:text-3xl font-black text-gray-900" id="kpi-returns">459</p>
+                <p class="text-xs text-gray-500 mt-1">1.84% tổng đơn</p>
+            </div>
+            
+            <!-- KPI Card 3: Failed delivery (Feb only) -->
+            <div class="card-hover pulse-glow bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-orange-100" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="text-xs font-medium text-orange-500 uppercase tracking-wider">Giao thất bại</span>
+                </div>
+                <p class="text-2xl md:text-3xl font-black text-gray-900" id="kpi-failed">79</p>
+                <p class="text-xs text-gray-500 mt-1">Tháng 02/2026</p>
+            </div>
+            
+            <!-- KPI Card 4: Cancel Rate -->
+            <div class="card-hover pulse-glow bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-shopee-100" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-shopee-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-shopee-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-xs font-medium text-shopee-500 uppercase tracking-wider">Tỷ lệ hủy TB</span>
+                </div>
+                <p class="text-2xl md:text-3xl font-black text-gray-900" id="kpi-rate">23.68%</p>
+                <p class="text-xs text-red-600 mt-1 font-medium">So T1: tăng 7.10%</p>
+            </div>
+            
+            <!-- KPI Card 5: Revenue Loss -->
+            <div class="card-hover pulse-glow bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-purple-100 col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="text-xs font-medium text-purple-500 uppercase tracking-wider">Thiệt hại</span>
+                </div>
+                <p class="text-xl md:text-2xl font-black text-gray-900" id="kpi-loss">1,157.6M₫</p>
+                <p class="text-xs text-gray-500 mt-1">Doanh số đơn hủy + hoàn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Trend Charts -->
+    <section id="trends" class="bg-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Xu Hướng Theo Tháng</h2>
+                <p class="text-gray-500">Biến động đơn hủy/hoàn từ tháng 10/2025 đến 02/2026</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                <!-- Chart 1: Orders & Cancellations -->
+                <div class="bg-gray-50 rounded-2xl p-5 md:p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-base font-semibold text-gray-800 mb-4">Đơn Hàng vs Đơn Hủy</h3>
+                    <div id="chart-orders-vs-cancel" class="w-full" style="min-height:320px"></div>
+                </div>
+                
+                <!-- Chart 2: Cancellation & Return Rate -->
+                <div class="bg-gray-50 rounded-2xl p-5 md:p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-base font-semibold text-gray-800 mb-4">Tỷ Lệ Hủy & Hoàn (%)</h3>
+                    <div id="chart-rates" class="w-full" style="min-height:320px"></div>
+                </div>
+                
+                <!-- Chart 3: Revenue Impact -->
+                <div class="bg-gray-50 rounded-2xl p-5 md:p-6 shadow-sm" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-base font-semibold text-gray-800 mb-4">Doanh Số Thiệt Hại Theo Tháng</h3>
+                    <div id="chart-revenue-loss" class="w-full" style="min-height:320px"></div>
+                </div>
+                
+                <!-- Chart 4: Stacked comparison -->
+                <div class="bg-gray-50 rounded-2xl p-5 md:p-6 shadow-sm" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-base font-semibold text-gray-800 mb-4">So Sánh Đơn Hủy vs Hoàn vs Tổng</h3>
+                    <div id="chart-stacked" class="w-full" style="min-height:320px"></div>
+                </div>
+            </div>
+            
+            <!-- Monthly Data Table -->
+            <div class="mt-10" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Bảng Số Liệu Chi Tiết Theo Tháng</h3>
+                <div class="table-scroll bg-gray-50 rounded-2xl shadow-sm overflow-hidden">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gradient-to-r from-shopee-500 to-shopee-400 text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left font-semibold">Tháng</th>
+                                <th class="py-3 px-4 text-right font-semibold">Tổng đơn</th>
+                                <th class="py-3 px-4 text-right font-semibold">Đơn hủy</th>
+                                <th class="py-3 px-4 text-right font-semibold">Đơn hoàn</th>
+                                <th class="py-3 px-4 text-right font-semibold">Tỷ lệ hủy</th>
+                                <th class="py-3 px-4 text-right font-semibold">Tỷ lệ hoàn</th>
+                                <th class="py-3 px-4 text-right font-semibold">Biến động</th>
+                                <th class="py-3 px-4 text-right font-semibold">DS đơn hủy</th>
+                                <th class="py-3 px-4 text-right font-semibold">DS đơn hoàn</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+        <tr class="border-b border-gray-100 hover:bg-orange-50/50 transition-colors">
+            <td class="py-3 px-4 font-semibold text-gray-800">T10/2025</td>
+            <td class="py-3 px-4 text-right">3,381</td>
+            <td class="py-3 px-4 text-right text-red-600 font-medium">780</td>
+            <td class="py-3 px-4 text-right text-amber-600 font-medium">75</td>
+            <td class="py-3 px-4 text-right font-bold">23.07%</td>
+            <td class="py-3 px-4 text-right">2.22%</td>
+            <td class="py-3 px-4 text-right text-gray-500 font-medium">→ 0.00%</td>
+            <td class="py-3 px-4 text-right text-gray-700">110,360,972₫</td>
+            <td class="py-3 px-4 text-right text-gray-700">5,064,672₫</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/50 transition-colors">
+            <td class="py-3 px-4 font-semibold text-gray-800">T11/2025</td>
+            <td class="py-3 px-4 text-right">6,035</td>
+            <td class="py-3 px-4 text-right text-red-600 font-medium">1,395</td>
+            <td class="py-3 px-4 text-right text-amber-600 font-medium">120</td>
+            <td class="py-3 px-4 text-right font-bold">23.12%</td>
+            <td class="py-3 px-4 text-right">1.99%</td>
+            <td class="py-3 px-4 text-right text-red-500 font-medium">↑ 0.05%</td>
+            <td class="py-3 px-4 text-right text-gray-700">234,497,480₫</td>
+            <td class="py-3 px-4 text-right text-gray-700">7,670,565₫</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/50 transition-colors">
+            <td class="py-3 px-4 font-semibold text-gray-800">T12/2025</td>
+            <td class="py-3 px-4 text-right">4,141</td>
+            <td class="py-3 px-4 text-right text-red-600 font-medium">967</td>
+            <td class="py-3 px-4 text-right text-amber-600 font-medium">64</td>
+            <td class="py-3 px-4 text-right font-bold">23.35%</td>
+            <td class="py-3 px-4 text-right">1.55%</td>
+            <td class="py-3 px-4 text-right text-red-500 font-medium">↑ 0.23%</td>
+            <td class="py-3 px-4 text-right text-gray-700">176,262,169₫</td>
+            <td class="py-3 px-4 text-right text-gray-700">6,573,653₫</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/50 transition-colors">
+            <td class="py-3 px-4 font-semibold text-gray-800">T1/2026</td>
+            <td class="py-3 px-4 text-right">6,742</td>
+            <td class="py-3 px-4 text-right text-red-600 font-medium">1,441</td>
+            <td class="py-3 px-4 text-right text-amber-600 font-medium">112</td>
+            <td class="py-3 px-4 text-right font-bold">21.37%</td>
+            <td class="py-3 px-4 text-right">1.66%</td>
+            <td class="py-3 px-4 text-right text-green-500 font-medium">↓ 1.98%</td>
+            <td class="py-3 px-4 text-right text-gray-700">301,168,896₫</td>
+            <td class="py-3 px-4 text-right text-gray-700">21,737,260₫</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/50 transition-colors">
+            <td class="py-3 px-4 font-semibold text-gray-800">T2/2026</td>
+            <td class="py-3 px-4 text-right">4,650</td>
+            <td class="py-3 px-4 text-right text-red-600 font-medium">1,324</td>
+            <td class="py-3 px-4 text-right text-amber-600 font-medium">88</td>
+            <td class="py-3 px-4 text-right font-bold">28.47%</td>
+            <td class="py-3 px-4 text-right">1.89%</td>
+            <td class="py-3 px-4 text-right text-red-500 font-medium">↑ 7.10%</td>
+            <td class="py-3 px-4 text-right text-gray-700">277,192,728₫</td>
+            <td class="py-3 px-4 text-right text-gray-700">17,101,941₫</td>
+        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Root Cause Analysis -->
+    <section id="causes" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Phân Tích Nguyên Nhân</h2>
+            <p class="text-gray-500">Dữ liệu chi tiết tháng 02/2026 — 1296 đơn hủy, 95 đơn hoàn, 79 đơn giao thất bại</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Cancelled Reasons Donut -->
+            <div class="card-hover bg-white rounded-2xl p-5 md:p-6 shadow-lg" data-aos="zoom-in" data-aos-delay="0">
+                <h3 class="text-base font-semibold text-red-600 mb-1">Lý Do Hủy Đơn</h3>
+                <p class="text-xs text-gray-400 mb-3">2440 dòng dữ liệu</p>
+                <div id="chart-cancel-reasons" style="min-height:300px"></div>
+            </div>
+            
+            <!-- Return Reasons Donut -->
+            <div class="card-hover bg-white rounded-2xl p-5 md:p-6 shadow-lg" data-aos="zoom-in" data-aos-delay="150">
+                <h3 class="text-base font-semibold text-amber-600 mb-1">Lý Do Hoàn Hàng</h3>
+                <p class="text-xs text-gray-400 mb-3">174 dòng dữ liệu</p>
+                <div id="chart-return-reasons" style="min-height:300px"></div>
+            </div>
+            
+            <!-- Return Solutions Donut -->
+            <div class="card-hover bg-white rounded-2xl p-5 md:p-6 shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-base font-semibold text-blue-600 mb-1">Phương Án Xử Lý Hoàn</h3>
+                <p class="text-xs text-gray-400 mb-3">Hoàn tiền ngay vs Trả hàng</p>
+                <div id="chart-return-solutions" style="min-height:300px"></div>
+            </div>
+        </div>
+        
+        <!-- Province Analysis -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="card-hover bg-white rounded-2xl p-5 md:p-6 shadow-lg" data-aos="fade-right" data-aos-delay="100">
+                <h3 class="text-base font-semibold text-gray-800 mb-4">Top 10 Tỉnh/TP Có Đơn Hủy Nhiều Nhất</h3>
+                <div id="chart-provinces" style="min-height:320px"></div>
+            </div>
+            <div class="card-hover bg-white rounded-2xl p-5 md:p-6 shadow-lg" data-aos="fade-left" data-aos-delay="200">
+                <h3 class="text-base font-semibold text-gray-800 mb-4">Thống Kê Theo Phương Thức Thanh Toán</h3>
+                <div class="space-y-3 mt-6">
+                    
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm font-medium text-gray-700">Thanh toán khi nhận hàng</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-24 md:w-32 bg-gray-200 rounded-full h-2">
+                                <div class="bg-shopee-500 h-2 rounded-full" style="width:100%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-800 w-12 text-right">1967</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm font-medium text-gray-700">TK Ngân hàng liên kết ShopeePay</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-24 md:w-32 bg-gray-200 rounded-full h-2">
+                                <div class="bg-shopee-500 h-2 rounded-full" style="width:12%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-800 w-12 text-right">245</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm font-medium text-gray-700">SPayLater</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-24 md:w-32 bg-gray-200 rounded-full h-2">
+                                <div class="bg-shopee-500 h-2 rounded-full" style="width:8%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-800 w-12 text-right">161</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm font-medium text-gray-700">Ví ShopeePay</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-24 md:w-32 bg-gray-200 rounded-full h-2">
+                                <div class="bg-shopee-500 h-2 rounded-full" style="width:2%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-800 w-12 text-right">38</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm font-medium text-gray-700">Thẻ Tín dụng/Ghi nợ</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-24 md:w-32 bg-gray-200 rounded-full h-2">
+                                <div class="bg-shopee-500 h-2 rounded-full" style="width:1%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-800 w-12 text-right">20</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm font-medium text-gray-700">Thẻ nội địa NAPAS</span>
+                        <div class="flex items-center gap-3">
+                            <div class="w-24 md:w-32 bg-gray-200 rounded-full h-2">
+                                <div class="bg-shopee-500 h-2 rounded-full" style="width:0%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-800 w-12 text-right">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Impact -->
+    <section id="products" class="bg-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Sản Phẩm Bị Ảnh Hưởng</h2>
+                <p class="text-gray-500">Top sản phẩm có đơn hủy/hoàn nhiều nhất (02/2026)</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-gray-50 rounded-2xl p-5 md:p-6 shadow-sm" data-aos="fade-right">
+                    <h3 class="text-base font-semibold text-red-600 mb-4">Top Sản Phẩm Bị Hủy</h3>
+                    <div id="chart-top-cancel-products" style="min-height:350px"></div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-5 md:p-6 shadow-sm" data-aos="fade-left">
+                    <h3 class="text-base font-semibold text-amber-600 mb-4">Top Sản Phẩm Bị Hoàn</h3>
+                    <div id="chart-top-return-products" style="min-height:350px"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Data Tables -->
+    <section id="details" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Dữ Liệu Chi Tiết</h2>
+            <p class="text-gray-500">Mẫu dữ liệu đơn hàng tháng 02/2026 (20 đơn đầu tiên mỗi loại)</p>
+        </div>
+        
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+            <button onclick="showTab('tab-cancel')" id="btn-tab-cancel" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-red-500 text-white shadow-md transition-all">
+                Đơn Hủy (1296)
+            </button>
+            <button onclick="showTab('tab-return')" id="btn-tab-return" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-gray-200 text-gray-600 hover:bg-amber-100 transition-all">
+                Đơn Hoàn (95)
+            </button>
+            <button onclick="showTab('tab-failed')" id="btn-tab-failed" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-gray-200 text-gray-600 hover:bg-orange-100 transition-all">
+                Giao Thất Bại (79)
+            </button>
+        </div>
+        
+        <!-- Tab: Cancelled -->
+        <div id="tab-cancel" class="tab-content" data-aos="fade-up">
+            <div class="table-scroll bg-white rounded-2xl shadow-lg overflow-hidden">
+                <table class="w-full text-sm">
+                    <thead class="bg-red-500 text-white">
+                        <tr>
+                            <th class="py-3 px-3 text-left font-semibold">Mã đơn</th>
+                            <th class="py-3 px-3 text-left font-semibold">Ngày</th>
+                            <th class="py-3 px-3 text-left font-semibold">Sản phẩm</th>
+                            <th class="py-3 px-3 text-right font-semibold">Giá trị</th>
+                            <th class="py-3 px-3 text-left font-semibold">Lý do</th>
+                            <th class="py-3 px-3 text-left font-semibold">Tỉnh/TP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VVWTDDGY</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">107,292₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">******66</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VR7TKFKW</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">126,700₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">******32</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VTG56BE7</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">116,000₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Muốn thay đổi địa chỉ giao hàng</td>
+            <td class="py-2.5 px-3 text-xs">******51</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VVSJY5UH</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">130,400₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Thủ tục thanh toán quá rắc rối</td>
+            <td class="py-2.5 px-3 text-xs">******60</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VS5WSP7T</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">127,600₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Đổi ý, không muốn mua nữa</td>
+            <td class="py-2.5 px-3 text-xs">******07</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VRVCNJ5W</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">145,000₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Đổi ý, không muốn mua nữa</td>
+            <td class="py-2.5 px-3 text-xs">******18</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VQNE5DQD</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">107,292₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Muốn nhập/thay đổi mã Voucher</td>
+            <td class="py-2.5 px-3 text-xs">******66</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VFDGF92G</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">118,021₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Thay đổi đơn hàng</td>
+            <td class="py-2.5 px-3 text-xs">******23</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VHHT7MK4</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">118,021₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Thay đổi đơn hàng</td>
+            <td class="py-2.5 px-3 text-xs">******61</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VKKNWHDC</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">118,021₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Muốn thay đổi sản phẩm trong đơn hàng</td>
+            <td class="py-2.5 px-3 text-xs">******45</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228VJHC5A61</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">127,600₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Muốn nhập/thay đổi mã Voucher</td>
+            <td class="py-2.5 px-3 text-xs">******62</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">2602218WMB6K39</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-21</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Serum Trioderma ActiBalance+ 30ml, giảm mụn, mờ thâm, dưỡng </td>
+            <td class="py-2.5 px-3 text-xs text-right">265,350₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Giao hàng thất bại</td>
+            <td class="py-2.5 px-3 text-xs">******46</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">2602206MW2SA7G</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-20</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">120,150₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Giao hàng thất bại</td>
+            <td class="py-2.5 px-3 text-xs">******61</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228UVQ6EV78</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">127,600₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">******78</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228V6UN4PBY</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">127,600₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Muốn nhập/thay đổi mã Voucher</td>
+            <td class="py-2.5 px-3 text-xs">******58</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228V6PD8UEF</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">45,000₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lí do khác</td>
+            <td class="py-2.5 px-3 text-xs">******31</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228V6MH6PJ0</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">45,000₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lí do khác</td>
+            <td class="py-2.5 px-3 text-xs">******31</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228V6JWN4Q4</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">45,000₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lí do khác</td>
+            <td class="py-2.5 px-3 text-xs">******31</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228V6904KD1</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">127,600₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Muốn thay đổi địa chỉ giao hàng</td>
+            <td class="py-2.5 px-3 text-xs">******80</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-red-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260228UN4MJ41S</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-28</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">337,120₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">******12</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Tab: Returns -->
+        <div id="tab-return" class="tab-content hidden" data-aos="fade-up">
+            <div class="table-scroll bg-white rounded-2xl shadow-lg overflow-hidden">
+                <table class="w-full text-sm">
+                    <thead class="bg-amber-500 text-white">
+                        <tr>
+                            <th class="py-3 px-3 text-left font-semibold">Mã đơn</th>
+                            <th class="py-3 px-3 text-left font-semibold">Ngày</th>
+                            <th class="py-3 px-3 text-left font-semibold">Sản phẩm</th>
+                            <th class="py-3 px-3 text-right font-semibold">Hoàn trả</th>
+                            <th class="py-3 px-3 text-left font-semibold">Lý do</th>
+                            <th class="py-3 px-3 text-left font-semibold">Phương án</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260131FT1YRT3H</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-31</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn thay đổi sản phẩm (kích thước, màu sắc, s</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">2601299S03VFP7</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-29</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">118,800₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Hàng nguyên vẹn nhưng không còn nhu cầu</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260129ASTMW1A6</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-29</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Mặt nạ Trioderma Blemish Care Essence Mask tinh chất khổ qua</td>
+            <td class="py-2.5 px-3 text-xs text-right">224,000₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Khác với mô tả</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260129B9P34F5T</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-29</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn cập nhật địa chỉ/sđt nhận hàng</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260130DQ0C1EJB</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-30</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">111,200₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202M3H3N9QF</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">105,204₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn thay đổi sản phẩm (kích thước, màu sắc, s</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202M8CAD2WF</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn cập nhật địa chỉ/sđt nhận hàng</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260203NRQJ9SK9</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260130DHM1TPAV</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-30</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v</td>
+            <td class="py-2.5 px-3 text-xs text-right">343,300₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Khác với mô tả</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260203R86M7NPJ</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-03</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Serum phục hồi da MD Care serum cân bằng lợi khuẩn và phục h</td>
+            <td class="py-2.5 px-3 text-xs text-right">365,518₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Thiếu hàng</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260204RABVN4GG</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-03</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v</td>
+            <td class="py-2.5 px-3 text-xs text-right">116,760₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Người bán xác nhận gửi sai hàng</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260204SP88KE6K</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-04</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn thay đổi sản phẩm (kích thước, màu sắc, s</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">2601299XFWM170</td>
+            <td class="py-2.5 px-3 text-xs">2026-01-29</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v</td>
+            <td class="py-2.5 px-3 text-xs text-right">119,140₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Hàng giả, nhái (cần bằng chứng)</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202KC4GB9KF</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">110,100₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Hàng giả, nhái (cần bằng chứng)</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202MT718RAH</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">116,760₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Hàng nguyên vẹn nhưng không còn nhu cầu</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202KXR0KE74</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Lý do khác</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260204TKBTH50J</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-04</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn cập nhật địa chỉ/sđt nhận hàng</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260204RK6PXTKE</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-04</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn thay đổi sản phẩm (kích thước, màu sắc, s</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260203R5EJ6G3P</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-03</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">0₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Tôi muốn cập nhật địa chỉ/sđt nhận hàng</td>
+            <td class="py-2.5 px-3 text-xs">Hoàn tiền ngay</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-amber-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202NHG8TBVR</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15</td>
+            <td class="py-2.5 px-3 text-xs text-right">109,803₫</td>
+            <td class="py-2.5 px-3 text-xs max-w-[180px] truncate">Hàng giả, nhái (cần bằng chứng)</td>
+            <td class="py-2.5 px-3 text-xs">Trả hàng &amp; Hoàn tiền</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Tab: Failed Delivery -->
+        <div id="tab-failed" class="tab-content hidden" data-aos="fade-up">
+            <div class="table-scroll bg-white rounded-2xl shadow-lg overflow-hidden">
+                <table class="w-full text-sm">
+                    <thead class="bg-orange-500 text-white">
+                        <tr>
+                            <th class="py-3 px-3 text-left font-semibold">Mã đơn</th>
+                            <th class="py-3 px-3 text-left font-semibold">Ngày</th>
+                            <th class="py-3 px-3 text-left font-semibold">Sản phẩm</th>
+                            <th class="py-3 px-3 text-right font-semibold">Giá trị</th>
+                            <th class="py-3 px-3 text-left font-semibold">Tỉnh/TP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">2602218WMB6K39</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-21</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Serum Trioderma ActiBalance+ 30ml, giảm mụn, mờ thâm, dưỡng </td>
+            <td class="py-2.5 px-3 text-xs text-right">265,350₫</td>
+            <td class="py-2.5 px-3 text-xs">******46</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">2602206MW2SA7G</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-20</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">120,150₫</td>
+            <td class="py-2.5 px-3 text-xs">******61</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260224HD6UDB7E</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-24</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">129,050₫</td>
+            <td class="py-2.5 px-3 text-xs">******20</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260202ME87A1UP</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-02</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v</td>
+            <td class="py-2.5 px-3 text-xs text-right">59,000₫</td>
+            <td class="py-2.5 px-3 text-xs">******19</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">26021967RN9JWV</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-19</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">120,000₫</td>
+            <td class="py-2.5 px-3 text-xs">******59</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260214NS0P4ASQ</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-14</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">129,050₫</td>
+            <td class="py-2.5 px-3 text-xs">******11</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260217W0MY6XC7</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-17</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">340,940₫</td>
+            <td class="py-2.5 px-3 text-xs">******06</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260212HMERTYSB</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-12</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">120,791₫</td>
+            <td class="py-2.5 px-3 text-xs">******97</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">26020992U8PFYE</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-09</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m</td>
+            <td class="py-2.5 px-3 text-xs text-right">124,200₫</td>
+            <td class="py-2.5 px-3 text-xs">******53</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260216TR4SRQNG</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-16</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Serum Trioderma ActiBalance+ 30ml, giảm mụn, mờ thâm, dưỡng </td>
+            <td class="py-2.5 px-3 text-xs text-right">263,032₫</td>
+            <td class="py-2.5 px-3 text-xs">******38</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260210CCY43WPD</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-10</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo 3 bước dành cho da dầu mụn gel mụn &amp; sữa rửa mặt &amp; ser</td>
+            <td class="py-2.5 px-3 text-xs text-right">722,280₫</td>
+            <td class="py-2.5 px-3 text-xs">******32</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260217VBTH5WMN</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-17</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">127,850₫</td>
+            <td class="py-2.5 px-3 text-xs">******78</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260214NQKVQ40V</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-14</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">116,000₫</td>
+            <td class="py-2.5 px-3 text-xs">******79</td>
+        </tr>
+        <tr class="border-b border-gray-100 hover:bg-orange-50/30 transition-colors">
+            <td class="py-2.5 px-3 font-mono text-xs text-gray-600">260213K7J4S3YP</td>
+            <td class="py-2.5 px-3 text-xs">2026-02-13</td>
+            <td class="py-2.5 px-3 text-xs max-w-[200px] truncate">Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm </td>
+            <td class="py-2.5 px-3 text-xs text-right">172,480₫</td>
+            <td class="py-2.5 px-3 text-xs">******70</td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights & Recommendations -->
+    <section id="insights" class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">Phân Tích & Đề Xuất</h2>
+                <p class="text-gray-400">Tóm tắt insights chính và giải pháp đề xuất</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Key Insights -->
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-lg font-bold text-shopee-400 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        Nhận Xét Chính
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                            <p class="text-sm text-gray-200">
+                                <span class="text-shopee-400 font-bold">1.</span>
+                                Tỷ lệ hủy đơn trung bình <strong class="text-white">23.68%</strong> trong 5 tháng. 
+                                Tháng cao nhất là <strong class="text-red-400">T2/2026</strong> (28.47%), 
+                                thấp nhất là <strong class="text-green-400">T1/2026</strong> (21.37%).
+                            </p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                            <p class="text-sm text-gray-200">
+                                <span class="text-shopee-400 font-bold">2.</span>
+                                Tổng thiệt hại doanh số do hủy/hoàn: <strong class="text-white">1,157.6 triệu VNĐ</strong>,
+                                chiếm <strong class="text-red-400">25.9%</strong> tổng doanh số.
+                            </p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                            <p class="text-sm text-gray-200">
+                                <span class="text-shopee-400 font-bold">3.</span>
+                                Tháng 11/2025 có số đơn hủy <strong class="text-red-400">cao kỷ lục (1,395 đơn)</strong> do trùng mùa sale 11/11, 
+                                nhưng T12 đã giảm đáng kể.
+                            </p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                            <p class="text-sm text-gray-200">
+                                <span class="text-shopee-400 font-bold">4.</span>
+                                Phần lớn đơn hủy do <strong class="text-amber-400">khách tự hủy</strong> (đổi ý, thay đổi đơn, lý do cá nhân).
+                                Đơn giao thất bại tháng 2: <strong class="text-white">79 đơn</strong>.
+                            </p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                            <p class="text-sm text-gray-200">
+                                <span class="text-shopee-400 font-bold">5.</span>
+                                Tỷ lệ hoàn hàng rất thấp (<strong class="text-green-400">1.84%</strong>), cho thấy 
+                                chất lượng sản phẩm đáp ứng tốt kỳ vọng khách hàng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recommendations -->
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-lg font-bold text-green-400 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Đề Xuất Giải Pháp
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-green-900/30 border border-green-800/50 rounded-xl p-4">
+                            <h4 class="text-sm font-bold text-green-300 mb-1">✅ Giảm hủy do đổi ý</h4>
+                            <p class="text-xs text-gray-300">Cải thiện mô tả sản phẩm, hình ảnh rõ ràng, size guide chi tiết. Thêm video review để khách hàng tự tin hơn khi đặt.</p>
+                        </div>
+                        <div class="bg-green-900/30 border border-green-800/50 rounded-xl p-4">
+                            <h4 class="text-sm font-bold text-green-300 mb-1">✅ Giảm hủy do thay đổi đơn</h4>
+                            <p class="text-xs text-gray-300">Nhắn tin xác nhận đơn nhanh sau khi khách đặt. Hỗ trợ đổi SKU/số lượng trước khi gửi hàng thay vì để khách hủy.</p>
+                        </div>
+                        <div class="bg-green-900/30 border border-green-800/50 rounded-xl p-4">
+                            <h4 class="text-sm font-bold text-green-300 mb-1">✅ Giảm giao thất bại</h4>
+                            <p class="text-xs text-gray-300">Xác nhận số điện thoại + địa chỉ qua chat trước khi gửi. Gửi hàng nhanh trong ngày để tránh khách đổi ý.</p>
+                        </div>
+                        <div class="bg-green-900/30 border border-green-800/50 rounded-xl p-4">
+                            <h4 class="text-sm font-bold text-green-300 mb-1">✅ Giảm hoàn hàng</h4>
+                            <p class="text-xs text-gray-300">Đóng gói kỹ, kèm hướng dẫn sử dụng. Chủ động liên hệ khách sau giao hàng để hỗ trợ kịp thời.</p>
+                        </div>
+                        <div class="bg-blue-900/30 border border-blue-800/50 rounded-xl p-4">
+                            <h4 class="text-sm font-bold text-blue-300 mb-1">📊 Mục tiêu tháng tới</h4>
+                            <p class="text-xs text-gray-300">Giảm tỷ lệ hủy xuống dưới <strong>20%</strong>. Duy trì tỷ lệ hoàn dưới <strong>2%</strong>. Giảm đơn giao thất bại xuống dưới <strong>50 đơn/tháng</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center text-xs">
+        <p>Báo cáo được tạo tự động từ dữ liệu Shopee Seller Center</p>
+        <p class="mt-1">Shop: Mỹ Phẩm Mai Hân | Kỳ: 10/2025–02/2026 | Ngày xuất: 18/03/2026</p>
+    </footer>
+
+    <!-- Back to top -->
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="no-print fixed bottom-6 right-6 w-12 h-12 bg-shopee-500 text-white rounded-full shadow-lg hover:bg-shopee-600 transition-all hover:scale-110 flex items-center justify-center z-40" title="Lên đầu trang">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+    </button>
+
+    <script>
+    // ===== Initialize AOS =====
+    AOS.init({
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+    });
+
+    // ===== Tab switching =====
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(tabId).classList.remove('hidden');
+        
+        const colors = { 'tab-cancel': ['bg-red-500', 'text-white'], 'tab-return': ['bg-amber-500', 'text-white'], 'tab-failed': ['bg-orange-500', 'text-white'] };
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.className = 'tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-gray-200 text-gray-600 hover:bg-gray-300 transition-all';
+        });
+        const activeBtn = document.getElementById('btn-' + tabId);
+        if (activeBtn && colors[tabId]) {
+            activeBtn.className = 'tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold ' + colors[tabId][0] + ' ' + colors[tabId][1] + ' shadow-md transition-all';
+        }
+    }
+
+    // ===== CountUp Animation =====
+    function startCountUps() {
+        if (typeof countUp !== 'undefined' && countUp.CountUp) {
+            const CU = countUp.CountUp;
+            new CU('kpi-cancelled', 5907, { duration: 2, separator: ',', enableScrollSpy: true, scrollSpyOnce: true }).start();
+            new CU('kpi-returns', 459, { duration: 2, separator: ',', enableScrollSpy: true, scrollSpyOnce: true }).start();
+            new CU('kpi-failed', 79, { duration: 2, enableScrollSpy: true, scrollSpyOnce: true }).start();
+        }
+    }
+    setTimeout(startCountUps, 500);
+
+    // ===== Chart Theme =====
+    const chartColors = ['#EE4D2D', '#ff8461', '#ffb09a', '#10b981', '#3b82f6', '#8b5cf6', '#f59e0b', '#ec4899', '#06b6d4', '#84cc16'];
+    const chartFont = { fontFamily: 'Inter, system-ui, sans-serif' };
+
+    // ===== Chart 1: Orders vs Cancellations =====
+    new ApexCharts(document.querySelector("#chart-orders-vs-cancel"), {
+        chart: { type: 'area', height: 320, toolbar: { show: true }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1000 } },
+        series: [
+            { name: 'Tổng đơn hàng', data: [3381, 6035, 4141, 6742, 4650] },
+            { name: 'Đơn hủy', data: [780, 1395, 967, 1441, 1324] },
+            { name: 'Đơn hoàn', data: [75, 120, 64, 112, 88] }
+        ],
+        xaxis: { categories: ["T10/2025", "T11/2025", "T12/2025", "T1/2026", "T2/2026"] },
+        colors: ['#3b82f6', '#EE4D2D', '#f59e0b'],
+        fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0.05, stops: [0, 95, 100] } },
+        stroke: { curve: 'smooth', width: 2.5 },
+        dataLabels: { enabled: false },
+        legend: { position: 'top' },
+        tooltip: { y: { formatter: v => v.toLocaleString('vi-VN') + ' đơn' } },
+        grid: { borderColor: '#f1f1f1' },
+    }).render();
+
+    // ===== Chart 2: Rates =====
+    new ApexCharts(document.querySelector("#chart-rates"), {
+        chart: { type: 'line', height: 320, toolbar: { show: true }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1200 } },
+        series: [
+            { name: 'Tỷ lệ hủy (%)', data: [23.07, 23.12, 23.35, 21.37, 28.47] },
+            { name: 'Tỷ lệ hoàn (%)', data: [2.22, 1.99, 1.55, 1.66, 1.89] }
+        ],
+        xaxis: { categories: ["T10/2025", "T11/2025", "T12/2025", "T1/2026", "T2/2026"] },
+        colors: ['#EE4D2D', '#f59e0b'],
+        stroke: { curve: 'smooth', width: 3 },
+        markers: { size: 6, strokeWidth: 0, hover: { sizeOffset: 3 } },
+        yaxis: { labels: { formatter: v => v.toFixed(1) + '%' } },
+        tooltip: { y: { formatter: v => v.toFixed(2) + '%' } },
+        dataLabels: { enabled: true, formatter: v => v.toFixed(1) + '%', style: { fontSize: '11px' } },
+        grid: { borderColor: '#f1f1f1' },
+        annotations: {
+            yaxis: [{ y: 20, borderColor: '#ef4444', label: { text: 'Ngưỡng cảnh báo 20%', style: { background: '#ef4444', color: '#fff', fontSize: '10px' } } }]
+        }
+    }).render();
+
+    // ===== Chart 3: Revenue Loss =====
+    new ApexCharts(document.querySelector("#chart-revenue-loss"), {
+        chart: { type: 'bar', height: 320, toolbar: { show: true }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1000 } },
+        series: [
+            { name: 'DS đơn hủy', data: [110360972, 234497480, 176262169, 301168896, 277192728] },
+            { name: 'DS đơn hoàn', data: [5064672, 7670565, 6573653, 21737260, 17101941] }
+        ],
+        xaxis: { categories: ["T10/2025", "T11/2025", "T12/2025", "T1/2026", "T2/2026"] },
+        colors: ['#EE4D2D', '#f59e0b'],
+        plotOptions: { bar: { borderRadius: 6, columnWidth: '60%' } },
+        dataLabels: { enabled: false },
+        yaxis: { labels: { formatter: v => (v/1000000).toFixed(0) + 'M' } },
+        tooltip: { y: { formatter: v => new Intl.NumberFormat('vi-VN').format(v) + '₫' } },
+        legend: { position: 'top' },
+        grid: { borderColor: '#f1f1f1' },
+    }).render();
+
+    // ===== Chart 4: Stacked Bar =====
+    new ApexCharts(document.querySelector("#chart-stacked"), {
+        chart: { type: 'bar', height: 320, stacked: true, toolbar: { show: true }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 800 } },
+        series: [
+            { name: 'Đơn thành công', data: [2526, 4520, 3110, 5189, 3238] },
+            { name: 'Đơn hủy', data: [780, 1395, 967, 1441, 1324] },
+            { name: 'Đơn hoàn', data: [75, 120, 64, 112, 88] }
+        ],
+        xaxis: { categories: ["T10/2025", "T11/2025", "T12/2025", "T1/2026", "T2/2026"] },
+        colors: ['#10b981', '#EE4D2D', '#f59e0b'],
+        plotOptions: { bar: { borderRadius: 4, columnWidth: '55%' } },
+        dataLabels: { enabled: false },
+        legend: { position: 'top' },
+        tooltip: { y: { formatter: v => v.toLocaleString('vi-VN') + ' đơn' } },
+        grid: { borderColor: '#f1f1f1' },
+    }).render();
+
+    // ===== Chart: Cancel Reasons Donut =====
+    new ApexCharts(document.querySelector("#chart-cancel-reasons"), {
+        chart: { type: 'donut', height: 300, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1200, animateGradually: { enabled: true, delay: 150 } } },
+        series: [1012, 611, 250, 167, 95, 90, 83, 81, 51],
+        labels: ["Muốn thay đổi đơn hàng", "Lý do khác", "Need to change delivery address", "Vấn đề giao hàng", "Vấn đề thanh toán", "Đổi ý / Không muốn mua", "Tìm thấy giá rẻ hơn ở chỗ khác", "Lí do khác", "Người bán hủy"],
+        colors: chartColors,
+        legend: { position: 'bottom', fontSize: '11px' },
+        plotOptions: { pie: { donut: { size: '55%', labels: { show: true, total: { show: true, label: 'Tổng', fontSize: '13px' } } } } },
+        dataLabels: { enabled: true, formatter: (v) => v.toFixed(1) + '%', style: { fontSize: '10px' } },
+        responsive: [{ breakpoint: 640, options: { legend: { position: 'bottom', fontSize: '9px' } } }]
+    }).render();
+
+    // ===== Chart: Return Reasons Donut =====
+    new ApexCharts(document.querySelector("#chart-return-reasons"), {
+        chart: { type: 'donut', height: 300, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1200, animateGradually: { enabled: true, delay: 150 } } },
+        series: [44, 39, 37, 16, 12, 8, 6, 6, 4, 1, 1],
+        labels: ["Tôi muốn thay đổi sản phẩm (kích thước, màu sắc, s", "Lý do khác", "Tôi muốn cập nhật địa chỉ/sđt nhận hàng", "Hàng nguyên vẹn nhưng không còn nhu cầu", "Khác với mô tả", "Hàng giả, nhái (cần bằng chứng)", "Rò rỉ chất lỏng", "Người bán gửi sai hàng", "Thiếu hàng", "Người bán xác nhận gửi sai hàng", "Thùng hàng rỗng/nghi ngờ lừa đảo"],
+        colors: ['#f59e0b', '#EE4D2D', '#3b82f6', '#10b981', '#8b5cf6', '#ec4899', '#06b6d4', '#84cc16'],
+        legend: { position: 'bottom', fontSize: '11px' },
+        plotOptions: { pie: { donut: { size: '55%', labels: { show: true, total: { show: true, label: 'Tổng', fontSize: '13px' } } } } },
+        dataLabels: { enabled: true, formatter: (v) => v.toFixed(1) + '%', style: { fontSize: '10px' } },
+        responsive: [{ breakpoint: 640, options: { legend: { position: 'bottom', fontSize: '9px' } } }]
+    }).render();
+
+    // ===== Chart: Return Solutions Donut =====
+    new ApexCharts(document.querySelector("#chart-return-solutions"), {
+        chart: { type: 'donut', height: 300, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1200 } },
+        series: [128, 46],
+        labels: ["Hoàn tiền ngay", "Trả hàng & Hoàn tiền"],
+        colors: ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'],
+        legend: { position: 'bottom', fontSize: '11px' },
+        plotOptions: { pie: { donut: { size: '55%', labels: { show: true, total: { show: true, label: 'Tổng', fontSize: '13px' } } } } },
+        dataLabels: { enabled: true, formatter: (v) => v.toFixed(1) + '%', style: { fontSize: '10px' } },
+    }).render();
+
+    // ===== Chart: Top Cancelled Products =====
+    new ApexCharts(document.querySelector("#chart-top-cancel-products"), {
+        chart: { type: 'bar', height: 350, toolbar: { show: false }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1000 } },
+        series: [{ name: 'Số lượng bị hủy', data: [688, 630, 237, 160, 112, 65, 37, 28, 20, 16] }],
+        xaxis: { categories: ["Mặt nạ Trioderma Blemish Care Essence Mask tinh chất khổ qua", "Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m", "Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm ", "Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15", "Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v", "Serum Trioderma ActiBalance+ 30ml, giảm mụn, mờ thâm, dưỡng ", "Combo 3 bước dành cho da dầu mụn gel mụn & sữa rửa mặt & ser", "Combo 2 gel giảm mụn Trioderma Anti Acne Gel mờ thâm mụn, là", "Mặt nạ dưỡng ẩm Trioderma Calming & Hydrating Essence Mask l", "Mặt nạ sáng da Trioderma Brightening Essence Mask dưỡng trắn"] },
+        colors: ['#EE4D2D'],
+        plotOptions: { bar: { horizontal: true, borderRadius: 6, barHeight: '60%', dataLabels: { position: 'top' } } },
+        dataLabels: { enabled: true, offsetX: 20, style: { fontSize: '11px', colors: ['#333'] } },
+        grid: { borderColor: '#f1f1f1' },
+        yaxis: { labels: { style: { fontSize: '10px' }, maxWidth: 200 } },
+    }).render();
+
+    // ===== Chart: Top Return Products =====
+    new ApexCharts(document.querySelector("#chart-top-return-products"), {
+        chart: { type: 'bar', height: 350, toolbar: { show: false }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1000 } },
+        series: [{ name: 'Số lượng hoàn', data: [50, 36, 20, 16, 10, 7, 4, 2, 1, 1] }],
+        xaxis: { categories: ["Mặt nạ Trioderma Blemish Care Essence Mask tinh chất khổ qua", "Kem chấm mụn Trioderma Anti Acne giảm sưng viêm, ngừa thâm m", "Kem chấm mụn Trioderma giảm sưng viêm, ngừa thâm mụn tuýp 15", "Combo gel mụn Trioderma và serum Trioderma mờ thâm sáng da v", "Combo gel mụn Trioderma 15g và serum Trioderma 30ml mờ thâm ", "Serum Trioderma ActiBalance+ 30ml, giảm mụn, mờ thâm, dưỡng ", "Mặt nạ dưỡng ẩm Trioderma Calming & Hydrating Essence Mask l", "Combo 3 bước dành cho da dầu mụn gel mụn & sữa rửa mặt & ser", "Serum phục hồi da MD Care serum cân bằng lợi khuẩn và phục h", "Mặt nạ sáng da Trioderma Brightening Essence Mask dưỡng trắn"] },
+        colors: ['#f59e0b'],
+        plotOptions: { bar: { horizontal: true, borderRadius: 6, barHeight: '60%', dataLabels: { position: 'top' } } },
+        dataLabels: { enabled: true, offsetX: 20, style: { fontSize: '11px', colors: ['#333'] } },
+        grid: { borderColor: '#f1f1f1' },
+        yaxis: { labels: { style: { fontSize: '10px' }, maxWidth: 200 } },
+    }).render();
+
+    // ===== Chart: Province Bar =====
+    new ApexCharts(document.querySelector("#chart-provinces"), {
+        chart: { type: 'bar', height: 320, toolbar: { show: false }, ...chartFont, animations: { enabled: true, easing: 'easeinout', speed: 1000 } },
+        series: [{ name: 'Đơn hủy', data: [47, 46, 41, 41, 41, 39, 38, 36, 36, 36] }],
+        xaxis: { categories: ["******32", "******09", "******18", "******42", "******20", "******88", "******25", "******23", "******49", "******08"] },
+        colors: ['#EE4D2D'],
+        plotOptions: { bar: { horizontal: true, borderRadius: 4, barHeight: '55%' } },
+        dataLabels: { enabled: true, style: { fontSize: '11px' } },
+        grid: { borderColor: '#f1f1f1' },
+        yaxis: { labels: { style: { fontSize: '10px' }, maxWidth: 160 } },
+    }).render();
+
+    // ===== Navbar scroll highlight =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 100;
+            if (window.scrollY >= top) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+    });
+    </script>
+
+</body>
+</html>
