@@ -17,17 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ==================== TYPED.JS INIT ====================
     const typedStringsVI = [
-        'Chuyên viên TMĐT',
-        'Chiến lược nội dung',
-        'Phân tích dữ liệu',
-        'Tối ưu tăng trưởng'
+        'Senior E-commerce Executive',
+        'Shopee | TikTok Shop | Lazada',
+        'Data-driven Growth',
+        'Reporting & Automation'
     ];
 
     const typedStringsEN = [
-        'E-Commerce Specialist',
-        'Content Strategist',
-        'Data Analyst',
-        'Growth Operator'
+        'Senior E-commerce Executive',
+        'Shopee | TikTok Shop | Lazada',
+        'Data-driven Growth',
+        'Reporting & Automation'
     ];
 
     let currentLang = localStorage.getItem('portfolio-lang') || 'vi';
