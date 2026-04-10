@@ -2183,18 +2183,20 @@ body::before {
 }
 
 .section-header {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    padding: 18px 24px 20px;
-    margin-bottom: 36px;
+    padding: 18px clamp(20px, 5vw, 60px) 20px;
+    margin: 0 auto 36px auto;
     background: rgba(255, 249, 240, 0.85);
     border: 1px solid rgba(78, 68, 55, 0.1);
     border-radius: 28px;
     box-shadow: var(--shadow-paper);
     backdrop-filter: blur(10px);
     position: relative;
+    width: 100%;
+    max-width: calc(100% - 60px);
 }
 
 .section-header::before {
@@ -2672,8 +2674,7 @@ body::before {
 }
 
 #about .section-header {
-    margin: 0 auto;
-    margin-bottom: 36px;
+    margin: 0 auto 36px auto;
 }
 
 /* Unified Content Wrapper */
