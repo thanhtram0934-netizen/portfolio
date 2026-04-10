@@ -28,60 +28,30 @@
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#hero">
-                <i class="fas fa-gem me-2"></i>
-                <span data-vi="Thanh Trâm" data-en="Thanh Tram">Thanh Trâm</span>
-            </a>
+            <a class="navbar-brand fw-bold" href="#hero"><i class="fas fa-gem me-2"></i>THANH TRÂM</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto me-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects" data-vi="Dự án" data-en="Projects">Dự án</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#achievements" data-vi="Thành tích" data-en="Achievements">Thành tích</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#about" data-vi="Về tôi" data-en="About">Về tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-vi="Năng lực" data-en="Skills">Năng lực</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-vi="Case Study" data-en="Case Studies">Case Study</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <button class="btn btn-lang" id="langToggle" type="button" aria-label="Toggle language">
+                            <span id="langLabel">EN</span>
+                        </button>
                     </li>
                 </ul>
-                <!-- Language Toggle -->
-                <button class="btn btn-lang" id="langToggle" title="Switch language">
-                    <i class="fas fa-globe me-1"></i>
-                    <span id="langLabel">EN</span>
-                </button>
             </div>
         </div>
     </nav>
 
-    <!-- ==================== HERO SECTION ==================== -->
     <section id="hero" class="hero-section d-flex align-items-center">
-        <!-- Animated background blobs -->
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-        <!-- Wave bottom -->
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,70 1440,80 L1440,120 L0,120 Z" fill="#F8FBFF"/>
-            </svg>
-        </div>
-
         <div class="container position-relative hero-grid">
             <div class="hero-copy" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="hero-name">THANH TRÂM</h1>
@@ -217,7 +187,7 @@
                                 <span class="stat-label" data-vi="Năng lực cốt lõi" data-en="Core strengths">Năng lực cốt lõi</span>
                             </div>
                             <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
-                                <span class="stat-number" data-count="2">0</span>
+                                <span class="stat-number" data-count="3">0</span>
                                 <span class="stat-label" data-vi="Case study trọng điểm" data-en="Flagship case studies">Case study trọng điểm</span>
                             </div>
                             <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
@@ -440,14 +410,6 @@
                     </div>
                 </div>
 
-                <!-- Experience 3 -->
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-                    <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">
-                            <i class="far fa-calendar-alt me-1"></i>
-                </div>
-            </div>
                     </div>
                 </div>
             </div>
@@ -458,7 +420,7 @@
     <section id="projects" class="section-padding">
         <div class="section-header text-center" data-aos="fade-up">
             <span class="section-subtitle" data-vi="Case Study" data-en="Case Study">Case Study</span>
-            <h2 class="section-title" data-vi="Case Study 1 & 2" data-en="Case Study 1 & 2">Case Study 1 & 2</h2>
+            <h2 class="section-title" data-vi="Case Study 1, 2 & 3" data-en="Case Study 1, 2 & 3">Case Study 1, 2 & 3</h2>
             <div class="section-divider"></div>
         </div>
 
@@ -541,6 +503,59 @@
                         <div class="case-study-tags">
                             <span>Key SKU</span><span>Assortment</span><span>Pricing</span><span>Shopee Growth</span>
                         </div>
+                        <div class="case-study-showcase case-study-showcase-premium">
+                            <h4 class="showcase-title"><i class="fas fa-images me-2"></i><span data-vi="Minh họa trước/sau" data-en="Before/After Showcase">Minh họa trước/sau</span></h4>
+                            <p class="showcase-intro" data-vi="So sánh trực quan giai đoạn trước và sau khi triển khai chiến lược tăng trưởng." data-en="Visual comparison of the pre- and post-strategy growth phases.">So sánh trực quan giai đoạn trước và sau khi triển khai chiến lược tăng trưởng.</p>
+                            <div class="showcase-grid">
+                                <div>
+                                    <div class="showcase-section-label" data-vi="Tổng quan tăng trưởng" data-en="Growth overview">Tổng quan tăng trưởng</div>
+                                    <div class="showcase-before-after">
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/anh-1-truoc.jpg" alt="Dashboard trước khi tối ưu tăng trưởng">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Doanh số phân tán, quy mô đơn chưa cao" data-en="Revenue was fragmented with lower order scale">Doanh số phân tán, quy mô đơn chưa cao</p>
+                                        </div>
+                                        <div class="showcase-arrow showcase-arrow-labeled">
+                                            <i class="fas fa-arrow-right"></i>
+                                            <span data-vi="Triển khai chiến lược" data-en="Strategy rollout">Triển khai chiến lược</span>
+                                        </div>
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/anh-2-sau.jpg" alt="Dashboard sau khi tối ưu tăng trưởng">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Doanh số tập trung vào line chiến lược" data-en="Revenue shifted to strategic product lines">Doanh số tập trung vào line chiến lược</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="showcase-phone">
+                                    <div class="showcase-section-label" data-vi="Hiển thị storefront" data-en="Storefront visibility">Hiển thị storefront</div>
+                                    <div class="phone-mockup">
+                                        <div class="phone-notch"></div>
+                                        <div class="phone-screen">
+                                            <img src="assets/images/anh-shop-3.jpg" alt="Hiển thị sản phẩm Trioderma trên Shopee mobile">
+                                        </div>
+                                    </div>
+                                    <p class="showcase-caption" data-vi="Độ phủ storefront vẫn duy trì ổn định" data-en="Storefront visibility stayed stable">Độ phủ storefront vẫn duy trì ổn định</p>
+                                </div>
+                            </div>
+                            <div class="showcase-kpi-strip">
+                                <div class="showcase-kpi-pill">
+                                    <span class="kpi-pill-label" data-vi="Doanh số" data-en="Revenue">Doanh số</span>
+                                    <strong class="kpi-pill-value">+437%</strong>
+                                </div>
+                                <div class="showcase-kpi-pill">
+                                    <span class="kpi-pill-label" data-vi="Đơn hàng" data-en="Orders">Đơn hàng</span>
+                                    <strong class="kpi-pill-value">+581%</strong>
+                                </div>
+                                <div class="showcase-kpi-pill showcase-kpi-pill-highlight">
+                                    <span class="kpi-pill-label" data-vi="Định hướng" data-en="Focus">Định hướng</span>
+                                    <strong class="kpi-pill-value" data-vi="Hero SKU" data-en="Hero SKU">Hero SKU</strong>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -610,6 +625,218 @@
                         </div>
                         <div class="case-study-tags">
                             <span>Search Ads</span><span>Discovery Ads</span><span>Campaign Ads</span><span>ROAS</span>
+                        </div>
+                        <div class="case-study-showcase">
+                            <h4 class="showcase-title"><i class="fas fa-images me-2"></i><span data-vi="Minh họa trước/sau theo chiến dịch" data-en="Campaign before/after visuals">Minh họa trước/sau theo chiến dịch</span></h4>
+                            <div class="showcase-ads-grid">
+                                <div class="showcase-ad-product">
+                                    <h5 class="ad-product-name"><i class="fas fa-box-open me-2"></i><span data-vi="Combo gel mụn + serum" data-en="Acne gel + serum combo">Combo gel mụn + serum</span></h5>
+                                    <div class="showcase-before-after">
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/ads-combo-truoc.jpg" alt="Hiệu quả quảng cáo combo trước tối ưu">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Giai đoạn trước tối ưu" data-en="Before optimization">Giai đoạn trước tối ưu</p>
+                                        </div>
+                                        <div class="showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/ads-combo-sau.jpg" alt="Hiệu quả quảng cáo combo sau tối ưu">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Giai đoạn sau tối ưu" data-en="After optimization">Giai đoạn sau tối ưu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="showcase-ad-product">
+                                    <h5 class="ad-product-name"><i class="fas fa-vial me-2"></i><span data-vi="Kem chấm mụn Trioderma" data-en="Trioderma acne treatment">Kem chấm mụn Trioderma</span></h5>
+                                    <div class="showcase-before-after">
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/ads-kem-truoc.jpg" alt="Hiệu quả quảng cáo kem chấm mụn trước tối ưu">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Giai đoạn trước tối ưu" data-en="Before optimization">Giai đoạn trước tối ưu</p>
+                                        </div>
+                                        <div class="showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/ads-kem-sau.jpg" alt="Hiệu quả quảng cáo kem chấm mụn sau tối ưu">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Giai đoạn sau tối ưu" data-en="After optimization">Giai đoạn sau tối ưu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="showcase-ad-product">
+                                    <h5 class="ad-product-name"><i class="fas fa-layer-group me-2"></i><span data-vi="Tổng quan Ads theo tháng" data-en="Monthly ads overview">Tổng quan Ads theo tháng</span></h5>
+                                    <div class="showcase-before-after">
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/ads-monthly-overview-truoc.jpg" alt="Hiệu quả ads tổng tháng trước tối ưu cho nhiều sản phẩm">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Tháng 11/2025 (trước tối ưu)" data-en="11/2025 (before optimization)">Tháng 11/2025 (trước tối ưu)</p>
+                                        </div>
+                                        <div class="showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                        <div class="showcase-item">
+                                            <span class="showcase-label showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                            <div class="showcase-img-wrap">
+                                                <img src="assets/images/ads-monthly-overview-sau.jpg" alt="Hiệu quả ads tổng tháng sau tối ưu cho nhiều sản phẩm">
+                                            </div>
+                                            <p class="showcase-caption" data-vi="Tháng 2/2026 (sau tối ưu)" data-en="2/2026 (after optimization)">Tháng 2/2026 (sau tối ưu)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="launch" data-aos="fade-up" data-aos-delay="120">
+                    <div class="case-study-card">
+                        <div class="case-study-header">
+                            <div class="case-study-meta">
+                                <span class="case-study-number">03</span>
+                                <span class="case-study-label">CASE STUDY</span>
+                                <span class="case-study-category" data-vi="Launch & Scale" data-en="Launch & Scale">Launch & Scale</span>
+                            </div>
+                            <h3 class="case-study-title" data-vi="SKU Strategy & Assortment Development" data-en="SKU Strategy & Assortment Development">SKU Strategy & Assortment Development</h3>
+                        </div>
+                        <div class="case-study-body">
+                            <div class="case-study-narrative">
+                                <div class="phase-block">
+                                    <h4 class="phase-title"><i class="fas fa-bookmark me-2"></i><span data-vi="Bối cảnh" data-en="Background">Bối cảnh</span></h4>
+                                    <p data-vi="Shop chuyển trọng tâm từ line cũ sang Trioderma nên cần tái cấu trúc danh mục, không chỉ thêm SKU mới. Thách thức là dịch chuyển trụ cột doanh thu sang line mới nhưng vẫn giữ nhịp tăng trưởng và độ hiện diện trên sàn." data-en="As the shop shifted from its old line to Trioderma, the task was to restructure the assortment, not just add new SKUs. The core challenge was moving the revenue pillar to the new line while maintaining growth momentum and marketplace visibility.">Shop chuyển trọng tâm từ line cũ sang Trioderma nên cần tái cấu trúc danh mục, không chỉ thêm SKU mới. Thách thức là dịch chuyển trụ cột doanh thu sang line mới nhưng vẫn giữ nhịp tăng trưởng và độ hiện diện trên sàn.</p>
+                                </div>
+                                <div class="phase-block">
+                                    <h4 class="phase-title"><i class="fas fa-chess me-2"></i><span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
+                                    <ul>
+                                        <li data-vi="Xây lại danh mục theo mô hình Hero SKU - Supporting SKU - Growth SKU" data-en="Rebuild the assortment with a Hero SKU - Supporting SKU - Growth SKU model">Xây lại danh mục theo mô hình Hero SKU - Supporting SKU - Growth SKU</li>
+                                        <li data-vi="Chuyển dịch doanh thu sang Trioderma mà không đứt nhịp tăng trưởng" data-en="Shift revenue to Trioderma without breaking growth momentum">Chuyển dịch doanh thu sang Trioderma mà không đứt nhịp tăng trưởng</li>
+                                        <li data-vi="Tăng AOV và giữ top hiển thị ngành hàng trong giai đoạn chuyển đổi" data-en="Increase AOV and maintain top category visibility during transition">Tăng AOV và giữ top hiển thị ngành hàng trong giai đoạn chuyển đổi</li>
+                                    </ul>
+                                </div>
+                                <div class="phase-block">
+                                    <h4 class="phase-title"><i class="fas fa-rocket me-2"></i><span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
+                                    <ul>
+                                        <li data-vi="Rà soát và tái cấu trúc danh mục khoảng 100 SKU" data-en="Reviewed and restructured around 100 SKUs">Rà soát và tái cấu trúc danh mục khoảng 100 SKU</li>
+                                        <li data-vi="Xác định Hero SKU làm trụ cột doanh thu, bổ sung Supporting SKU để tăng chuyển đổi và bán kèm" data-en="Defined Hero SKUs as revenue pillars and added Supporting SKUs for conversion and bundling">Xác định Hero SKU làm trụ cột doanh thu, bổ sung Supporting SKU để tăng chuyển đổi và bán kèm</li>
+                                        <li data-vi="Phát triển Growth SKU và triển khai assortment strategy theo dữ liệu ngành hàng, nhu cầu thị trường và hành vi khách hàng" data-en="Built Growth SKUs and deployed a data-led assortment strategy based on category trends, market demand, and customer behavior">Phát triển Growth SKU và triển khai assortment strategy theo dữ liệu ngành hàng, nhu cầu thị trường và hành vi khách hàng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="case-study-results">
+                                <h4 class="results-title"><i class="fas fa-trophy me-2"></i><span data-vi="Kết quả" data-en="Results">Kết quả</span></h4>
+                                <div class="results-grid">
+                                    <div class="result-metric">
+                                        <span class="metric-value">1,000+</span>
+                                        <span class="metric-unit" data-vi="lượt bán/SKU" data-en="sales/SKU">lượt bán/SKU</span>
+                                        <span class="metric-label" data-vi="Các SKU trong line" data-en="SKUs in the line">Các SKU trong line</span>
+                                    </div>
+                                    <div class="result-metric">
+                                        <span class="metric-value">Top</span>
+                                        <span class="metric-unit" data-vi="Hiển thị" data-en="Visibility">Hiển thị</span>
+                                        <span class="metric-label" data-vi="Duy trì top ngành hàng" data-en="Maintained top category visibility">Duy trì top ngành hàng</span>
+                                    </div>
+                                    <div class="result-metric">
+                                        <span class="metric-value">Better</span>
+                                        <span class="metric-unit">Mix</span>
+                                        <span class="metric-label" data-vi="Tối ưu cơ cấu doanh thu" data-en="Optimized revenue structure">Tối ưu cơ cấu doanh thu</span>
+                                    </div>
+                                    <div class="result-metric">
+                                        <span class="metric-value">AOV</span>
+                                        <span class="metric-unit">Up</span>
+                                        <span class="metric-label" data-vi="Gia tăng giá trị đơn hàng" data-en="Increased average order value">Gia tăng giá trị đơn hàng</span>
+                                    </div>
+                                </div>
+                                <div class="result-highlight">
+                                    <i class="fas fa-lightbulb me-2"></i>
+                                    <span data-vi="Bài học: tăng trưởng bền vững đến từ chiến lược SKU rõ ràng, phát triển danh mục theo dữ liệu và tối ưu cơ cấu doanh thu theo từng giai đoạn." data-en="Lesson: sustainable growth comes from clear SKU strategy, data-led assortment development, and staged revenue mix optimization.">Bài học: tăng trưởng bền vững đến từ chiến lược SKU rõ ràng, phát triển danh mục theo dữ liệu và tối ưu cơ cấu doanh thu theo từng giai đoạn.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-tags">
+                            <span>SKU Strategy</span><span>Assortment</span><span>AOV</span><span>Category Visibility</span>
+                        </div>
+                        <div class="case-study-showcase product-mix-showcase">
+                            <h4 class="showcase-title"><i class="fas fa-chart-bar me-2"></i><span data-vi="Cơ cấu sản phẩm trước/sau" data-en="Product mix before/after">Cơ cấu sản phẩm trước/sau</span></h4>
+
+                            <div class="mix-summary-grid">
+                                <div class="mix-summary-card">
+                                    <span class="mix-summary-label" data-vi="Tổng doanh số trước" data-en="Total revenue before">Tổng doanh số trước</span>
+                                    <strong class="mix-summary-value">221.63M</strong>
+                                    <span class="mix-summary-note" data-vi="Top 3 SKU" data-en="Top 3 SKUs">Top 3 SKU</span>
+                                </div>
+                                <div class="mix-summary-card mix-summary-card-after">
+                                    <span class="mix-summary-label" data-vi="Tổng doanh số sau" data-en="Total revenue after">Tổng doanh số sau</span>
+                                    <strong class="mix-summary-value">1,190.36M</strong>
+                                    <span class="mix-summary-note" data-vi="Top 3 SKU" data-en="Top 3 SKUs">Top 3 SKU</span>
+                                </div>
+                                <div class="mix-summary-card mix-summary-card-growth">
+                                    <span class="mix-summary-label" data-vi="Mức tăng trưởng" data-en="Growth uplift">Mức tăng trưởng</span>
+                                    <strong class="mix-summary-value">+437%</strong>
+                                    <span class="mix-summary-note" data-vi="Tổng doanh số nhóm SKU" data-en="Top-SKU group revenue">Tổng doanh số nhóm SKU</span>
+                                </div>
+                            </div>
+
+                            <div class="mix-compare-grid">
+                                <div class="mix-panel">
+                                    <div class="showcase-section-label" data-vi="Trước tối ưu cơ cấu" data-en="Before mix optimization">Trước tối ưu cơ cấu</div>
+                                    <div class="mix-row">
+                                        <div class="mix-row-head">
+                                            <span>Sữa rửa mặt CeraVe</span>
+                                            <span>98.57M | 44.5%</span>
+                                        </div>
+                                        <div class="mix-track"><span class="mix-fill mix-fill-before" style="width:44.5%"></span></div>
+                                    </div>
+                                    <div class="mix-row">
+                                        <div class="mix-row-head">
+                                            <span>Kem chấm mụn Trioderma</span>
+                                            <span>65.22M | 29.4%</span>
+                                        </div>
+                                        <div class="mix-track"><span class="mix-fill mix-fill-before" style="width:29.4%"></span></div>
+                                    </div>
+                                    <div class="mix-row">
+                                        <div class="mix-row-head">
+                                            <span>Sữa rửa mặt CeraVe line 2</span>
+                                            <span>57.84M | 26.1%</span>
+                                        </div>
+                                        <div class="mix-track"><span class="mix-fill mix-fill-before" style="width:26.1%"></span></div>
+                                    </div>
+                                </div>
+
+                                <div class="mix-panel">
+                                    <div class="showcase-section-label" data-vi="Sau mở rộng danh mục" data-en="After assortment expansion">Sau mở rộng danh mục</div>
+                                    <div class="mix-row">
+                                        <div class="mix-row-head">
+                                            <span>Kem chấm mụn Trioderma</span>
+                                            <span>578.95M | 48.6%</span>
+                                        </div>
+                                        <div class="mix-track"><span class="mix-fill mix-fill-after" style="width:48.6%"></span></div>
+                                    </div>
+                                    <div class="mix-row">
+                                        <div class="mix-row-head">
+                                            <span>Combo gel mụn Trioderma</span>
+                                            <span>495.09M | 41.6%</span>
+                                        </div>
+                                        <div class="mix-track"><span class="mix-fill mix-fill-after" style="width:41.6%"></span></div>
+                                    </div>
+                                    <div class="mix-row">
+                                        <div class="mix-row-head">
+                                            <span>Serum Trioderma</span>
+                                            <span>116.32M | 9.8%</span>
+                                        </div>
+                                        <div class="mix-track"><span class="mix-fill mix-fill-after" style="width:9.8%"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="result-highlight mt-3">
+                                <i class="fas fa-circle-check me-2"></i>
+                                <span data-vi="Cơ cấu doanh số chuyển dịch rõ từ nhóm sản phẩm cũ sang bộ SKU chiến lược của Trioderma, giúp mở rộng danh mục và nâng AOV bền vững." data-en="Revenue mix shifted from old product groups to strategic Trioderma SKUs, supporting sustainable assortment expansion and higher AOV.">Cơ cấu doanh số chuyển dịch rõ từ nhóm sản phẩm cũ sang bộ SKU chiến lược của Trioderma, giúp mở rộng danh mục và nâng AOV bền vững.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
