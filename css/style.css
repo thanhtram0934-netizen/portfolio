@@ -2812,6 +2812,66 @@ body::before {
     box-shadow: 0 22px 46px rgba(58, 42, 22, 0.16);
 }
 
+#tools .section-header-tools {
+    max-width: min(1440px, calc(100% - 20px));
+    padding: clamp(28px, 3vw, 42px) clamp(22px, 5vw, 72px) clamp(24px, 3vw, 34px);
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.95), rgba(245, 248, 255, 0.88) 28%, rgba(246, 239, 229, 0.82) 100%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 247, 240, 0.92));
+    border: 1px solid rgba(76, 98, 216, 0.14);
+    box-shadow: 0 20px 52px rgba(58, 42, 22, 0.14);
+}
+
+#tools .section-header-tools::before {
+    left: 34px;
+    right: 34px;
+    background: linear-gradient(90deg, rgba(76, 98, 216, 0), rgba(76, 98, 216, 0.55), rgba(255, 182, 193, 0.52), rgba(76, 98, 216, 0));
+}
+
+#tools .section-header-tools::after {
+    width: clamp(128px, 14vw, 188px);
+    height: 6px;
+    top: 12px;
+    background: linear-gradient(90deg, #6d7cff 0%, #8fd3ff 52%, #ff8fd6 100%);
+    box-shadow: 0 8px 18px rgba(109, 124, 255, 0.18);
+}
+
+#tools .tools-section-subtitle {
+    background: linear-gradient(135deg, rgba(230, 236, 255, 0.98), rgba(198, 225, 255, 0.9));
+    border-color: rgba(95, 112, 255, 0.24);
+    color: #4256d4;
+    letter-spacing: 0.22em;
+}
+
+#tools .tools-section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.3rem, 5vw, 4.4rem);
+    line-height: 0.95;
+    text-transform: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background: linear-gradient(90deg, #1f2937 0%, #4c62d8 42%, #ff7eb6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 10px 24px rgba(76, 98, 216, 0.08);
+}
+
+#tools .tools-section-note {
+    max-width: 920px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: clamp(0.96rem, 1.1vw, 1.08rem);
+    line-height: 1.75;
+}
+
+#tools .section-divider {
+    width: clamp(180px, 26vw, 320px);
+    height: 4px;
+    background: linear-gradient(90deg, rgba(109, 124, 255, 0.95), rgba(143, 211, 255, 0.95), rgba(255, 143, 214, 0.95));
+    box-shadow: 0 8px 18px rgba(109, 124, 255, 0.16);
+}
+
 .navbar {
     background: rgba(251, 247, 239, 0.82);
     border-bottom: 1px solid rgba(79, 62, 40, 0.08);
