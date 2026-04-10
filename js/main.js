@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (typedInstance) {
             typedInstance.destroy();
         }
+        var typedTarget = document.querySelector('#typed-output');
+        if (!typedTarget || typeof Typed === 'undefined') {
+            return;
+        }
         const strings = currentLang === 'vi' ? typedStringsVI : typedStringsEN;
         typedInstance = new Typed('#typed-output', {
             strings: strings,
