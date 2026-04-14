@@ -21,9 +21,9 @@
   --white: #ffffff;
   --seal: #8b2020;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
-  --font-accent: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-accent: 'Lora', 'Georgia', serif;
 
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
