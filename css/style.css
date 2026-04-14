@@ -314,6 +314,102 @@ ul { padding-left: 1.2em; margin: 0 0 1em; }
   .ed-blob-4, .ed-blob-5 { display: none; }
 }
 
+/* ─── HERO ENTRANCE ANIMATIONS ─── */
+
+/* Generic reveal — fade up + slide */
+.ed-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroReveal .9s var(--ease-out) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Title — clip-path reveal from bottom, letter by letter feel */
+.ed-reveal-title {
+  opacity: 0;
+  transform: translateY(60px) scale(.95);
+  animation: heroTitleReveal 1.2s var(--ease-out) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Badge — pop in with rotation */
+.ed-reveal-badge {
+  opacity: 0;
+  transform: rotate(30deg) scale(.5);
+  animation: heroBadgeReveal .7s var(--ease-out) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Star — spin in */
+.ed-reveal-spin {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0);
+  animation: heroStarReveal .6s var(--ease-out) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(.95);
+  }
+  40% {
+    opacity: .6;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroBadgeReveal {
+  0% {
+    opacity: 0;
+    transform: rotate(30deg) scale(.5);
+  }
+  60% {
+    transform: rotate(8deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(12deg) scale(1);
+  }
+}
+
+@keyframes heroStarReveal {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ed-reveal,
+  .ed-reveal-title,
+  .ed-reveal-badge,
+  .ed-reveal-spin {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .ed-reveal-badge { transform: rotate(12deg); }
+}
+
 /* Top info bar */
 .ed-hero-top {
   position: relative;
