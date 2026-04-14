@@ -207,6 +207,27 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', animateProgressBars, { passive: true });
     animateProgressBars(); // Check on load
 
+    // ==================== BENTO METER ANIMATION ====================
+    function animateBentoMeters() {
+        document.querySelectorAll('.bento-meter-fill[data-width]').forEach(function (fill) {
+            if (fill.dataset.animated) return;
+
+            var rect = fill.getBoundingClientRect();
+            var windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight - 50) {
+                fill.dataset.animated = 'true';
+                var width = fill.getAttribute('data-width');
+                setTimeout(function () {
+                    fill.style.width = width + '%';
+                }, 200);
+            }
+        });
+    }
+
+    window.addEventListener('scroll', animateBentoMeters, { passive: true });
+    animateBentoMeters(); // Check on load
+
     // ==================== PROJECT FILTER ====================
     var filterBtns = document.querySelectorAll('.filter-btn');
     var projectItems = document.querySelectorAll('.project-item');
