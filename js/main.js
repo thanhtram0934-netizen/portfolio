@@ -1,7 +1,9 @@
 /* ============================================================
    MAIN.JS — Portfolio Nguyễn Thị Thanh Trâm
-   Features: AOS, Typed.js, Language Toggle, Scroll Effects,
-             Counter Animation, Project Filter, Form Handling
+   Editorial Vintage — Navy + Cream + Gold
+   Features: AOS, Language Toggle, Scroll Effects,
+             Counter Animation, Meter Animation,
+             Project Filter, Nav Toggle, Form Handling
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,54 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
         disable: false
     });
 
-    // ==================== TYPED.JS INIT ====================
-    const typedStringsVI = [
-        'Senior E-commerce Executive',
-        'Shopee | TikTok Shop | Lazada',
-        'Data-driven Growth',
-        'Reporting & Automation'
-    ];
-
-    const typedStringsEN = [
-        'Senior E-commerce Executive',
-        'Shopee | TikTok Shop | Lazada',
-        'Data-driven Growth',
-        'Reporting & Automation'
-    ];
-
+    // ==================== LANGUAGE STATE ====================
     let currentLang = localStorage.getItem('portfolio-lang') || 'vi';
-    let typedInstance = null;
-
-    function initTyped() {
-        if (typedInstance) {
-            typedInstance.destroy();
-        }
-        var typedTarget = document.querySelector('#typed-output');
-        if (!typedTarget || typeof Typed === 'undefined') {
-            return;
-        }
-        const strings = currentLang === 'vi' ? typedStringsVI : typedStringsEN;
-        typedInstance = new Typed('#typed-output', {
-            strings: strings,
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            loop: true,
-            showCursor: true,
-            cursorChar: '|'
-        });
-    }
-
-    initTyped();
 
     // ==================== NAVBAR SCROLL EFFECT ====================
     const navbar = document.getElementById('mainNav');
     const backToTop = document.getElementById('backToTop');
 
     function handleScroll() {
-        const scrollY = window.scrollY;
+        var scrollY = window.scrollY;
 
-        // Navbar shrink
+        // Navbar background
         if (scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -70,28 +35,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Back to top button
-        if (scrollY > 400) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
+        if (backToTop) {
+            if (scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         }
 
-        // Active nav link based on scroll position
+        // Active nav link
         updateActiveNavLink();
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     // ==================== ACTIVE NAV LINK ====================
     function updateActiveNavLink() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-        const scrollY = window.scrollY + 100;
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('.ed-nav-links a[href^="#"]');
+        var scrollY = window.scrollY + 120;
 
         sections.forEach(function (section) {
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-            const id = section.getAttribute('id');
+            var top = section.offsetTop;
+            var height = section.offsetHeight;
+            var id = section.getAttribute('id');
 
             if (scrollY >= top && scrollY < top + height) {
                 navLinks.forEach(function (link) {
@@ -104,33 +72,42 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ==================== CLOSE MOBILE NAV ON LINK CLICK ====================
-    const navbarCollapse = document.getElementById('navbarNav');
-    document.querySelectorAll('.nav-link[href^="#"]').forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (navbarCollapse.classList.contains('show')) {
-                var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                if (bsCollapse) bsCollapse.hide();
-            }
+    // ==================== MOBILE NAV TOGGLE ====================
+    var navToggle = document.getElementById('navToggle');
+    var navLinksEl = document.getElementById('navLinks');
+
+    if (navToggle && navLinksEl) {
+        navToggle.addEventListener('click', function () {
+            navLinksEl.classList.toggle('open');
         });
-    });
+
+        navLinksEl.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                navLinksEl.classList.remove('open');
+            });
+        });
+    }
+
+    // ==================== BACK TO TOP ====================
+    if (backToTop) {
+        backToTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // ==================== LANGUAGE TOGGLE ====================
-    const langToggle = document.getElementById('langToggle');
-    const langLabel = document.getElementById('langLabel');
+    var langToggle = document.getElementById('langToggle');
+    var langLabel = document.getElementById('langLabel');
 
     function applyLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('portfolio-lang', lang);
 
-        // Update toggle button label
         langLabel.textContent = lang === 'vi' ? 'EN' : 'VI';
 
-        // Update all elements with data-vi and data-en attributes
         document.querySelectorAll('[data-vi][data-en]').forEach(function (el) {
             var text = el.getAttribute('data-' + lang);
             if (text) {
-                // Check if the text contains HTML
                 if (text.includes('<')) {
                     el.innerHTML = text;
                 } else {
@@ -138,9 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-
-        // Reinitialize Typed.js with new language
-        initTyped();
     }
 
     langToggle.addEventListener('click', function () {
@@ -148,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
         applyLanguage(newLang);
     });
 
-    // Apply saved language on load
     if (currentLang !== 'vi') {
         applyLanguage(currentLang);
     }
@@ -159,9 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (counter.dataset.animated) return;
 
             var rect = counter.getBoundingClientRect();
-            var windowHeight = window.innerHeight;
-
-            if (rect.top < windowHeight - 50) {
+            if (rect.top < window.innerHeight - 50) {
                 counter.dataset.animated = 'true';
                 var target = parseInt(counter.getAttribute('data-count'), 10);
                 var current = 0;
@@ -184,38 +155,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', animateCounters, { passive: true });
-    animateCounters(); // Check on load
+    animateCounters();
 
-    // ==================== SKILL PROGRESS BAR ANIMATION ====================
-    function animateProgressBars() {
-        document.querySelectorAll('.progress-bar[data-width]').forEach(function (bar) {
-            if (bar.dataset.animated) return;
-
-            var rect = bar.getBoundingClientRect();
-            var windowHeight = window.innerHeight;
-
-            if (rect.top < windowHeight - 50) {
-                bar.dataset.animated = 'true';
-                var width = bar.getAttribute('data-width');
-                setTimeout(function () {
-                    bar.style.width = width + '%';
-                }, 200);
-            }
-        });
-    }
-
-    window.addEventListener('scroll', animateProgressBars, { passive: true });
-    animateProgressBars(); // Check on load
-
-    // ==================== BENTO METER ANIMATION ====================
-    function animateBentoMeters() {
-        document.querySelectorAll('.bento-meter-fill[data-width]').forEach(function (fill) {
+    // ==================== METER ANIMATION ====================
+    function animateMeters() {
+        document.querySelectorAll('.ed-meter-fill[data-width]').forEach(function (fill) {
             if (fill.dataset.animated) return;
 
             var rect = fill.getBoundingClientRect();
-            var windowHeight = window.innerHeight;
-
-            if (rect.top < windowHeight - 50) {
+            if (rect.top < window.innerHeight - 50) {
                 fill.dataset.animated = 'true';
                 var width = fill.getAttribute('data-width');
                 setTimeout(function () {
@@ -225,16 +173,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    window.addEventListener('scroll', animateBentoMeters, { passive: true });
-    animateBentoMeters(); // Check on load
+    window.addEventListener('scroll', animateMeters, { passive: true });
+    animateMeters();
 
     // ==================== PROJECT FILTER ====================
-    var filterBtns = document.querySelectorAll('.filter-btn');
+    var filterBtns = document.querySelectorAll('.ed-filter-btn');
     var projectItems = document.querySelectorAll('.project-item');
 
     filterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
-            // Update active button
             filterBtns.forEach(function (b) { b.classList.remove('active'); });
             btn.classList.add('active');
 
@@ -244,8 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 var category = item.getAttribute('data-category');
 
                 if (filter === 'all' || category === filter) {
-                    item.classList.remove('hidden');
-                    item.style.position = '';
                     item.style.opacity = '1';
                     item.style.transform = 'translateY(0)';
                     item.style.display = '';
@@ -268,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Simple frontend validation
             var name = document.getElementById('contactName').value.trim();
             var email = document.getElementById('contactEmail').value.trim();
             var message = document.getElementById('contactMessage').value.trim();
@@ -281,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Email validation
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
                 formStatus.className = 'form-status mt-3 error';
@@ -291,10 +234,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Simulate send
-            var submitBtn = contactForm.querySelector('.btn-submit');
+            var submitBtn = contactForm.querySelector('.ed-btn-submit');
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>' +
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' +
                 (currentLang === 'vi' ? 'Đang gửi...' : 'Sending...');
 
             setTimeout(function () {
@@ -305,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 contactForm.reset();
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>' +
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> ' +
                     (currentLang === 'vi' ? 'Gửi tin nhắn' : 'Send Message');
 
                 setTimeout(function () {
@@ -314,37 +256,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 5000);
             }, 1500);
         });
-    }
-
-    // ==================== SMOOTH REVEAL ON SCROLL ====================
-    // Additional parallax-like subtle effect for hero section
-    var heroSection = document.getElementById('hero');
-    if (heroSection) {
-        window.addEventListener('scroll', function () {
-            var scrollY = window.scrollY;
-            var shapes = heroSection.querySelectorAll('.shape');
-            shapes.forEach(function (shape, i) {
-                var speed = 0.3 + (i * 0.1);
-                shape.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
-            });
-
-            var heroCard = heroSection.querySelector('.hero-card-main');
-            var heroMiniCards = heroSection.querySelectorAll('.hero-mini-card');
-            var heroSticker = heroSection.querySelector('.hero-sticker-star');
-
-            if (heroCard) {
-                heroCard.style.transform = 'translateY(' + (scrollY * 0.05) + 'px) rotate(-5deg)';
-            }
-
-            heroMiniCards.forEach(function (card, index) {
-                var direction = index === 0 ? 1 : -1;
-                card.style.transform = 'translateY(' + (scrollY * (0.03 + (index * 0.01)) * direction) + 'px) ' + (index === 0 ? 'rotate(7deg)' : 'rotate(-8deg)');
-            });
-
-            if (heroSticker) {
-                heroSticker.style.transform = 'translateY(' + (scrollY * 0.06) + 'px) rotate(14deg)';
-            }
-        }, { passive: true });
     }
 
 });
