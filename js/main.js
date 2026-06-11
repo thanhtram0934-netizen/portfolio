@@ -23,9 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==================== NAVBAR SCROLL EFFECT ====================
     const navbar = document.getElementById('mainNav');
     const backToTop = document.getElementById('backToTop');
+    const scrollProgress = document.getElementById('scrollProgress');
 
     function handleScroll() {
         var scrollY = window.scrollY;
+
+        // Scroll progress bar
+        if (scrollProgress) {
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+            scrollProgress.style.width = progress + '%';
+        }
 
         // Navbar background
         if (scrollY > 50) {
@@ -134,18 +142,37 @@ document.addEventListener('DOMContentLoaded', function () {
             var rect = counter.getBoundingClientRect();
             if (rect.top < window.innerHeight - 50) {
                 counter.dataset.animated = 'true';
-                var target = parseInt(counter.getAttribute('data-count'), 10);
-                var current = 0;
-                var duration = 1500;
-                var step = Math.ceil(target / (duration / 16));
 
-                function updateCounter() {
-                    current += step;
-                    if (current >= target) {
-                        counter.textContent = target;
-                    } else {
-                        counter.textContent = current;
+                var target = parseFloat(counter.getAttribute('data-count'));
+                var prefix = counter.getAttribute('data-prefix') || '';
+                var suffix = counter.getAttribute('data-suffix') || '';
+                var decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
+                var useSeparator = counter.getAttribute('data-separator') === 'true';
+
+                function format(value) {
+                    var num = value.toFixed(decimals);
+                    if (useSeparator) {
+                        var parts = num.split('.');
+                        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        num = parts.join('.');
+                    }
+                    return prefix + num + suffix;
+                }
+
+                var duration = 1600;
+                var startTime = null;
+
+                function updateCounter(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var elapsed = timestamp - startTime;
+                    var t = Math.min(elapsed / duration, 1);
+                    // easeOutCubic
+                    var eased = 1 - Math.pow(1 - t, 3);
+                    counter.textContent = format(target * eased);
+                    if (t < 1) {
                         requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = format(target);
                     }
                 }
 
@@ -255,6 +282,50 @@ document.addEventListener('DOMContentLoaded', function () {
                     formStatus.className = 'form-status mt-3';
                 }, 5000);
             }, 1500);
+        });
+    }
+
+    // ==================== LIGHTBOX ====================
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCaption = document.getElementById('lightboxCaption');
+    var lightboxClose = document.getElementById('lightboxClose');
+
+    if (lightbox && lightboxImg) {
+        // Build a readable caption from the nearest before/after label or alt text
+        function captionFor(img) {
+            var item = img.closest('.ed-showcase-item');
+            var label = item ? item.querySelector('.ed-showcase-label') : null;
+            var labelText = label ? label.textContent.trim() : '';
+            var alt = img.getAttribute('alt') || '';
+            return [labelText, alt].filter(Boolean).join(' — ');
+        }
+
+        function openLightbox(img) {
+            lightboxImg.setAttribute('src', img.currentSrc || img.src);
+            lightboxImg.setAttribute('alt', img.getAttribute('alt') || '');
+            lightboxCaption.textContent = captionFor(img);
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.ed-showcase-img-wrap img, .ed-phone-screen img').forEach(function (img) {
+            img.addEventListener('click', function () { openLightbox(img); });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
         });
     }
 
