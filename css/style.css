@@ -3014,14 +3014,20 @@ ul { padding-left: 1.2em; margin: 0 0 1em; }
   margin: 14px 0 6px;
 }
 .ed-hero-title-name {
-  font-size: clamp(3rem, 9.5vw, 8rem);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3rem, 9.5vw, 8.4rem);
+  font-weight: 700;          /* Playfair ships 600/700 — 800 would be synthesised */
   font-style: normal;
-  letter-spacing: -.02em;
+  letter-spacing: -.005em;
+  line-height: .95;
 }
 .ed-hero-title-name::before { display: none; }
 .ed-hero-title-name em {
   font-style: italic;
   color: var(--gold-dark);
+  /* Playfair's italic T tucks under the following R — open the pair up a little */
+  letter-spacing: .045em;
+  padding-right: .08em;
 }
 .ed-hero-lede {
   max-width: 780px;
