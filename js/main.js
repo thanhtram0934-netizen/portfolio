@@ -1,21 +1,39 @@
 /* ============================================================
    MAIN.JS — Portfolio Nguyễn Thị Thanh Trâm
    Editorial Vintage — Navy + Cream + Gold
-   Features: AOS, Language Toggle, Scroll Effects,
-             Counter Animation, Meter Animation,
-             Project Filter, Nav Toggle, Form Handling
+   Features: AOS, Language Toggle, Scroll Effects, Counter Animation,
+             Case Study Expand/Collapse, Nav Toggle, Contact Form, Lightbox
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
 
     // ==================== AOS INIT ====================
-    AOS.init({
-        duration: 900,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 80,
-        disable: false
-    });
+    // AOS hides every [data-aos] element until it adds .aos-animate. If the CDN is
+    // blocked, that would leave the whole page blank — fall back to plain visible.
+    if (window.AOS) {
+        AOS.init({
+            duration: 900,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80,
+            disable: false
+        });
+
+        // Landing directly on an anchor (e.g. /#projects) jumps past AOS's initial
+        // check, leaving those sections invisible until the first scroll. Recalculate
+        // once everything has loaded, and again after the browser settles on the anchor.
+        var nudgeAos = function () {
+            AOS.refreshHard();
+            window.dispatchEvent(new Event('scroll'));
+        };
+        window.addEventListener('load', function () {
+            nudgeAos();
+            setTimeout(nudgeAos, 300);
+        });
+        window.addEventListener('hashchange', nudgeAos);
+    } else {
+        document.documentElement.classList.add('no-aos');
+    }
 
     // ==================== LANGUAGE STATE ====================
     let currentLang = localStorage.getItem('portfolio-lang') || 'vi';
@@ -184,51 +202,25 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', animateCounters, { passive: true });
     animateCounters();
 
-    // ==================== METER ANIMATION ====================
-    function animateMeters() {
-        document.querySelectorAll('.ed-meter-fill[data-width]').forEach(function (fill) {
-            if (fill.dataset.animated) return;
+    // ==================== CASE STUDY — EXPAND / COLLAPSE ====================
+    document.querySelectorAll('[data-case-toggle]').forEach(function (btn) {
+        var panel = document.getElementById(btn.getAttribute('data-case-toggle'));
+        if (!panel) return;
 
-            var rect = fill.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 50) {
-                fill.dataset.animated = 'true';
-                var width = fill.getAttribute('data-width');
-                setTimeout(function () {
-                    fill.style.width = width + '%';
-                }, 200);
-            }
-        });
-    }
-
-    window.addEventListener('scroll', animateMeters, { passive: true });
-    animateMeters();
-
-    // ==================== PROJECT FILTER ====================
-    var filterBtns = document.querySelectorAll('.ed-filter-btn');
-    var projectItems = document.querySelectorAll('.project-item');
-
-    filterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
-            filterBtns.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
+            var isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-            var filter = btn.getAttribute('data-filter');
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            panel.hidden = isOpen;
 
-            projectItems.forEach(function (item) {
-                var category = item.getAttribute('data-category');
+            if (isOpen) {
+                // Collapsing — keep the card header in view
+                var card = btn.closest('.ed-case-card');
+                var top = card.getBoundingClientRect().top + window.scrollY - 90;
+                if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+            }
 
-                if (filter === 'all' || category === filter) {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                    item.style.display = '';
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(-10px)';
-                    setTimeout(function () {
-                        item.style.display = 'none';
-                    }, 400);
-                }
-            });
+            if (window.AOS) AOS.refresh();
         });
     });
 
@@ -262,26 +254,41 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             var submitBtn = contactForm.querySelector('.ed-btn-submit');
+
+            function resetButton() {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> ' +
+                    (currentLang === 'vi' ? 'Gửi tin nhắn' : 'Send Message');
+            }
+
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' +
                 (currentLang === 'vi' ? 'Đang gửi...' : 'Sending...');
 
-            setTimeout(function () {
-                formStatus.className = 'form-status mt-3 success';
-                formStatus.textContent = currentLang === 'vi'
-                    ? 'Cảm ơn bạn! Tin nhắn đã được gửi thành công.'
-                    : 'Thank you! Your message has been sent successfully.';
-
-                contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> ' +
-                    (currentLang === 'vi' ? 'Gửi tin nhắn' : 'Send Message');
-
-                setTimeout(function () {
-                    formStatus.textContent = '';
-                    formStatus.className = 'form-status mt-3';
-                }, 5000);
-            }, 1500);
+            fetch(contactForm.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(contactForm)
+            })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.json();
+                })
+                .then(function () {
+                    formStatus.className = 'form-status mt-3 success';
+                    formStatus.textContent = currentLang === 'vi'
+                        ? 'Cảm ơn bạn! Tin nhắn đã được gửi tới hộp thư của tôi.'
+                        : 'Thank you! Your message has landed in my inbox.';
+                    contactForm.reset();
+                    resetButton();
+                })
+                .catch(function () {
+                    formStatus.className = 'form-status mt-3 error';
+                    formStatus.textContent = currentLang === 'vi'
+                        ? 'Gửi không thành công. Vui lòng email trực tiếp tới thanhtram0934@gmail.com.'
+                        : 'Sending failed. Please email me directly at thanhtram0934@gmail.com.';
+                    resetButton();
+                });
         });
     }
 

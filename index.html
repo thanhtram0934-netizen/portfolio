@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THANH TRÂM — Senior E-commerce Executive Portfolio</title>
-    <meta name="description" content="Portfolio Senior E-commerce Executive - Thanh Trâm. Shopee | TikTok Shop | Lazada | Data-driven Growth | Reporting | Automation.">
+    <title>Thanh Trâm — Senior E-commerce Executive | Shopee · TikTok Shop · Lazada</title>
+    <meta name="description" content="Senior E-commerce Executive — scale gian hàng Beauty & Health từ 50 triệu lên 1 tỷ GMV/tháng, ROAS 5.0 → 8.9, Top 3 Shopee ngành kem trị mụn. Growth planning · Ads optimization · Reporting.">
+    <meta name="author" content="Nguyễn Thị Thanh Trâm">
+
+    <!-- Favicon (emoji inline — không cần file) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+    <meta name="theme-color" content="#1a365d">
+
+    <!-- Open Graph / LinkedIn / Zalo preview -->
+    <link rel="canonical" href="https://portfolio-ebon-seven-45.vercel.app/">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Thanh Trâm — Portfolio">
+    <meta property="og:title" content="Thanh Trâm — Senior E-commerce Executive">
+    <meta property="og:description" content="50M → 1 tỷ GMV/tháng · ROAS 8.9 · Top 3 Shopee ngành kem trị mụn. Portfolio E-commerce data-driven.">
+    <meta property="og:url" content="https://portfolio-ebon-seven-45.vercel.app/">
+    <meta property="og:image" content="https://portfolio-ebon-seven-45.vercel.app/assets/images/profile.jpg">
+    <meta property="og:image:alt" content="Nguyễn Thị Thanh Trâm — Senior E-commerce Executive">
+    <meta property="og:locale" content="vi_VN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thanh Trâm — Senior E-commerce Executive">
+    <meta name="twitter:description" content="50M → 1 tỷ GMV/tháng · ROAS 8.9 · Top 3 Shopee ngành kem trị mụn.">
+    <meta name="twitter:image" content="https://portfolio-ebon-seven-45.vercel.app/assets/images/profile.jpg">
 
     <!-- Google Fonts — Friendly & Readable -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +42,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Safety net: AOS hides [data-aos] elements until its JS runs.
+         Without JS (or if the CDN is blocked) the page must still be readable. -->
+    <noscript>
+        <style>[data-aos] { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
 </head>
 <body>
 
@@ -39,13 +65,16 @@
 
             <ul class="ed-nav-links" id="navLinks">
                 <li><a href="#about" data-vi="Về tôi" data-en="About">Về tôi</a></li>
-                <li><a href="#skills" data-vi="Năng lực" data-en="Skills">Năng lực</a></li>
-                <li><a href="#experience" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a></li>
-                <li><a href="#brands" data-vi="Thương hiệu" data-en="Brands">Thương hiệu</a></li>
                 <li><a href="#projects" data-vi="Case Study" data-en="Case Studies">Case Study</a></li>
-                <li><a href="#planning-portfolio" data-vi="Planning" data-en="Planning">Planning</a></li>
-                <li><a href="#tools" data-vi="Công cụ" data-en="Tools">Công cụ</a></li>
+                <li><a href="#skills" data-vi="Năng lực" data-en="Capabilities">Năng lực</a></li>
+                <li><a href="#experience" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a></li>
                 <li><a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a></li>
+                <li>
+                    <a href="assets/Thanh-Tram-CV.pdf" download class="ed-nav-cv">
+                        <i class="fas fa-download"></i>
+                        <span data-vi="Tải CV" data-en="Download CV">Tải CV</span>
+                    </a>
+                </li>
                 <li>
                     <button class="btn-lang" id="langToggle" type="button" aria-label="Toggle language">
                         <span id="langLabel">EN</span>
@@ -55,7 +84,7 @@
         </div>
     </nav>
 
-    <!-- ==================== HERO — Editorial Full-Viewport ==================== -->
+    <!-- ==================== HERO — Proof-first Editorial ==================== -->
     <section id="hero" class="ed-hero">
         <div class="film-strip film-strip-l"></div>
         <div class="film-strip film-strip-r"></div>
@@ -65,61 +94,73 @@
         </div>
 
         <!-- Top info bar -->
-        <div class="ed-hero-top ed-reveal" style="--delay:.3s">
+        <div class="ed-hero-top ed-reveal" style="--delay:.15s">
             <div class="ed-hero-top-item">
-                <strong>Thanh Trâm</strong>
-                <span data-vi="(Senior E-commerce Executive)" data-en="(Senior E-commerce Executive)">(Senior E-commerce Executive)</span>
-            </div>
-            <div class="ed-hero-top-item" style="text-align:center">
+                <strong>Nguyễn Thị Thanh Trâm</strong>
                 <span data-vi="TP. Hồ Chí Minh, Việt Nam" data-en="Ho Chi Minh City, Vietnam">TP. Hồ Chí Minh, Việt Nam</span>
             </div>
             <div class="ed-hero-top-item ed-hero-top-right">
-                <span data-vi="LIÊN HỆ" data-en="SAY HELLO">LIÊN HỆ</span><br>
-                <a href="mailto:thanhtram0934@gmail.com">thanhtram0934@gmail.com</a>
+                <a href="mailto:thanhtram0934@gmail.com">thanhtram0934@gmail.com</a><br>
+                <a href="https://www.linkedin.com/in/tram-thanh/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
             </div>
         </div>
 
-        <!-- Center — giant editorial title -->
+        <!-- Center — name + positioning -->
         <div class="ed-hero-center">
-            <a href="#contact" class="ed-hero-status ed-reveal" style="--delay:.45s">
+            <a href="#contact" class="ed-hero-status ed-reveal" style="--delay:.25s">
                 <span class="ed-status-dot"></span>
-                <span data-vi="Đang tìm cơ hội mới" data-en="Open to new opportunities">Đang tìm cơ hội mới</span>
+                <span data-vi="Đang tìm cơ hội E-commerce Lead / Manager" data-en="Open to E-commerce Lead / Manager roles">Đang tìm cơ hội E-commerce Lead / Manager</span>
             </a>
-            <span class="ed-hero-welcome ed-reveal" style="--delay:.6s" data-vi="welcome to my" data-en="welcome to my">welcome to my</span>
-            <h1 class="ed-hero-title ed-reveal-title" style="--delay:.9s">
-                port<em>f</em>olio
-                <span class="ed-hero-star ed-hero-star-1 ed-reveal-spin" style="--delay:1.8s">✦</span>
+
+            <p class="ed-hero-eyebrow ed-reveal" style="--delay:.35s" data-vi="Senior E-commerce Executive · Beauty &amp; Health · FMCG" data-en="Senior E-commerce Executive · Beauty &amp; Health · FMCG">Senior E-commerce Executive · Beauty &amp; Health · FMCG</p>
+
+            <h1 class="ed-hero-title ed-hero-title-name ed-reveal-title" style="--delay:.45s">
+                THANH <em>TRÂM</em>
+                <span class="ed-hero-star ed-hero-star-1 ed-reveal-spin" style="--delay:1.1s">✦</span>
             </h1>
 
+            <p class="ed-hero-lede ed-reveal" style="--delay:.7s" data-vi="4 năm vận hành và tăng trưởng gian hàng trên Shopee, TikTok Shop, Lazada.<br>Tôi xây chiến lược SKU – giá – ads funnel dựa trên dữ liệu, và đưa một thương hiệu mới<br>từ <strong>50 triệu lên 1 tỷ GMV/tháng trong 10 tháng</strong>." data-en="4 years operating and growing stores on Shopee, TikTok Shop and Lazada.<br>I build data-led SKU, pricing and ads-funnel strategies — and took a new brand<br>from <strong>50M to 1B VND GMV/month in 10 months</strong>.">
+                4 năm vận hành và tăng trưởng gian hàng trên Shopee, TikTok Shop, Lazada.<br>
+                Tôi xây chiến lược SKU – giá – ads funnel dựa trên dữ liệu, và đưa một thương hiệu mới<br>
+                từ <strong>50 triệu lên 1 tỷ GMV/tháng trong 10 tháng</strong>.
+            </p>
+
             <!-- Tilted badge -->
-            <div class="ed-hero-badge ed-reveal-badge" style="--delay:1.5s">
+            <div class="ed-hero-badge ed-reveal-badge" style="--delay:.85s">
                 <span class="badge-star">✦</span>
                 E-COMMERCE<br>EXECUTIVE
             </div>
 
             <!-- Hero CTAs -->
-            <div class="ed-hero-actions ed-reveal" style="--delay:1.5s">
-                <a href="assets/Thanh-Tram-CV.pdf" download class="ed-hero-btn ed-hero-btn-primary">
+            <div class="ed-hero-actions ed-reveal" style="--delay:.9s">
+                <a href="#projects" class="ed-hero-btn ed-hero-btn-primary">
+                    <span data-vi="Xem 3 Case Study" data-en="View 3 Case Studies">Xem 3 Case Study</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="assets/Thanh-Tram-CV.pdf" download class="ed-hero-btn ed-hero-btn-ghost">
                     <i class="fas fa-download"></i>
                     <span data-vi="Tải CV" data-en="Download CV">Tải CV</span>
-                </a>
-                <a href="#projects" class="ed-hero-btn ed-hero-btn-ghost">
-                    <span data-vi="Xem Case Study" data-en="View Case Studies">Xem Case Study</span>
-                    <i class="fas fa-arrow-down"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Bottom info bar -->
-        <div class="ed-hero-bottom ed-reveal" style="--delay:1.2s">
-            <div class="ed-hero-bottom-item">
-                PORTFOLIO<br>2026 UPDATE
+        <!-- Proof bar — con số thay cho slogan -->
+        <div class="ed-hero-proof ed-reveal" style="--delay:1s" aria-label="Key results">
+            <div class="ed-proof-item">
+                <span class="ed-proof-value">50M → 1B</span>
+                <span class="ed-proof-label" data-vi="GMV/tháng — scale trong 10 tháng" data-en="GMV/month — scaled in 10 months">GMV/tháng — scale trong 10 tháng</span>
             </div>
-            <div class="ed-hero-bottom-item" style="text-align:center">
-                <em data-vi="Data-driven E-commerce | Growth Planning | Reporting" data-en="Data-driven E-commerce | Growth Planning | Reporting">Data-driven E-commerce | Growth Planning | Reporting</em>
+            <div class="ed-proof-item">
+                <span class="ed-proof-value stat-number" data-count="8.9" data-decimals="1">8.9</span>
+                <span class="ed-proof-label" data-vi="ROAS — tối ưu từ 5.0" data-en="ROAS — improved from 5.0">ROAS — tối ưu từ 5.0</span>
             </div>
-            <div class="ed-hero-bottom-item ed-hero-bottom-right">
-                <a href="https://www.linkedin.com/in/tram-thanh/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
+            <div class="ed-proof-item">
+                <span class="ed-proof-value stat-number" data-count="437" data-prefix="+" data-suffix="%">+437%</span>
+                <span class="ed-proof-label" data-vi="Doanh thu Top 3 SKU chủ lực" data-en="Revenue of top 3 hero SKUs">Doanh thu Top 3 SKU chủ lực</span>
+            </div>
+            <div class="ed-proof-item">
+                <span class="ed-proof-value">Top 3</span>
+                <span class="ed-proof-label" data-vi="Shopee — ngành kem trị mụn" data-en="Shopee — acne cream category">Shopee — ngành kem trị mụn</span>
             </div>
         </div>
     </section>
@@ -127,74 +168,28 @@
     <!-- ==================== MARQUEE — Keywords Ticker ==================== -->
     <div class="ed-marquee ed-marquee-navy">
         <div class="ed-marquee-track" data-speed="fast">
-            <span class="ed-marquee-item"><span class="star">✦</span> MARKETPLACE</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> CAMPAIGN</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> ANALYTICS</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> AUTOMATION</span>
             <span class="ed-marquee-item"><span class="star">✦</span> SHOPEE</span>
             <span class="ed-marquee-item"><span class="star">✦</span> TIKTOK SHOP</span>
             <span class="ed-marquee-item"><span class="star">✦</span> LAZADA</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> GROWTH PLANNING</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> ADS OPTIMIZATION</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> SKU STRATEGY</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> REPORTING</span>
             <span class="ed-marquee-item"><span class="star">✦</span> DATA-DRIVEN</span>
             <!-- Duplicate for seamless loop -->
-            <span class="ed-marquee-item"><span class="star">✦</span> MARKETPLACE</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> CAMPAIGN</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> ANALYTICS</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> AUTOMATION</span>
             <span class="ed-marquee-item"><span class="star">✦</span> SHOPEE</span>
             <span class="ed-marquee-item"><span class="star">✦</span> TIKTOK SHOP</span>
             <span class="ed-marquee-item"><span class="star">✦</span> LAZADA</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> GROWTH PLANNING</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> ADS OPTIMIZATION</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> SKU STRATEGY</span>
+            <span class="ed-marquee-item"><span class="star">✦</span> REPORTING</span>
             <span class="ed-marquee-item"><span class="star">✦</span> DATA-DRIVEN</span>
         </div>
     </div>
 
-    <!-- ==================== ABOUT — Intro Envelope ==================== -->
+    <!-- ==================== ABOUT — vị trí #1 sau hero ==================== -->
     <section id="about">
-
-        <!-- Part A — Navy envelope quote -->
-        <div class="ed-about-intro">
-            <div class="ed-about-intro-header">
-                <h3 data-vi="Welcome to my<br>Visual Diary" data-en="Welcome to my<br>Visual Diary">Welcome to my<br>Visual Diary</h3>
-                <span class="year">2026</span>
-            </div>
-
-            <div class="ed-envelope" data-aos="zoom-in" data-aos-duration="800">
-                <div class="ed-envelope-body">
-                    <p class="ed-envelope-quote" data-vi="Tôi là một Senior E-commerce Executive đam mê<br><span class='ed-envelope-quote-emphasis'>dữ liệu, chiến lược sản phẩm</span> và<br>sức mạnh của sự tăng trưởng bền vững.<br><span class='ed-envelope-divider'></span><br>Với tôi, E-commerce không chỉ là bán hàng —<br>mà là tạo ra giá trị thông qua dữ liệu,<br>chiến lược khiến thương hiệu phát triển và ghi nhớ." data-en="A Senior E-commerce Executive who's passionate about<br><span class='ed-envelope-quote-emphasis'>data, product strategy</span> and<br>the quiet power of sustainable growth.<br><span class='ed-envelope-divider'></span><br>For me, E-commerce is more than selling —<br>it's about creating meaning through data, ideas<br>that make brands grow and stay remembered.">
-                        Tôi là một Senior E-commerce Executive đam mê<br>
-                        <span class="ed-envelope-quote-emphasis">dữ liệu, chiến lược sản phẩm</span> và<br>
-                        sức mạnh của sự tăng trưởng bền vững.<br>
-                        <span class="ed-envelope-divider"></span><br>
-                        Với tôi, E-commerce không chỉ là bán hàng —<br>
-                        mà là tạo ra giá trị thông qua dữ liệu,<br>
-                        chiến lược khiến thương hiệu phát triển và ghi nhớ.
-                    </p>
-                </div>
-                <div class="ed-wax-seal"></div>
-            </div>
-        </div>
-
-        <!-- Marquee — skills keywords -->
-        <div class="ed-marquee ed-marquee-gold">
-            <div class="ed-marquee-track">
-                <span class="ed-marquee-item"><span class="star">✦</span> DATA-DRIVEN</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> E-COMMERCE</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> GROWTH PLANNING</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> REPORTING</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> DASHBOARD</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> CREATIVE THINKING</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> PROBLEM SOLVING</span>
-                <!-- Duplicate -->
-                <span class="ed-marquee-item"><span class="star">✦</span> DATA-DRIVEN</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> E-COMMERCE</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> GROWTH PLANNING</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> REPORTING</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> DASHBOARD</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> CREATIVE THINKING</span>
-                <span class="ed-marquee-item"><span class="star">✦</span> PROBLEM SOLVING</span>
-            </div>
-        </div>
-
-        <!-- Part B — About Me (ID card + bio) -->
         <div class="ed-about-me">
             <div class="container">
                 <div class="ed-about-grid">
@@ -218,12 +213,12 @@
                                     <span data-vi="Sr. E-com Exec" data-en="Sr. E-com Exec">Sr. E-com Exec</span>
                                 </div>
                                 <div class="ed-id-info-item">
-                                    <strong>MBTI:</strong>
-                                    <span>—</span>
+                                    <strong data-vi="Ngành hàng:" data-en="Categories:">Ngành hàng:</strong>
+                                    <span data-vi="Beauty, FMCG" data-en="Beauty, FMCG">Beauty, FMCG</span>
                                 </div>
                                 <div class="ed-id-info-item">
                                     <strong data-vi="Địa điểm:" data-en="Location:">Địa điểm:</strong>
-                                    <span data-vi="HCM City" data-en="HCM City">HCM City</span>
+                                    <span data-vi="TP.HCM" data-en="HCM City">TP.HCM</span>
                                 </div>
                             </div>
 
@@ -250,9 +245,11 @@
                         </h2>
 
                         <div class="ed-about-copy">
-                            <p data-vi="Tôi là Senior E-commerce Executive có kinh nghiệm vận hành và tăng trưởng gian hàng trên các sàn TMĐT, đặc biệt trong ngành Beauty & Health và FMCG. Với tư duy data-driven, tôi tập trung xây dựng chiến lược sản phẩm, tối ưu quảng cáo và phát triển thương hiệu trên Shopee, TikTok Shop và Lazada." data-en="I am a Senior E-commerce Executive experienced in operating and growing stores on e-commerce marketplaces, especially in Beauty & Health and FMCG. With a data-driven mindset, I focus on product strategy, ad optimization, and brand growth across Shopee, TikTok Shop, and Lazada.">Tôi là Senior E-commerce Executive có kinh nghiệm vận hành và tăng trưởng gian hàng trên các sàn TMĐT, đặc biệt trong ngành Beauty & Health và FMCG. Với tư duy data-driven, tôi tập trung xây dựng chiến lược sản phẩm, tối ưu quảng cáo và phát triển thương hiệu trên Shopee, TikTok Shop và Lazada.</p>
+                            <p data-vi="Tôi là Senior E-commerce Executive với 4 năm vận hành và tăng trưởng gian hàng trên các sàn TMĐT, đặc biệt trong ngành Beauty &amp; Health và FMCG. Với tư duy data-driven, tôi tập trung vào chiến lược sản phẩm, tối ưu quảng cáo và phát triển thương hiệu trên Shopee, TikTok Shop và Lazada." data-en="I am a Senior E-commerce Executive with four years of operating and growing marketplace stores, especially in Beauty &amp; Health and FMCG. With a data-driven mindset, I focus on product strategy, ad optimization and brand growth across Shopee, TikTok Shop and Lazada.">Tôi là Senior E-commerce Executive với 4 năm vận hành và tăng trưởng gian hàng trên các sàn TMĐT, đặc biệt trong ngành Beauty &amp; Health và FMCG. Với tư duy data-driven, tôi tập trung vào chiến lược sản phẩm, tối ưu quảng cáo và phát triển thương hiệu trên Shopee, TikTok Shop và Lazada.</p>
 
-                            <p data-vi="Tôi đang hướng tới vị trí E-commerce Lead / Manager, nơi tôi có thể kết hợp năng lực phân tích dữ liệu, lập kế hoạch tăng trưởng và dẫn dắt đội ngũ để tạo ra tăng trưởng bền vững cho doanh nghiệp." data-en="I am working toward an E-commerce Lead / Manager role where I can combine data analysis, growth planning, and team leadership to create sustainable growth for businesses.">Tôi đang hướng tới vị trí E-commerce Lead / Manager, nơi tôi có thể kết hợp năng lực phân tích dữ liệu, lập kế hoạch tăng trưởng và dẫn dắt đội ngũ để tạo ra tăng trưởng bền vững cho doanh nghiệp.</p>
+                            <p data-vi="Điều tôi quan tâm nhất không phải là một tháng doanh số đẹp, mà là cấu trúc khiến tháng sau tiếp tục tốt: đúng SKU dẫn dắt, đúng giá, đúng funnel và một hệ thống báo cáo đủ nhanh để phát hiện vấn đề trước khi nó thành thiệt hại." data-en="What I care about is not one good sales month, but the structure that makes the next month good too: the right hero SKU, the right price, the right funnel, and a reporting system fast enough to catch problems before they become losses.">Điều tôi quan tâm nhất không phải là một tháng doanh số đẹp, mà là cấu trúc khiến tháng sau tiếp tục tốt: đúng SKU dẫn dắt, đúng giá, đúng funnel và một hệ thống báo cáo đủ nhanh để phát hiện vấn đề trước khi nó thành thiệt hại.</p>
+
+                            <p data-vi="Tôi đang hướng tới vị trí <strong>E-commerce Lead / Manager</strong>, nơi tôi có thể kết hợp năng lực phân tích dữ liệu, lập kế hoạch tăng trưởng và dẫn dắt đội ngũ để tạo ra tăng trưởng bền vững." data-en="I am working toward an <strong>E-commerce Lead / Manager</strong> role where I can combine data analysis, growth planning and team leadership to build sustainable growth.">Tôi đang hướng tới vị trí <strong>E-commerce Lead / Manager</strong>, nơi tôi có thể kết hợp năng lực phân tích dữ liệu, lập kế hoạch tăng trưởng và dẫn dắt đội ngũ để tạo ra tăng trưởng bền vững.</p>
                         </div>
 
                         <div class="ed-about-highlights" aria-label="About highlights">
@@ -270,181 +267,672 @@
                             </div>
                         </div>
 
-                        <p class="ed-about-thanks" data-vi="Cảm ơn bạn đã ghé thăm portfolio của tôi!" data-en="Thanks for taking time to visit my portfolio!">Cảm ơn bạn đã ghé thăm portfolio của tôi!</p>
-
-                        <a href="#contact" class="ed-about-resume">
-                            <span data-vi="Liên hệ" data-en="Contact">Liên hệ</span>
+                        <a href="#projects" class="ed-about-resume">
+                            <span data-vi="Xem 3 case study của tôi" data-en="See my 3 case studies">Xem 3 case study của tôi</span>
                             <span class="arrows">►►</span>
                         </a>
-
-                        <!-- Stats -->
-                        <div class="ed-stats-row" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="ed-stat">
-                                <span class="stat-number" data-count="437" data-prefix="+" data-suffix="%">0</span>
-                                <span class="stat-label" data-vi="Tăng trưởng doanh số" data-en="Revenue growth">Tăng trưởng doanh số</span>
-                            </div>
-                            <div class="ed-stat">
-                                <span class="stat-number" data-count="8.9" data-decimals="1">0</span>
-                                <span class="stat-label" data-vi="ROAS tối ưu đạt được" data-en="Peak ROAS achieved">ROAS tối ưu đạt được</span>
-                            </div>
-                            <div class="ed-stat">
-                                <span class="stat-number" data-count="15000" data-suffix="+" data-separator="true">0</span>
-                                <span class="stat-label" data-vi="Lượt bán Hero SKU" data-en="Hero SKU units sold">Lượt bán Hero SKU</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SKILLS — Editorial Grid ==================== -->
-    <section id="skills" class="ed-skills">
+    <!-- ==================== CASE STUDIES ==================== -->
+    <section id="projects" class="ed-case-studies">
         <div class="container">
             <div class="ed-section-header" data-aos="fade-up">
-                <p class="ed-section-sub"><span class="star">✦</span> <span data-vi="Năng lực" data-en="Competencies">Năng lực</span> <span class="star">✦</span></p>
-                <h2 class="ed-section-title" data-vi="Năng lực cốt lõi" data-en="Core Strengths">Năng lực cốt lõi</h2>
+                <p class="ed-section-sub"><span class="star">✦</span> <span data-vi="Bằng chứng" data-en="Proof of work">Bằng chứng</span> <span class="star">✦</span></p>
+                <h2 class="ed-section-title" data-vi="3 Case Study tiêu biểu" data-en="3 Selected Case Studies">3 Case Study tiêu biểu</h2>
                 <div class="ed-section-rule"></div>
             </div>
 
-            <div class="ed-skills-grid">
-                <!-- Card 1 — HERO: E-commerce Growth -->
-                <div class="ed-skill-card ed-skill-card-hero" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-store"></i>
-                        <h3>E-commerce Growth</h3>
-                        <span class="badge-skill" data-vi="Năng lực #1" data-en="Skill #1">Năng lực #1</span>
-                    </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Xây dựng chiến lược tăng trưởng qua Key SKU, định giá, thời điểm campaign, tối ưu danh mục sản phẩm." data-en="Building growth strategy through key SKU, pricing, campaign timing, and category optimization.">Xây dựng chiến lược tăng trưởng qua Key SKU, định giá, thời điểm campaign, tối ưu danh mục sản phẩm.</p>
-                        <div class="ed-skill-tags">
-                            <span>Shopee</span><span>TikTok Shop</span><span>Lazada</span><span>Growth Plan</span>
+            <!-- Case index — 3 thẻ tóm tắt, click để nhảy tới -->
+            <div class="ed-case-index" data-aos="fade-up" data-aos-delay="80">
+                <a class="ed-case-index-card" href="#case-1">
+                    <span class="ed-case-index-num">01</span>
+                    <span class="ed-case-index-cat">Launch &amp; Scale</span>
+                    <h3 data-vi="Launch &amp; scale Trioderma trên Shopee" data-en="Launching &amp; scaling Trioderma on Shopee">Launch &amp; scale Trioderma trên Shopee</h3>
+                    <span class="ed-case-index-metric">50M → 1B <em data-vi="GMV/tháng" data-en="GMV/month">GMV/tháng</em></span>
+                    <span class="ed-case-index-go" data-vi="Xem case" data-en="View case">Xem case</span>
+                </a>
+                <a class="ed-case-index-card" href="#case-2">
+                    <span class="ed-case-index-num">02</span>
+                    <span class="ed-case-index-cat">Performance</span>
+                    <h3 data-vi="Tối ưu ads funnel: ROAS 5.0 → 8.9" data-en="Ads funnel optimization: ROAS 5.0 → 8.9">Tối ưu ads funnel: ROAS 5.0 → 8.9</h3>
+                    <span class="ed-case-index-metric">+78% <em data-vi="hiệu suất quảng cáo" data-en="ad efficiency">hiệu suất quảng cáo</em></span>
+                    <span class="ed-case-index-go" data-vi="Xem case" data-en="View case">Xem case</span>
+                </a>
+                <a class="ed-case-index-card" href="#case-3">
+                    <span class="ed-case-index-num">03</span>
+                    <span class="ed-case-index-cat">SKU Strategy</span>
+                    <h3 data-vi="Tái cấu trúc assortment ~100 SKU" data-en="Restructuring a ~100-SKU assortment">Tái cấu trúc assortment ~100 SKU</h3>
+                    <span class="ed-case-index-metric">+437% <em data-vi="doanh thu Top 3 SKU" data-en="top-3 SKU revenue">doanh thu Top 3 SKU</em></span>
+                    <span class="ed-case-index-go" data-vi="Xem case" data-en="View case">Xem case</span>
+                </a>
+            </div>
+
+            <!-- ===== CASE STUDY 1 ===== -->
+            <article class="ed-case-card" id="case-1" data-aos="fade-up">
+                <div class="ed-case-header">
+                    <span class="ed-case-number">01</span>
+                    <div class="ed-case-header-text">
+                        <div class="ed-case-meta">
+                            <span class="ed-case-label">CASE STUDY</span>
+                            <span class="ed-case-cat">Launch &amp; Scale</span>
                         </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">90%</span>
-                            <div class="ed-meter-fill" data-width="90"></div>
+                        <h3 data-vi="Launch và scale thương hiệu Trioderma trên Shopee" data-en="Launching and scaling Trioderma on Shopee">Launch và scale thương hiệu Trioderma trên Shopee</h3>
+                    </div>
+                </div>
+
+                <div class="ed-case-summary">
+                    <p class="ed-case-lede" data-vi="<strong>Bối cảnh:</strong> thương hiệu mới hoàn toàn, chưa có lịch sử bán, phải xây từ số 0 trên một ngành hàng cạnh tranh cao (kem trị mụn). Tôi phụ trách chiến lược Key SKU, định giá theo giai đoạn, assortment và ads funnel." data-en="<strong>Context:</strong> a brand-new label with no sales history, built from zero in a highly competitive category (acne treatment). I owned key-SKU strategy, phased pricing, assortment and the ads funnel."><strong>Bối cảnh:</strong> thương hiệu mới hoàn toàn, chưa có lịch sử bán, phải xây từ số 0 trên một ngành hàng cạnh tranh cao (kem trị mụn). Tôi phụ trách chiến lược Key SKU, định giá theo giai đoạn, assortment và ads funnel.</p>
+
+                    <div class="ed-results-grid">
+                        <div class="ed-result-metric">
+                            <span class="metric-value">50M → 1B</span>
+                            <span class="metric-unit">VNĐ/tháng</span>
+                            <span class="metric-label" data-vi="GMV scale trong 10 tháng" data-en="GMV scaled in 10 months">GMV scale trong 10 tháng</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value">+437%</span>
+                            <span class="metric-unit" data-vi="doanh thu" data-en="revenue">doanh thu</span>
+                            <span class="metric-label" data-vi="Top 3 SKU so với trước tái cấu trúc" data-en="Top 3 SKUs vs. before restructure">Top 3 SKU so với trước tái cấu trúc</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value">15,000</span>
+                            <span class="metric-unit" data-vi="lượt bán" data-en="units sold">lượt bán</span>
+                            <span class="metric-label" data-vi="Kem chấm mụn trong 7 tháng" data-en="Acne spot cream in 7 months">Kem chấm mụn trong 7 tháng</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value">Top 3</span>
+                            <span class="metric-unit">Shopee</span>
+                            <span class="metric-label" data-vi="Ngành kem trị mụn" data-en="Acne cream category">Ngành kem trị mụn</span>
+                        </div>
+                    </div>
+
+                    <button class="ed-case-toggle" type="button" data-case-toggle="case-1-detail" aria-expanded="false" aria-controls="case-1-detail">
+                        <span class="toggle-open" data-vi="Xem chi tiết cách làm &amp; hình ảnh" data-en="See the approach &amp; visuals">Xem chi tiết cách làm &amp; hình ảnh</span>
+                        <span class="toggle-close" data-vi="Thu gọn" data-en="Collapse">Thu gọn</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <div class="ed-case-detail" id="case-1-detail" hidden>
+                    <div class="ed-case-body">
+                        <div class="ed-case-narrative">
+                            <div class="ed-phase-block">
+                                <h4 class="ed-phase-title"><i class="fas fa-bullseye"></i> <span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
+                                <ul>
+                                    <li data-vi="Xây nền tảng tăng trưởng cho thương hiệu mới" data-en="Build a growth foundation for a new brand">Xây nền tảng tăng trưởng cho thương hiệu mới</li>
+                                    <li data-vi="Xác định Key SKU và tối ưu dòng sản phẩm" data-en="Identify key SKUs and optimize the product line">Xác định Key SKU và tối ưu dòng sản phẩm</li>
+                                    <li data-vi="Scale từ launch đến doanh thu tỷ đồng/tháng" data-en="Scale from launch to billion-VND monthly revenue">Scale từ launch đến doanh thu tỷ đồng/tháng</li>
+                                </ul>
+                            </div>
+                            <div class="ed-phase-block">
+                                <h4 class="ed-phase-title"><i class="fas fa-cogs"></i> <span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
+                                <ul>
+                                    <li data-vi="Phân tầng Key SKU và supporting SKU theo vai trò doanh thu" data-en="Tiered key and supporting SKUs by revenue role">Phân tầng Key SKU và supporting SKU theo vai trò doanh thu</li>
+                                    <li data-vi="Chiến lược định giá theo từng giai đoạn launch → scale" data-en="Phased pricing strategy from launch to scale">Chiến lược định giá theo từng giai đoạn launch → scale</li>
+                                    <li data-vi="Xây assortment dựa trên dữ liệu ngành hàng và đối thủ" data-en="Built assortment from category and competitor data">Xây assortment dựa trên dữ liệu ngành hàng và đối thủ</li>
+                                    <li data-vi="Thiết kế ads funnel riêng cho hero SKU (Search → Discovery)" data-en="Designed a dedicated ads funnel for hero SKUs (Search → Discovery)">Thiết kế ads funnel riêng cho hero SKU (Search → Discovery)</li>
+                                    <li data-vi="Tối ưu hình ảnh, nội dung và SEO sản phẩm cho gian hàng" data-en="Optimized product imagery, content and SEO across the store">Tối ưu hình ảnh, nội dung và SEO sản phẩm cho gian hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ed-case-results">
+                            <div class="ed-result-lesson">
+                                <i class="fas fa-lightbulb"></i>
+                                <span data-vi="Bài học: scale bền vững đến từ cấu trúc sản phẩm, chiến lược giá, phân tầng SKU và funnel quảng cáo phù hợp từng giai đoạn — không phải từ việc tăng ngân sách ads." data-en="Lesson: sustainable scaling comes from product structure, pricing, SKU tiering and a stage-appropriate ads funnel — not from raising ad budgets.">Bài học: scale bền vững đến từ cấu trúc sản phẩm, chiến lược giá, phân tầng SKU và funnel quảng cáo phù hợp từng giai đoạn — không phải từ việc tăng ngân sách ads.</span>
+                            </div>
+
+                            <div class="ed-kpi-strip">
+                                <div class="ed-kpi-pill">
+                                    <span class="ed-kpi-pill-label" data-vi="Doanh số" data-en="Revenue">Doanh số</span>
+                                    <span class="ed-kpi-pill-value">+437%</span>
+                                </div>
+                                <div class="ed-kpi-pill">
+                                    <span class="ed-kpi-pill-label" data-vi="Đơn hàng" data-en="Orders">Đơn hàng</span>
+                                    <span class="ed-kpi-pill-value">+581%</span>
+                                </div>
+                                <div class="ed-kpi-pill ed-kpi-pill-highlight">
+                                    <span class="ed-kpi-pill-label" data-vi="Định hướng" data-en="Focus">Định hướng</span>
+                                    <span class="ed-kpi-pill-value">Hero SKU</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showcase -->
+                    <div class="ed-case-showcase">
+                        <h5 class="ed-showcase-title"><i class="fas fa-images"></i> <span data-vi="Gian hàng trước &amp; sau khi tối ưu" data-en="Store before &amp; after optimization">Gian hàng trước &amp; sau khi tối ưu</span></h5>
+
+                        <div class="ed-showcase-grid">
+                            <div class="ed-before-after">
+                                <div class="ed-showcase-item">
+                                    <span class="ed-showcase-label ed-showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                    <div class="ed-showcase-img-wrap">
+                                        <img src="assets/images/anh-1-truoc.jpg" alt="Gian hàng trước khi tối ưu" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                <div class="ed-showcase-item">
+                                    <span class="ed-showcase-label ed-showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                    <div class="ed-showcase-img-wrap">
+                                        <img src="assets/images/anh-2-sau.jpg" alt="Gian hàng sau khi tối ưu" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ed-phone-mockup" style="margin-top:20px">
+                            <div class="ed-phone-notch"></div>
+                            <div class="ed-phone-screen">
+                                <img src="assets/images/anh-shop-3.jpg" alt="Giao diện gian hàng Trioderma trên Shopee" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 — Performance Optimization -->
-                <div class="ed-skill-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3 data-vi="Tối ưu hiệu suất" data-en="Performance Optimization">Tối ưu hiệu suất</h3>
+                <div class="ed-case-tags">
+                    <span>Key SKU</span><span>Pricing</span><span>Ads Funnel</span><span>Shopee</span><span>Brand Launch</span>
+                </div>
+            </article>
+
+            <!-- ===== CASE STUDY 2 ===== -->
+            <article class="ed-case-card" id="case-2" data-aos="fade-up">
+                <div class="ed-case-header">
+                    <span class="ed-case-number">02</span>
+                    <div class="ed-case-header-text">
+                        <div class="ed-case-meta">
+                            <span class="ed-case-label">CASE STUDY</span>
+                            <span class="ed-case-cat">Performance</span>
+                        </div>
+                        <h3 data-vi="Tối ưu hiệu quả quảng cáo: ROAS từ 5.0 lên 8.9" data-en="Ad performance optimization: ROAS from 5.0 to 8.9">Tối ưu hiệu quả quảng cáo: ROAS từ 5.0 lên 8.9</h3>
                     </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Theo dõi GMV, ROAS, CR, tỷ lệ chi phí marketing, hiệu quả campaign để đưa ra quyết định nhanh." data-en="Tracking GMV, ROAS, CR, marketing cost ratio, and campaign performance for fast decisions.">Theo dõi GMV, ROAS, CR, tỷ lệ chi phí marketing, hiệu quả campaign để đưa ra quyết định nhanh.</p>
-                        <div class="ed-skill-kpi">
-                            <div class="ed-skill-kpi-item"><strong>8.9</strong><span>ROAS</span></div>
-                            <div class="ed-skill-kpi-item"><strong>↑ 35%</strong><span>CR</span></div>
-                            <div class="ed-skill-kpi-item"><strong>1B+</strong><span>GMV</span></div>
+                </div>
+
+                <div class="ed-case-summary">
+                    <p class="ed-case-lede" data-vi="<strong>Bối cảnh:</strong> cần scale doanh thu ngành Beauty &amp; Health nhưng vẫn giữ tỷ lệ chi phí marketing trong ngưỡng cho phép. Vấn đề nằm ở cấu trúc campaign — ngân sách bị dàn đều thay vì phân bổ theo vai trò từng SKU." data-en="<strong>Context:</strong> scale Beauty &amp; Health revenue while keeping the marketing cost ratio within target. The bottleneck was campaign structure — budget spread evenly instead of allocated by SKU role."><strong>Bối cảnh:</strong> cần scale doanh thu ngành Beauty &amp; Health nhưng vẫn giữ tỷ lệ chi phí marketing trong ngưỡng cho phép. Vấn đề nằm ở cấu trúc campaign — ngân sách bị dàn đều thay vì phân bổ theo vai trò từng SKU.</p>
+
+                    <div class="ed-results-grid">
+                        <div class="ed-result-metric">
+                            <span class="metric-value">5.0 → 8.9</span>
+                            <span class="metric-unit">ROAS</span>
+                            <span class="metric-label" data-vi="+78% hiệu suất quảng cáo" data-en="+78% ad efficiency">+78% hiệu suất quảng cáo</span>
                         </div>
-                        <div class="ed-skill-tags">
-                            <span>ROAS</span><span>CR</span><span>GMV</span><span>Ads Funnel</span>
+                        <div class="ed-result-metric">
+                            <span class="metric-value">+581%</span>
+                            <span class="metric-unit" data-vi="đơn hàng" data-en="orders">đơn hàng</span>
+                            <span class="metric-label" data-vi="Tăng trưởng đơn hàng cùng kỳ" data-en="Order growth over the period">Tăng trưởng đơn hàng cùng kỳ</span>
                         </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">85%</span>
-                            <div class="ed-meter-fill" data-width="85"></div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value" data-vi="Trong ngưỡng" data-en="On target">Trong ngưỡng</span>
+                            <span class="metric-unit" data-vi="chi phí MKT" data-en="MKT cost">chi phí MKT</span>
+                            <span class="metric-label" data-vi="Giữ tỷ lệ chi phí khi GMV tăng" data-en="Cost ratio held while GMV grew">Giữ tỷ lệ chi phí khi GMV tăng</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value" data-vi="Ngày / Tuần" data-en="Daily / Weekly">Ngày / Tuần</span>
+                            <span class="metric-unit" data-vi="nhịp tối ưu" data-en="optimization cadence">nhịp tối ưu</span>
+                            <span class="metric-label" data-vi="Rút ngắn thời gian ra quyết định" data-en="Shorter decision cycle">Rút ngắn thời gian ra quyết định</span>
+                        </div>
+                    </div>
+
+                    <button class="ed-case-toggle" type="button" data-case-toggle="case-2-detail" aria-expanded="false" aria-controls="case-2-detail">
+                        <span class="toggle-open" data-vi="Xem chi tiết cách làm &amp; hình ảnh" data-en="See the approach &amp; visuals">Xem chi tiết cách làm &amp; hình ảnh</span>
+                        <span class="toggle-close" data-vi="Thu gọn" data-en="Collapse">Thu gọn</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <div class="ed-case-detail" id="case-2-detail" hidden>
+                    <div class="ed-case-body">
+                        <div class="ed-case-narrative">
+                            <div class="ed-phase-block">
+                                <h4 class="ed-phase-title"><i class="fas fa-bullseye"></i> <span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
+                                <ul>
+                                    <li data-vi="Cải thiện hiệu quả quảng cáo qua cấu trúc funnel" data-en="Improve ad performance through funnel structure">Cải thiện hiệu quả quảng cáo qua cấu trúc funnel</li>
+                                    <li data-vi="Tối ưu tỷ lệ chi phí marketing trên doanh thu" data-en="Optimize marketing cost as a share of revenue">Tối ưu tỷ lệ chi phí marketing trên doanh thu</li>
+                                    <li data-vi="Hỗ trợ tăng trưởng doanh thu bền vững" data-en="Support sustainable revenue growth">Hỗ trợ tăng trưởng doanh thu bền vững</li>
+                                </ul>
+                            </div>
+                            <div class="ed-phase-block">
+                                <h4 class="ed-phase-title"><i class="fas fa-cogs"></i> <span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
+                                <ul>
+                                    <li data-vi="Review lại toàn bộ cấu trúc campaign (Search, Discovery, Shop Ads)" data-en="Reviewed the full campaign structure (Search, Discovery, Shop Ads)">Review lại toàn bộ cấu trúc campaign (Search, Discovery, Shop Ads)</li>
+                                    <li data-vi="Phân bổ ngân sách theo vai trò SKU: hero — supporting — thử nghiệm" data-en="Reallocated budget by SKU role: hero — supporting — testing">Phân bổ ngân sách theo vai trò SKU: hero — supporting — thử nghiệm</li>
+                                    <li data-vi="Kết hợp dữ liệu bán hàng, chuyển đổi và campaign để đọc hiệu quả thật" data-en="Combined sales, conversion and campaign data to read true performance">Kết hợp dữ liệu bán hàng, chuyển đổi và campaign để đọc hiệu quả thật</li>
+                                    <li data-vi="Tối ưu ảnh và tiêu đề sản phẩm để tăng CTR trước khi tăng bid" data-en="Improved product imagery and titles to lift CTR before raising bids">Tối ưu ảnh và tiêu đề sản phẩm để tăng CTR trước khi tăng bid</li>
+                                    <li data-vi="Thiết lập nhịp theo dõi ngày / tuần / tháng để điều chỉnh kịp thời" data-en="Set a daily / weekly / monthly tracking cadence for fast adjustment">Thiết lập nhịp theo dõi ngày / tuần / tháng để điều chỉnh kịp thời</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ed-case-results">
+                            <div class="ed-result-lesson">
+                                <i class="fas fa-lightbulb"></i>
+                                <span data-vi="Bài học: ROAS tăng nhờ đúng cấu trúc và đúng sản phẩm được đẩy, không phải nhờ cắt ngân sách. Tối ưu CTR ở tầng hiển thị rẻ hơn nhiều so với tăng bid." data-en="Lesson: ROAS improved through the right structure and the right products being pushed — not by cutting budget. Fixing CTR upstream is far cheaper than raising bids.">Bài học: ROAS tăng nhờ đúng cấu trúc và đúng sản phẩm được đẩy, không phải nhờ cắt ngân sách. Tối ưu CTR ở tầng hiển thị rẻ hơn nhiều so với tăng bid.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ads Showcase -->
+                    <div class="ed-case-showcase">
+                        <h5 class="ed-showcase-title"><i class="fas fa-images"></i> <span data-vi="Minh họa quảng cáo — trước &amp; sau" data-en="Ad creative — before &amp; after">Minh họa quảng cáo — trước &amp; sau</span></h5>
+                        <div class="ed-showcase-ads-grid">
+                            <div>
+                                <p class="ed-ad-product-name"><i class="fas fa-tag"></i> Combo gel mụn + serum</p>
+                                <div class="ed-before-after">
+                                    <div class="ed-showcase-item">
+                                        <span class="ed-showcase-label ed-showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                        <div class="ed-showcase-img-wrap"><img src="assets/images/ads-combo-truoc.jpg" alt="Combo gel mụn — quảng cáo trước tối ưu" loading="lazy"></div>
+                                    </div>
+                                    <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="ed-showcase-item">
+                                        <span class="ed-showcase-label ed-showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                        <div class="ed-showcase-img-wrap"><img src="assets/images/ads-combo-sau.jpg" alt="Combo gel mụn — quảng cáo sau tối ưu" loading="lazy"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="ed-ad-product-name"><i class="fas fa-tag"></i> Kem chấm mụn Trioderma</p>
+                                <div class="ed-before-after">
+                                    <div class="ed-showcase-item">
+                                        <span class="ed-showcase-label ed-showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
+                                        <div class="ed-showcase-img-wrap"><img src="assets/images/ads-kem-truoc.jpg" alt="Kem chấm mụn — quảng cáo trước tối ưu" loading="lazy"></div>
+                                    </div>
+                                    <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="ed-showcase-item">
+                                        <span class="ed-showcase-label ed-showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
+                                        <div class="ed-showcase-img-wrap"><img src="assets/images/ads-kem-sau.jpg" alt="Kem chấm mụn — quảng cáo sau tối ưu" loading="lazy"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="ed-ad-product-name"><i class="fas fa-chart-bar"></i> <span data-vi="Tổng quan Ads theo tháng" data-en="Monthly Ads Overview">Tổng quan Ads theo tháng</span></p>
+                                <div class="ed-before-after">
+                                    <div class="ed-showcase-item">
+                                        <span class="ed-showcase-label ed-showcase-label-before">11/2025</span>
+                                        <div class="ed-showcase-img-wrap"><img src="assets/images/ads-monthly-overview-truoc.jpg" alt="Báo cáo Ads tháng 11/2025" loading="lazy"></div>
+                                    </div>
+                                    <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="ed-showcase-item">
+                                        <span class="ed-showcase-label ed-showcase-label-after">2/2026</span>
+                                        <div class="ed-showcase-img-wrap"><img src="assets/images/ads-monthly-overview-sau.jpg" alt="Báo cáo Ads tháng 2/2026" loading="lazy"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 — Category & SKU Strategy -->
-                <div class="ed-skill-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3 data-vi="Chiến lược danh mục & SKU" data-en="Category & SKU Strategy">Chiến lược danh mục & SKU</h3>
-                    </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Chiến lược Key SKU và supporting SKU, phát triển dòng sản phẩm, assortment." data-en="Key SKU and supporting SKU strategy, product line development, assortment.">Chiến lược Key SKU và supporting SKU, phát triển dòng sản phẩm, assortment.</p>
-                        <div class="ed-skill-tags">
-                            <span>Key SKU</span><span>AOV</span><span>Assortment</span><span>Pricing</span>
+                <div class="ed-case-tags">
+                    <span>ROAS</span><span>Ads Funnel</span><span>Search</span><span>Discovery</span><span>Budget Allocation</span>
+                </div>
+            </article>
+
+            <!-- ===== CASE STUDY 3 ===== -->
+            <article class="ed-case-card" id="case-3" data-aos="fade-up">
+                <div class="ed-case-header">
+                    <span class="ed-case-number">03</span>
+                    <div class="ed-case-header-text">
+                        <div class="ed-case-meta">
+                            <span class="ed-case-label">CASE STUDY</span>
+                            <span class="ed-case-cat">SKU Strategy</span>
                         </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">80%</span>
-                            <div class="ed-meter-fill" data-width="80"></div>
+                        <h3 data-vi="Tái cấu trúc SKU &amp; phát triển assortment" data-en="SKU restructuring &amp; assortment development">Tái cấu trúc SKU &amp; phát triển assortment</h3>
+                    </div>
+                </div>
+
+                <div class="ed-case-summary">
+                    <p class="ed-case-lede" data-vi="<strong>Bối cảnh:</strong> gian hàng phụ thuộc doanh thu vào sản phẩm của thương hiệu khác (CeraVe chiếm 70% Top 3 SKU). Cần chuyển dịch doanh thu sang dòng own-brand Trioderma mà không làm đứt momentum bán hàng." data-en="<strong>Context:</strong> the store's revenue depended on another brand's products (CeraVe made up 70% of the top-3 SKUs). Revenue had to shift to the own-brand Trioderma line without breaking sales momentum."><strong>Bối cảnh:</strong> gian hàng phụ thuộc doanh thu vào sản phẩm của thương hiệu khác (CeraVe chiếm 70% Top 3 SKU). Cần chuyển dịch doanh thu sang dòng own-brand Trioderma mà không làm đứt momentum bán hàng.</p>
+
+                    <div class="ed-results-grid">
+                        <div class="ed-result-metric">
+                            <span class="metric-value">221M → 1,190M</span>
+                            <span class="metric-unit" data-vi="VNĐ — Top 3 SKU" data-en="VND — top 3 SKUs">VNĐ — Top 3 SKU</span>
+                            <span class="metric-label" data-vi="Tăng trưởng +437%" data-en="+437% growth">Tăng trưởng +437%</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-unit" data-vi="own-brand" data-en="own-brand">own-brand</span>
+                            <span class="metric-label" data-vi="Top 3 SKU chuyển hoàn toàn sang Trioderma" data-en="Top 3 SKUs fully shifted to Trioderma">Top 3 SKU chuyển hoàn toàn sang Trioderma</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value">1,000+</span>
+                            <span class="metric-unit" data-vi="lượt bán/SKU" data-en="units/SKU">lượt bán/SKU</span>
+                            <span class="metric-label" data-vi="Doanh số mỗi SKU chủ lực" data-en="Sales per hero SKU">Doanh số mỗi SKU chủ lực</span>
+                        </div>
+                        <div class="ed-result-metric">
+                            <span class="metric-value" data-vi="AOV tăng" data-en="AOV up">AOV tăng</span>
+                            <span class="metric-unit" data-vi="nhờ combo" data-en="via bundles">nhờ combo</span>
+                            <span class="metric-label" data-vi="Combo gel mụn đóng góp 41.6% doanh thu" data-en="Acne gel bundle drove 41.6% of revenue">Combo gel mụn đóng góp 41.6% doanh thu</span>
+                        </div>
+                    </div>
+
+                    <button class="ed-case-toggle" type="button" data-case-toggle="case-3-detail" aria-expanded="false" aria-controls="case-3-detail">
+                        <span class="toggle-open" data-vi="Xem chi tiết cách làm &amp; product mix" data-en="See the approach &amp; product mix">Xem chi tiết cách làm &amp; product mix</span>
+                        <span class="toggle-close" data-vi="Thu gọn" data-en="Collapse">Thu gọn</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <div class="ed-case-detail" id="case-3-detail" hidden>
+                    <div class="ed-case-body">
+                        <div class="ed-case-narrative">
+                            <div class="ed-phase-block">
+                                <h4 class="ed-phase-title"><i class="fas fa-bullseye"></i> <span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
+                                <ul>
+                                    <li data-vi="Xây lại assortment theo mô hình Hero — Supporting — Growth SKU" data-en="Rebuild the assortment on a Hero — Supporting — Growth SKU model">Xây lại assortment theo mô hình Hero — Supporting — Growth SKU</li>
+                                    <li data-vi="Chuyển dịch doanh thu sang Trioderma mà không đứt momentum" data-en="Shift revenue to Trioderma without breaking momentum">Chuyển dịch doanh thu sang Trioderma mà không đứt momentum</li>
+                                    <li data-vi="Tăng AOV và duy trì hiển thị ngành hàng" data-en="Raise AOV and maintain category visibility">Tăng AOV và duy trì hiển thị ngành hàng</li>
+                                </ul>
+                            </div>
+                            <div class="ed-phase-block">
+                                <h4 class="ed-phase-title"><i class="fas fa-cogs"></i> <span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
+                                <ul>
+                                    <li data-vi="Review và tái cấu trúc ~100 SKU theo đóng góp doanh thu" data-en="Reviewed and restructured ~100 SKUs by revenue contribution">Review và tái cấu trúc ~100 SKU theo đóng góp doanh thu</li>
+                                    <li data-vi="Xác định Hero SKU làm trụ cột doanh thu và dồn lực ads" data-en="Named hero SKUs as revenue pillars and concentrated ad spend">Xác định Hero SKU làm trụ cột doanh thu và dồn lực ads</li>
+                                    <li data-vi="Thiết kế combo để nâng AOV thay vì giảm giá đơn lẻ" data-en="Designed bundles to lift AOV instead of discounting single items">Thiết kế combo để nâng AOV thay vì giảm giá đơn lẻ</li>
+                                    <li data-vi="Xây Growth SKU theo dữ liệu ngành hàng để mở rộng dòng sản phẩm" data-en="Built growth SKUs from category data to extend the product line">Xây Growth SKU theo dữ liệu ngành hàng để mở rộng dòng sản phẩm</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ed-case-results">
+                            <div class="ed-result-lesson">
+                                <i class="fas fa-lightbulb"></i>
+                                <span data-vi="Bài học: chuyển dịch cơ cấu doanh thu phải làm theo lớp — giữ SKU cũ chạy trong khi Hero SKU mới đủ sức gánh, thay vì cắt đột ngột." data-en="Lesson: shifting the revenue mix has to happen in layers — keep the legacy SKUs running until the new hero SKUs can carry the load, rather than cutting abruptly.">Bài học: chuyển dịch cơ cấu doanh thu phải làm theo lớp — giữ SKU cũ chạy trong khi Hero SKU mới đủ sức gánh, thay vì cắt đột ngột.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Mix Showcase -->
+                    <div class="ed-case-showcase">
+                        <h5 class="ed-showcase-title"><i class="fas fa-chart-bar"></i> <span data-vi="Product Mix — Trước &amp; Sau" data-en="Product Mix — Before &amp; After">Product Mix — Trước &amp; Sau</span></h5>
+
+                        <div class="ed-mix-summary-grid">
+                            <div class="ed-mix-summary-card">
+                                <span class="ed-mix-summary-label" data-vi="Trước (Top 3 SKU)" data-en="Before (top 3 SKUs)">Trước (Top 3 SKU)</span>
+                                <span class="ed-mix-summary-value">221.63M</span>
+                            </div>
+                            <div class="ed-mix-summary-card ed-mix-card-after">
+                                <span class="ed-mix-summary-label" data-vi="Sau (Top 3 SKU)" data-en="After (top 3 SKUs)">Sau (Top 3 SKU)</span>
+                                <span class="ed-mix-summary-value">1,190.36M</span>
+                            </div>
+                            <div class="ed-mix-summary-card ed-mix-card-growth">
+                                <span class="ed-mix-summary-label" data-vi="Tăng trưởng" data-en="Growth">Tăng trưởng</span>
+                                <span class="ed-mix-summary-value">+437%</span>
+                            </div>
+                        </div>
+
+                        <div class="ed-mix-compare-grid">
+                            <div class="ed-mix-panel">
+                                <h6 class="ed-showcase-section-label" data-vi="Trước" data-en="Before">Trước</h6>
+                                <div class="ed-mix-row">
+                                    <div class="ed-mix-row-head"><span>Sữa rửa mặt CeraVe</span><span>98.57M | 44.5%</span></div>
+                                    <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-before" style="width:44.5%"></span></div>
+                                </div>
+                                <div class="ed-mix-row">
+                                    <div class="ed-mix-row-head"><span>Kem chấm mụn Trioderma</span><span>65.22M | 29.4%</span></div>
+                                    <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-before" style="width:29.4%"></span></div>
+                                </div>
+                                <div class="ed-mix-row">
+                                    <div class="ed-mix-row-head"><span>Sữa rửa mặt CeraVe line 2</span><span>57.84M | 26.1%</span></div>
+                                    <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-before" style="width:26.1%"></span></div>
+                                </div>
+                            </div>
+                            <div class="ed-mix-panel">
+                                <h6 class="ed-showcase-section-label" data-vi="Sau" data-en="After">Sau</h6>
+                                <div class="ed-mix-row">
+                                    <div class="ed-mix-row-head"><span>Kem chấm mụn Trioderma</span><span>578.95M | 48.6%</span></div>
+                                    <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-after" style="width:48.6%"></span></div>
+                                </div>
+                                <div class="ed-mix-row">
+                                    <div class="ed-mix-row-head"><span>Combo gel mụn Trioderma</span><span>495.09M | 41.6%</span></div>
+                                    <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-after" style="width:41.6%"></span></div>
+                                </div>
+                                <div class="ed-mix-row">
+                                    <div class="ed-mix-row-head"><span>Serum Trioderma</span><span>116.32M | 9.8%</span></div>
+                                    <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-after" style="width:9.8%"></span></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 4 — Reporting & Data Analysis -->
-                <div class="ed-skill-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-chart-pie"></i>
-                        <h3 data-vi="Báo cáo & Phân tích dữ liệu" data-en="Reporting & Data Analysis">Báo cáo & Phân tích dữ liệu</h3>
+                <div class="ed-case-tags">
+                    <span>SKU Strategy</span><span>Assortment</span><span>Hero SKU</span><span>AOV</span><span>Product Mix</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ==================== NĂNG LỰC — 4 trụ cột có bằng chứng ==================== -->
+    <section id="skills" class="ed-skills">
+        <div class="container">
+            <div class="ed-section-header" data-aos="fade-up">
+                <p class="ed-section-sub"><span class="star">✦</span> <span data-vi="Năng lực" data-en="Capabilities">Năng lực</span> <span class="star">✦</span></p>
+                <h2 class="ed-section-title" data-vi="Tôi làm được gì — và kết quả ra sao" data-en="What I do — and what it delivered">Tôi làm được gì — và kết quả ra sao</h2>
+                <div class="ed-section-rule"></div>
+            </div>
+
+            <p class="ed-pillar-intro" data-aos="fade-up" data-aos-delay="60" data-vi="Bốn nhóm năng lực tôi trực tiếp phụ trách trong 4 năm qua. Mỗi dòng bên dưới là một đầu việc thực tế kèm kết quả đo được." data-en="Four capability areas I have owned directly over the past four years. Each line below is a real scope of work with a measurable outcome.">Bốn nhóm năng lực tôi trực tiếp phụ trách trong 4 năm qua. Mỗi dòng bên dưới là một đầu việc thực tế kèm kết quả đo được.</p>
+
+            <div class="ed-pillar-grid">
+
+                <!-- Pillar 01 — featured -->
+                <article class="ed-pillar ed-pillar-featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ed-pillar-head">
+                        <span class="ed-pillar-num">01</span>
+                        <div>
+                            <p class="ed-pillar-eyebrow" data-vi="Năng lực chính" data-en="Primary strength">Năng lực chính</p>
+                            <h3><i class="fas fa-store"></i> E-commerce Growth &amp; Category Strategy</h3>
+                        </div>
                     </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Báo cáo doanh thu, GMV, hiệu quả quảng cáo, YoY, MoM, conversion funnel." data-en="Revenue, GMV, ad performance reports, YoY, MoM, conversion funnel.">Báo cáo doanh thu, GMV, hiệu quả quảng cáo, YoY, MoM, conversion funnel.</p>
-                        <div class="ed-skill-tags">
-                            <span>YoY</span><span>MoM</span><span>Funnel</span><span>Insight</span>
+                    <p class="ed-pillar-lede" data-vi="Xây chiến lược tăng trưởng cho ngành hàng: sản phẩm nào dẫn dắt, giá nào, tung ở thời điểm nào." data-en="Building category growth strategy: which products lead, at what price, launched when.">Xây chiến lược tăng trưởng cho ngành hàng: sản phẩm nào dẫn dắt, giá nào, tung ở thời điểm nào.</p>
+                    <ul class="ed-pillar-proof">
+                        <li>
+                            <span class="proof-do" data-vi="Launch thương hiệu Trioderma từ con số 0 trên Shopee" data-en="Launched the Trioderma brand from zero on Shopee">Launch thương hiệu Trioderma từ con số 0 trên Shopee</span>
+                            <span class="proof-res">50M → 1B GMV/<span data-vi="tháng" data-en="month">tháng</span></span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Phân tầng Hero / Supporting / Growth SKU cho ~100 SKU" data-en="Tiered Hero / Supporting / Growth roles across ~100 SKUs">Phân tầng Hero / Supporting / Growth SKU cho ~100 SKU</span>
+                            <span class="proof-res">+437% <span data-vi="doanh thu Top 3 SKU" data-en="top-3 SKU revenue">doanh thu Top 3 SKU</span></span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Định giá theo giai đoạn &amp; xây assortment từ dữ liệu ngành hàng" data-en="Phased pricing and data-led assortment building">Định giá theo giai đoạn &amp; xây assortment từ dữ liệu ngành hàng</span>
+                            <span class="proof-res">Top 3 Shopee <span data-vi="ngành kem trị mụn" data-en="acne cream category">ngành kem trị mụn</span></span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Theo dõi đối thủ &amp; xu hướng ngành hàng trên 3 sàn" data-en="Tracked competitors and category trends across 3 marketplaces">Theo dõi đối thủ &amp; xu hướng ngành hàng trên 3 sàn</span>
+                            <span class="proof-res" data-vi="Tăng tỷ trọng doanh thu SKU chủ lực" data-en="Higher revenue share from hero SKUs">Tăng tỷ trọng doanh thu SKU chủ lực</span>
+                        </li>
+                    </ul>
+                    <div class="ed-pillar-tags">
+                        <span>Key SKU</span><span>Assortment</span><span>Pricing</span><span>Brand Launch</span><span>Category Growth</span>
+                    </div>
+                </article>
+
+                <!-- Pillar 02 -->
+                <article class="ed-pillar" data-aos="fade-up" data-aos-delay="150">
+                    <div class="ed-pillar-head">
+                        <span class="ed-pillar-num">02</span>
+                        <div>
+                            <h3><i class="fas fa-bullhorn"></i> <span data-vi="Performance Marketing &amp; Ads" data-en="Performance Marketing &amp; Ads">Performance Marketing &amp; Ads</span></h3>
                         </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">85%</span>
-                            <div class="ed-meter-fill" data-width="85"></div>
+                    </div>
+                    <p class="ed-pillar-lede" data-vi="Vận hành ads theo cấu trúc funnel và vai trò SKU, tối ưu theo nhịp ngày/tuần." data-en="Running ads by funnel structure and SKU role, optimized on a daily/weekly cadence.">Vận hành ads theo cấu trúc funnel và vai trò SKU, tối ưu theo nhịp ngày/tuần.</p>
+                    <ul class="ed-pillar-proof">
+                        <li>
+                            <span class="proof-do" data-vi="Tái cấu trúc campaign Search / Discovery theo vai trò SKU" data-en="Restructured Search / Discovery campaigns by SKU role">Tái cấu trúc campaign Search / Discovery theo vai trò SKU</span>
+                            <span class="proof-res">ROAS 5.0 → 8.9</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Kiểm soát tỷ lệ chi phí marketing trong khi scale doanh thu" data-en="Held the marketing cost ratio while scaling revenue">Kiểm soát tỷ lệ chi phí marketing trong khi scale doanh thu</span>
+                            <span class="proof-res" data-vi="Chi phí MKT trong ngưỡng mục tiêu" data-en="MKT cost kept on target">Chi phí MKT trong ngưỡng mục tiêu</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Chạy Mega Campaign (9.9 / 11.11 / 12.12), Flash Sale, KOL/KOC, livestream" data-en="Ran mega campaigns (9.9 / 11.11 / 12.12), flash sales, KOL/KOC and livestreams">Chạy Mega Campaign (9.9 / 11.11 / 12.12), Flash Sale, KOL/KOC, livestream</span>
+                            <span class="proof-res">+581% <span data-vi="đơn hàng" data-en="orders">đơn hàng</span></span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Tối ưu ảnh, tiêu đề và SEO sản phẩm cho hero SKU" data-en="Optimized imagery, titles and product SEO for hero SKUs">Tối ưu ảnh, tiêu đề và SEO sản phẩm cho hero SKU</span>
+                            <span class="proof-res">15,000 <span data-vi="lượt bán / 7 tháng" data-en="units in 7 months">lượt bán / 7 tháng</span></span>
+                        </li>
+                    </ul>
+                    <div class="ed-pillar-tags">
+                        <span>Shopee Ads</span><span>Ads Funnel</span><span>ROAS</span><span>Mega Campaign</span><span>KOL/KOC</span><span>Livestream</span>
+                    </div>
+                </article>
+
+                <!-- Pillar 03 -->
+                <article class="ed-pillar" data-aos="fade-up" data-aos-delay="200">
+                    <div class="ed-pillar-head">
+                        <span class="ed-pillar-num">03</span>
+                        <div>
+                            <h3><i class="fas fa-chart-pie"></i> <span data-vi="Planning, Reporting &amp; Data" data-en="Planning, Reporting &amp; Data">Planning, Reporting &amp; Data</span></h3>
                         </div>
+                    </div>
+                    <p class="ed-pillar-lede" data-vi="Lập kế hoạch doanh thu, dựng hệ thống báo cáo và biến số liệu thành quyết định." data-en="Planning revenue, building the reporting system, turning numbers into decisions.">Lập kế hoạch doanh thu, dựng hệ thống báo cáo và biến số liệu thành quyết định.</p>
+                    <ul class="ed-pillar-proof">
+                        <li>
+                            <span class="proof-do" data-vi="Lập kế hoạch doanh thu tháng/quý &amp; forecast theo dữ liệu lịch sử, mùa campaign" data-en="Built monthly/quarterly revenue plans and forecasts from historical and seasonal data">Lập kế hoạch doanh thu tháng/quý &amp; forecast theo dữ liệu lịch sử, mùa campaign</span>
+                            <span class="proof-res" data-vi="Promotion calendar cho toàn bộ campaign lớn" data-en="Promotion calendar for every major campaign">Promotion calendar cho toàn bộ campaign lớn</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Báo cáo Daily / Weekly / Monthly + post-campaign review" data-en="Daily / weekly / monthly reporting plus post-campaign reviews">Báo cáo Daily / Weekly / Monthly + post-campaign review</span>
+                            <span class="proof-res">GMV · Traffic · CTR · CVR · AOV · ROAS</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Chuẩn hoá template báo cáo &amp; tự động hoá dashboard theo dõi KPI" data-en="Standardized report templates and automated the KPI tracking dashboard">Chuẩn hoá template báo cáo &amp; tự động hoá dashboard theo dõi KPI</span>
+                            <span class="proof-res" data-vi="Giảm mạnh thời gian làm báo cáo thủ công" data-en="Sharply reduced manual reporting time">Giảm mạnh thời gian làm báo cáo thủ công</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Phân tích xu hướng doanh thu, traffic và hành vi mua để đề xuất hướng tối ưu" data-en="Analyzed revenue, traffic and buying-behaviour trends to recommend next moves">Phân tích xu hướng doanh thu, traffic và hành vi mua để đề xuất hướng tối ưu</span>
+                            <span class="proof-res" data-vi="Rút ngắn chu kỳ ra quyết định xuống theo tuần" data-en="Decision cycle shortened to weekly">Rút ngắn chu kỳ ra quyết định xuống theo tuần</span>
+                        </li>
+                    </ul>
+                    <div class="ed-pillar-tags">
+                        <span>Sales Forecasting</span><span>Excel Pivot / XLOOKUP</span><span>Google Sheets</span><span>KPI Dashboard</span><span>Post-campaign Report</span>
+                    </div>
+                </article>
+
+                <!-- Pillar 04 -->
+                <article class="ed-pillar" data-aos="fade-up" data-aos-delay="250">
+                    <div class="ed-pillar-head">
+                        <span class="ed-pillar-num">04</span>
+                        <div>
+                            <h3><i class="fas fa-boxes-stacked"></i> <span data-vi="Operations &amp; Inventory" data-en="Operations &amp; Inventory">Operations &amp; Inventory</span></h3>
+                        </div>
+                    </div>
+                    <p class="ed-pillar-lede" data-vi="Giữ cho hàng luôn có mặt đúng lúc campaign chạy — phần ít ai thấy nhưng quyết định doanh số." data-en="Keeping stock available exactly when campaigns run — the invisible half of revenue.">Giữ cho hàng luôn có mặt đúng lúc campaign chạy — phần ít ai thấy nhưng quyết định doanh số.</p>
+                    <ul class="ed-pillar-proof">
+                        <li>
+                            <span class="proof-do" data-vi="Theo dõi tồn kho, OOS, stock aging &amp; replenishment plan" data-en="Tracked inventory, OOS, stock aging and the replenishment plan">Theo dõi tồn kho, OOS, stock aging &amp; replenishment plan</span>
+                            <span class="proof-res" data-vi="Giảm tỷ lệ OOS trong giai đoạn campaign" data-en="Lower OOS rate during campaign periods">Giảm tỷ lệ OOS trong giai đoạn campaign</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Phối hợp Supply Chain đảm bảo availability cho hero SKU" data-en="Worked with supply chain to secure hero-SKU availability">Phối hợp Supply Chain đảm bảo availability cho hero SKU</span>
+                            <span class="proof-res" data-vi="Hero SKU không đứt hàng giữa campaign" data-en="No hero-SKU stockouts mid-campaign">Hero SKU không đứt hàng giữa campaign</span>
+                        </li>
+                        <li>
+                            <span class="proof-do" data-vi="Theo dõi tỷ lệ hoàn/refund, SLA vận hành và xử lý vấn đề fulfillment" data-en="Monitored return/refund rates, operational SLAs and fulfillment issues">Theo dõi tỷ lệ hoàn/refund, SLA vận hành và xử lý vấn đề fulfillment</span>
+                            <span class="proof-res" data-vi="Giữ chỉ số sức khoẻ gian hàng ổn định" data-en="Kept store health metrics stable">Giữ chỉ số sức khoẻ gian hàng ổn định</span>
+                        </li>
+                    </ul>
+                    <div class="ed-pillar-tags">
+                        <span>Inventory</span><span>OOS Control</span><span>Replenishment</span><span>Fulfillment</span><span>SLA</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Work samples -->
+            <div class="ed-samples" data-aos="fade-up" data-aos-delay="120">
+                <h3 class="ed-samples-title"><i class="fas fa-folder-open"></i> <span data-vi="Sản phẩm công việc thật" data-en="Real work samples">Sản phẩm công việc thật</span></h3>
+                <p class="ed-samples-sub" data-vi="Bấm vào ảnh để xem lớn — file kế hoạch và dashboard tôi trực tiếp xây dựng." data-en="Click any image to enlarge — planning files and dashboards I built myself.">Bấm vào ảnh để xem lớn — file kế hoạch và dashboard tôi trực tiếp xây dựng.</p>
+                <div class="ed-samples-grid">
+                    <figure class="ed-sample">
+                        <div class="ed-showcase-img-wrap"><img src="assets/images/planning-growth-2026.jpg" alt="Kế hoạch tăng trưởng 2026" loading="lazy"></div>
+                        <figcaption data-vi="Kế hoạch tăng trưởng theo tháng" data-en="Monthly growth plan">Kế hoạch tăng trưởng theo tháng</figcaption>
+                    </figure>
+                    <figure class="ed-sample">
+                        <div class="ed-showcase-img-wrap"><img src="assets/images/planning-dashboard-shop.jpg" alt="Dashboard theo dõi hiệu suất gian hàng" loading="lazy"></div>
+                        <figcaption data-vi="Dashboard theo dõi hiệu suất gian hàng" data-en="Store performance dashboard">Dashboard theo dõi hiệu suất gian hàng</figcaption>
+                    </figure>
+                    <figure class="ed-sample">
+                        <div class="ed-showcase-img-wrap"><img src="assets/images/planning-livestream-2026.jpg" alt="Kế hoạch livestream" loading="lazy"></div>
+                        <figcaption data-vi="Kế hoạch livestream &amp; campaign" data-en="Livestream &amp; campaign plan">Kế hoạch livestream &amp; campaign</figcaption>
+                    </figure>
+                </div>
+                <a href="report.html" class="ed-samples-link">
+                    <i class="fas fa-chart-pie"></i>
+                    <span data-vi="Xem dashboard báo cáo đầy đủ" data-en="Open the full reporting dashboard">Xem dashboard báo cáo đầy đủ</span>
+                    <span class="arrows">►►</span>
+                </a>
+            </div>
+
+            <!-- Tools -->
+            <div class="ed-tools-table" data-aos="fade-up" data-aos-delay="140">
+                <div class="ed-tools-table-head">
+                    <span data-vi="Nhóm công cụ" data-en="Category">Nhóm công cụ</span>
+                    <span>Tools</span>
+                </div>
+
+                <div class="ed-tools-row">
+                    <div class="ed-tools-category"><i class="fas fa-store"></i> Marketplace</div>
+                    <div class="ed-tools-list">
+                        <span>Shopee Seller Center</span>
+                        <span>Shopee Ads</span>
+                        <span>TikTok Shop</span>
+                        <span>Lazada Seller Center</span>
                     </div>
                 </div>
 
-                <!-- Card 5 — Dashboard & Automation -->
-                <div class="ed-skill-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <h3>Dashboard & Automation</h3>
-                    </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Excel, Google Sheets, Pivot Table, XLOOKUP/VLOOKUP, công cụ AI hỗ trợ tự động hóa." data-en="Excel, Google Sheets, Pivot Table, XLOOKUP/VLOOKUP, AI tools for automation.">Excel, Google Sheets, Pivot Table, XLOOKUP/VLOOKUP, công cụ AI hỗ trợ tự động hóa.</p>
-                        <div class="ed-skill-tags">
-                            <span>Excel</span><span>Google Sheets</span><span>Pivot</span><span>XLOOKUP</span>
-                        </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">75%</span>
-                            <div class="ed-meter-fill" data-width="75"></div>
-                        </div>
+                <div class="ed-tools-row">
+                    <div class="ed-tools-category"><i class="fas fa-table"></i> Reporting</div>
+                    <div class="ed-tools-list">
+                        <span>Excel (Pivot Table, XLOOKUP/VLOOKUP)</span>
+                        <span>Google Sheets</span>
+                        <span>Marketplace Analytics</span>
                     </div>
                 </div>
 
-                <!-- Card 6 — Campaign Execution -->
-                <div class="ed-skill-card" data-aos="fade-up" data-aos-delay="220">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-rocket"></i>
-                        <h3 data-vi="Thực thi Campaign" data-en="Campaign Execution">Thực thi Campaign</h3>
-                    </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Mega Campaign, Flash Sale, KOL/KOC, livestream, tối ưu SEO sản phẩm." data-en="Mega Campaign, Flash Sale, KOL/KOC, livestream, SEO optimization.">Mega Campaign, Flash Sale, KOL/KOC, livestream, tối ưu SEO sản phẩm.</p>
-                        <div class="ed-skill-tags">
-                            <span>Mega Campaign</span><span>Flash Sale</span><span>KOL/KOC</span><span>Livestream</span>
-                        </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">80%</span>
-                            <div class="ed-meter-fill" data-width="80"></div>
-                        </div>
+                <div class="ed-tools-row">
+                    <div class="ed-tools-category"><i class="fas fa-chart-line"></i> Dashboard</div>
+                    <div class="ed-tools-list">
+                        <span>KPI Dashboard</span>
+                        <span>Sales Tracking</span>
+                        <span>Forecasting Model</span>
                     </div>
                 </div>
 
-                <!-- Card 7 — FEATURED: Data-driven Decision Making -->
-                <div class="ed-skill-card ed-skill-card-featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ed-skill-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>Data-driven Decision Making</h3>
-                        <span class="badge-skill" data-vi="★ Nổi bật" data-en="★ Highlight">★ Nổi bật</span>
+                <div class="ed-tools-row">
+                    <div class="ed-tools-category"><i class="fas fa-brain"></i> AI Tools</div>
+                    <div class="ed-tools-list">
+                        <span>Claude</span>
+                        <span>ChatGPT</span>
+                        <span>Gemini</span>
+                        <span>NotebookLM</span>
+                        <span>Midjourney</span>
                     </div>
-                    <div class="ed-skill-body">
-                        <p data-vi="Kết hợp dữ liệu bán hàng, hiệu quả campaign, chỉ số chuyển đổi để điều chỉnh chiến lược nhanh chóng." data-en="Combining sales data, campaign performance, conversion metrics for quick strategy adjustment.">Kết hợp dữ liệu bán hàng, hiệu quả campaign, chỉ số chuyển đổi để điều chỉnh chiến lược nhanh chóng.</p>
-                        <div class="ed-skill-tags">
-                            <span>GMV</span><span>ROAS</span><span>CR</span><span>Pricing</span><span>SKU Funnel</span><span>AI Tools</span>
-                        </div>
-                        <div class="ed-meter">
-                            <span class="ed-meter-label">85%</span>
-                            <div class="ed-meter-fill" data-width="85"></div>
-                        </div>
+                </div>
+
+                <div class="ed-tools-row ed-tools-row-learning">
+                    <div class="ed-tools-category"><i class="fas fa-seedling"></i> <span data-vi="Đang phát triển" data-en="Currently learning">Đang phát triển</span></div>
+                    <div class="ed-tools-list">
+                        <span>Power Query</span>
+                        <span>Power BI</span>
+                        <span>Looker Studio</span>
+                        <span>SQL</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== EXPERIENCE — Editorial Timeline ==================== -->
+    <!-- ==================== EXPERIENCE + BRANDS ==================== -->
     <section id="experience" class="ed-experience">
         <div class="container">
             <div class="ed-section-header" data-aos="fade-up">
@@ -454,7 +942,7 @@
             </div>
 
             <div class="ed-experience-overview" data-aos="fade-up" data-aos-delay="80">
-                <p data-vi="Hành trình vận hành và tăng trưởng các gian hàng TMĐT trong ngành Beauty & Health, FMCG và dược phẩm, tập trung vào marketplace execution, campaign planning và phân tích dữ liệu." data-en="A journey of operating and growing e-commerce stores across Beauty & Health, FMCG, and pharmaceutical categories, focused on marketplace execution, campaign planning, and data analysis.">Hành trình vận hành và tăng trưởng các gian hàng TMĐT trong ngành Beauty & Health, FMCG và dược phẩm, tập trung vào marketplace execution, campaign planning và phân tích dữ liệu.</p>
+                <p data-vi="Hành trình vận hành và tăng trưởng các gian hàng TMĐT trong ngành Beauty &amp; Health, FMCG và dược phẩm — tập trung vào marketplace execution, campaign planning và phân tích dữ liệu." data-en="A journey operating and growing e-commerce stores across Beauty &amp; Health, FMCG and pharmaceuticals — focused on marketplace execution, campaign planning and data analysis.">Hành trình vận hành và tăng trưởng các gian hàng TMĐT trong ngành Beauty &amp; Health, FMCG và dược phẩm — tập trung vào marketplace execution, campaign planning và phân tích dữ liệu.</p>
                 <div class="ed-experience-summary">
                     <span><strong>4+</strong><em data-vi="năm kinh nghiệm" data-en="years experience">năm kinh nghiệm</em></span>
                     <span><strong>3</strong><em data-vi="sàn TMĐT" data-en="marketplaces">sàn TMĐT</em></span>
@@ -467,15 +955,15 @@
                 <div class="ed-timeline-item ed-timeline-item-current" data-aos="fade-up" data-aos-delay="100">
                     <div class="ed-timeline-dot"></div>
                     <span class="ed-timeline-now" data-vi="Hiện tại" data-en="Current">Hiện tại</span>
-                    <p class="ed-timeline-date">02/2025 → 05/2026</p>
+                    <p class="ed-timeline-date">02/2025 → 07/2026</p>
                     <h3 class="ed-timeline-role">Senior E-commerce Executive</h3>
                     <p class="ed-timeline-company" data-vi="Mai Hân Group" data-en="Mai Han Group">Mai Hân Group</p>
-                    <span class="ed-timeline-industry">Beauty & Health</span>
-                    <p class="ed-timeline-desc" data-vi="Phụ trách phát triển ngành hàng Beauty & Health trên Shopee, dẫn đầu chiến lược launch Trioderma, quản lý ~100 SKU, phối hợp với leadership về KPI, pricing và growth planning." data-en="Leading Beauty & Health category development on Shopee, spearheading Trioderma launch strategy, managing ~100 SKUs, collaborating with leadership on KPI, pricing, and growth planning.">Phụ trách phát triển ngành hàng Beauty & Health trên Shopee, dẫn đầu chiến lược launch Trioderma, quản lý ~100 SKU, phối hợp với leadership về KPI, pricing và growth planning.</p>
+                    <span class="ed-timeline-industry">Beauty &amp; Health</span>
+                    <p class="ed-timeline-desc" data-vi="Phụ trách phát triển ngành hàng Beauty &amp; Health trên Shopee, dẫn đầu chiến lược launch Trioderma, quản lý ~100 SKU, phối hợp với ban lãnh đạo về KPI, pricing và growth planning." data-en="Led Beauty &amp; Health category development on Shopee, drove the Trioderma launch strategy, managed ~100 SKUs and worked with leadership on KPI, pricing and growth planning.">Phụ trách phát triển ngành hàng Beauty &amp; Health trên Shopee, dẫn đầu chiến lược launch Trioderma, quản lý ~100 SKU, phối hợp với ban lãnh đạo về KPI, pricing và growth planning.</p>
 
                     <div class="ed-timeline-highlights">
                         <div class="ed-timeline-highlight">
-                            <strong>100</strong>
+                            <strong>~100</strong>
                             <span data-vi="SKU quản lý" data-en="SKUs managed">SKU quản lý</span>
                         </div>
                         <div class="ed-timeline-highlight">
@@ -500,7 +988,7 @@
                     <h3 class="ed-timeline-role">E-commerce Executive</h3>
                     <p class="ed-timeline-company" data-vi="Công ty Cổ phần Dược phẩm Ladophar" data-en="Ladophar Pharmaceutical Joint Stock Company">Công ty Cổ phần Dược phẩm Ladophar</p>
                     <span class="ed-timeline-industry" data-vi="FMCG, TPCN, Mỹ phẩm" data-en="FMCG, Supplements, Cosmetics">FMCG, TPCN, Mỹ phẩm</span>
-                    <p class="ed-timeline-desc" data-vi="Vận hành Shopee Mall, LazMall, TikTok Shop cho nhiều thương hiệu; quản lý 40+ SKU, tối ưu tồn kho, định giá, campaign, thực thi mega campaign, flash sale, KOL/KOC, livestream." data-en="Operated Shopee Mall, LazMall, TikTok Shop for multiple brands; managed 40+ SKUs, optimized inventory, pricing, campaigns; executed mega campaigns, flash sales, KOL/KOC collaborations, livestreams.">Vận hành Shopee Mall, LazMall, TikTok Shop cho nhiều thương hiệu; quản lý 40+ SKU, tối ưu tồn kho, định giá, campaign, thực thi mega campaign, flash sale, KOL/KOC, livestream.</p>
+                    <p class="ed-timeline-desc" data-vi="Vận hành Shopee Mall, LazMall và TikTok Shop cho nhiều thương hiệu; quản lý 40+ SKU, tối ưu tồn kho, định giá và campaign; thực thi mega campaign, flash sale, KOL/KOC, livestream." data-en="Operated Shopee Mall, LazMall and TikTok Shop for multiple brands; managed 40+ SKUs, optimized inventory, pricing and campaigns; executed mega campaigns, flash sales, KOL/KOC collaborations and livestreams.">Vận hành Shopee Mall, LazMall và TikTok Shop cho nhiều thương hiệu; quản lý 40+ SKU, tối ưu tồn kho, định giá và campaign; thực thi mega campaign, flash sale, KOL/KOC, livestream.</p>
 
                     <div class="ed-timeline-highlights">
                         <div class="ed-timeline-highlight">
@@ -512,7 +1000,7 @@
                             <span data-vi="Sàn TMĐT" data-en="Platforms">Sàn TMĐT</span>
                         </div>
                         <div class="ed-timeline-highlight">
-                            <strong>Multi</strong>
+                            <strong>6+</strong>
                             <span data-vi="Thương hiệu" data-en="Brands">Thương hiệu</span>
                         </div>
                     </div>
@@ -522,735 +1010,62 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ==================== BRANDS — Logo Wall ==================== -->
-    <section class="ed-brands" id="brands">
-        <div class="container">
-            <div class="ed-section-header" data-aos="fade-up">
-                <p class="ed-section-sub"><span class="star">✦</span> Brand Portfolio <span class="star">✦</span></p>
-                <h2 class="ed-section-title" data-vi="Thương hiệu từng vận hành" data-en="Brands I've Managed">Thương hiệu từng vận hành</h2>
-                <div class="ed-section-rule"></div>
-            </div>
+            <!-- Brands — dải logo gọn nằm trong cùng section -->
+            <div class="ed-brands-strip" data-aos="fade-up" data-aos-delay="120">
+                <h3 class="ed-brands-strip-title">
+                    <span data-vi="7 thương hiệu đã trực tiếp vận hành" data-en="7 brands operated hands-on">7 thương hiệu đã trực tiếp vận hành</span>
+                </h3>
 
-            <div class="ed-brand-logo-wall" aria-label="Managed brands">
-                <article class="ed-brand-logo-card brand-tea brand-ladophar" data-aos="fade-up" data-aos-delay="80">
-                    <div class="ed-brand-logo-mark">
-                        <img src="logo.webp.jpg" alt="Logo Trà Ladophar">
-                    </div>
-                    <p data-vi="Trà Ladophar" data-en="Ladophar Tea">Trà Ladophar</p>
-                </article>
-
-                <article class="ed-brand-logo-card brand-beauty brand-vitara" data-aos="fade-up" data-aos-delay="140">
-                    <div class="ed-brand-logo-mark">
-                        <img src="Vitara.jpg" alt="Logo Mỹ phẩm Vitara">
-                    </div>
-                    <p data-vi="Mỹ phẩm Vitara" data-en="Vitara Cosmetics">Mỹ phẩm Vitara</p>
-                </article>
-
-                <article class="ed-brand-logo-card brand-makeup brand-holdlive" data-aos="fade-up" data-aos-delay="200">
-                    <div class="ed-brand-logo-mark">
-                        <img src="holdlive.jpg" alt="Logo Makeup Holdlive">
-                    </div>
-                    <p data-vi="Makeup Holdlive" data-en="Holdlive Makeup">Makeup Holdlive</p>
-                </article>
-
-                <article class="ed-brand-logo-card brand-makeup brand-gogotales" data-aos="fade-up" data-aos-delay="260">
-                    <div class="ed-brand-logo-mark">
-                        <img src="gogotales.jpg" alt="Logo Makeup Gogotales">
-                    </div>
-                    <p data-vi="Makeup Gogotales" data-en="Gogotales Makeup">Makeup Gogotales</p>
-                </article>
-
-                <article class="ed-brand-logo-card brand-tea brand-ammu" data-aos="fade-up" data-aos-delay="320">
-                    <div class="ed-brand-logo-mark">
-                        <img src="trà ammu.jpg" alt="Logo Trà AMMU">
-                    </div>
-                    <p data-vi="Trà AMMU" data-en="AMMU Tea">Trà AMMU</p>
-                </article>
-
-                <article class="ed-brand-logo-card brand-tea brand-sadu" data-aos="fade-up" data-aos-delay="380">
-                    <div class="ed-brand-logo-mark">
-                        <img src="sadu_.png" alt="Logo Trà Sadu">
-                    </div>
-                    <p data-vi="Trà Sadu" data-en="Sadu Tea">Trà Sadu</p>
-                </article>
-
-                <article class="ed-brand-logo-card brand-derma brand-trioderma" data-aos="fade-up" data-aos-delay="440">
-                    <div class="ed-brand-logo-mark">
-                        <img src="trioderma.jpg" alt="Logo Mỹ phẩm Trioderma">
-                    </div>
-                    <p data-vi="Mỹ phẩm Trioderma" data-en="Trioderma Cosmetics">Mỹ phẩm Trioderma</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CASE STUDIES — Editorial Spreads ==================== -->
-    <!-- Marquee ticker -->
-    <div class="ed-marquee ed-marquee-navy">
-        <div class="ed-marquee-track">
-            <span class="ed-marquee-item"><span class="star">✦</span> LAUNCH & SCALE</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> PERFORMANCE</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> SKU STRATEGY</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> TRIODERMA</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> ROAS OPTIMIZATION</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> ASSORTMENT</span>
-            <!-- Duplicate -->
-            <span class="ed-marquee-item"><span class="star">✦</span> LAUNCH & SCALE</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> PERFORMANCE</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> SKU STRATEGY</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> TRIODERMA</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> ROAS OPTIMIZATION</span>
-            <span class="ed-marquee-item"><span class="star">✦</span> ASSORTMENT</span>
-        </div>
-    </div>
-
-    <section id="projects" class="ed-case-studies">
-        <div class="container">
-            <div class="ed-section-header" data-aos="fade-up">
-                <p class="ed-section-sub"><span class="star">✦</span> Case Study <span class="star">✦</span></p>
-                <h2 class="ed-section-title">Case Study 1, 2 & 3</h2>
-                <div class="ed-section-rule"></div>
-            </div>
-
-            <!-- Filters -->
-            <div class="ed-filter" data-aos="fade-up">
-                <button class="ed-filter-btn active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
-                <button class="ed-filter-btn" data-filter="launch">Launch & Scale</button>
-                <button class="ed-filter-btn" data-filter="performance">Performance</button>
-            </div>
-
-            <!-- ===== CASE STUDY 1 ===== -->
-            <div class="ed-case-card project-item" data-category="launch" data-aos="fade-up">
-                <div class="ed-case-header">
-                    <span class="ed-case-number">01</span>
-                    <div class="ed-case-header-text">
-                        <div class="ed-case-meta">
-                            <span class="ed-case-label">CASE STUDY</span>
-                            <span class="ed-case-cat">Launch & Scale</span>
+                <div class="ed-brand-logo-wall" aria-label="Managed brands">
+                    <article class="ed-brand-logo-card brand-tea brand-ladophar">
+                        <div class="ed-brand-logo-mark">
+                            <img src="logo.webp.jpg" alt="Logo Trà Ladophar" loading="lazy">
                         </div>
-                        <h3 data-vi="Launch và scale thương hiệu Trioderma trên Shopee" data-en="Launching and scaling Trioderma on Shopee">Launch và scale thương hiệu Trioderma trên Shopee</h3>
-                    </div>
-                </div>
+                        <p data-vi="Trà Ladophar" data-en="Ladophar Tea">Trà Ladophar</p>
+                    </article>
 
-                <div class="ed-case-body">
-                    <div class="ed-case-narrative">
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-bookmark"></i> <span data-vi="Bối cảnh" data-en="Background">Bối cảnh</span></h4>
-                            <p data-vi="Xây dựng Trioderma từ đầu với chiến lược Key SKU, định giá, ads funnel và campaign rõ ràng." data-en="Building Trioderma from scratch with clear key SKU, pricing, ads funnel, and campaign strategy.">Xây dựng Trioderma từ đầu với chiến lược Key SKU, định giá, ads funnel và campaign rõ ràng.</p>
+                    <article class="ed-brand-logo-card brand-beauty brand-vitara">
+                        <div class="ed-brand-logo-mark">
+                            <img src="Vitara.jpg" alt="Logo Mỹ phẩm Vitara" loading="lazy">
                         </div>
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-bullseye"></i> <span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
-                            <ul>
-                                <li data-vi="Xây nền tảng tăng trưởng cho thương hiệu mới" data-en="Build growth foundation for new brand">Xây nền tảng tăng trưởng cho thương hiệu mới</li>
-                                <li data-vi="Xác định Key SKU và tối ưu dòng sản phẩm" data-en="Identify key SKU and optimize product line">Xác định Key SKU và tối ưu dòng sản phẩm</li>
-                                <li data-vi="Scale từ launch đến doanh thu lớn" data-en="Scale from launch to large revenue">Scale từ launch đến doanh thu lớn</li>
-                            </ul>
-                        </div>
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-cogs"></i> <span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
-                            <ul>
-                                <li data-vi="Chiến lược Key SKU và supporting SKU" data-en="Key SKU and supporting SKU strategy">Chiến lược Key SKU và supporting SKU</li>
-                                <li data-vi="Chiến lược định giá theo giai đoạn" data-en="Phased pricing strategy">Chiến lược định giá theo giai đoạn</li>
-                                <li data-vi="Chiến lược assortment dựa trên dữ liệu ngành hàng" data-en="Assortment strategy based on category data">Chiến lược assortment dựa trên dữ liệu ngành hàng</li>
-                                <li data-vi="Ads funnel và campaign cho hero SKU" data-en="Ads funnel and campaigns for hero SKU">Ads funnel và campaign cho hero SKU</li>
-                            </ul>
-                        </div>
-                    </div>
+                        <p data-vi="Mỹ phẩm Vitara" data-en="Vitara Cosmetics">Mỹ phẩm Vitara</p>
+                    </article>
 
-                    <div class="ed-case-results">
-                        <h4 class="ed-results-title"><i class="fas fa-trophy"></i> <span data-vi="Kết quả" data-en="Results">Kết quả</span></h4>
-                        <div class="ed-results-grid">
-                            <div class="ed-result-metric">
-                                <span class="metric-value">50M → 1B</span>
-                                <span class="metric-unit">VNĐ/tháng</span>
-                                <span class="metric-label" data-vi="GMV scale trong 10 tháng" data-en="GMV scaled in 10 months">GMV scale trong 10 tháng</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value">+400%</span>
-                                <span class="metric-unit">YoY</span>
-                                <span class="metric-label" data-vi="Tăng trưởng doanh thu" data-en="Annual revenue growth">Tăng trưởng doanh thu</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value">15,000</span>
-                                <span class="metric-unit" data-vi="lượt bán" data-en="units sold">lượt bán</span>
-                                <span class="metric-label" data-vi="Kem mụn trong 7 tháng" data-en="Acne cream in 7 months">Kem mụn trong 7 tháng</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value">Top 3</span>
-                                <span class="metric-unit">Shopee</span>
-                                <span class="metric-label" data-vi="Ngành kem trị mụn" data-en="Acne cream category">Ngành kem trị mụn</span>
-                            </div>
+                    <article class="ed-brand-logo-card brand-makeup brand-holdlive">
+                        <div class="ed-brand-logo-mark">
+                            <img src="holdlive.jpg" alt="Logo Makeup Holdlive" loading="lazy">
                         </div>
+                        <p data-vi="Makeup Holdlive" data-en="Holdlive Makeup">Makeup Holdlive</p>
+                    </article>
 
-                        <div class="ed-result-lesson">
-                            <i class="fas fa-lightbulb"></i>
-                            <span data-vi="Bài học: scale bền vững đến từ cấu trúc sản phẩm, chiến lược giá, phân tầng SKU và funnel quảng cáo phù hợp từng giai đoạn." data-en="Lesson: sustainable scaling comes from product structure, pricing strategy, SKU tiering, and ads funnel aligned with each growth stage.">Bài học: scale bền vững đến từ cấu trúc sản phẩm, chiến lược giá, phân tầng SKU và funnel quảng cáo phù hợp từng giai đoạn.</span>
+                    <article class="ed-brand-logo-card brand-makeup brand-gogotales">
+                        <div class="ed-brand-logo-mark">
+                            <img src="gogotales.jpg" alt="Logo Makeup Gogotales" loading="lazy">
                         </div>
-                    </div>
-                </div>
+                        <p data-vi="Makeup Gogotales" data-en="Gogotales Makeup">Makeup Gogotales</p>
+                    </article>
 
-                <!-- Showcase -->
-                <div class="ed-case-showcase">
-                    <h5 class="ed-showcase-title"><i class="fas fa-images"></i> <span data-vi="Minh họa" data-en="Showcase">Minh họa</span></h5>
-                    <p class="ed-showcase-intro" data-vi="Hình ảnh gian hàng trước và sau khi tối ưu" data-en="Store visuals before and after optimization">Hình ảnh gian hàng trước và sau khi tối ưu</p>
+                    <article class="ed-brand-logo-card brand-tea brand-ammu">
+                        <div class="ed-brand-logo-mark">
+                            <img src="trà ammu.jpg" alt="Logo Trà AMMU" loading="lazy">
+                        </div>
+                        <p data-vi="Trà AMMU" data-en="AMMU Tea">Trà AMMU</p>
+                    </article>
 
-                    <div class="ed-showcase-grid">
-                        <div class="ed-before-after">
-                            <div class="ed-showcase-item">
-                                <span class="ed-showcase-label ed-showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
-                                <div class="ed-showcase-img-wrap">
-                                    <img src="assets/images/anh-1-truoc.jpg" alt="Before">
-                                </div>
-                            </div>
-                            <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
-                            <div class="ed-showcase-item">
-                                <span class="ed-showcase-label ed-showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
-                                <div class="ed-showcase-img-wrap">
-                                    <img src="assets/images/anh-2-sau.jpg" alt="After">
-                                </div>
-                            </div>
+                    <article class="ed-brand-logo-card brand-tea brand-sadu">
+                        <div class="ed-brand-logo-mark">
+                            <img src="sadu_.png" alt="Logo Trà Sadu" loading="lazy">
                         </div>
-                    </div>
+                        <p data-vi="Trà Sadu" data-en="Sadu Tea">Trà Sadu</p>
+                    </article>
 
-                    <div class="ed-phone-mockup" style="margin-top:20px">
-                        <div class="ed-phone-notch"></div>
-                        <div class="ed-phone-screen">
-                            <img src="assets/images/anh-shop-3.jpg" alt="Shop screenshot">
+                    <article class="ed-brand-logo-card brand-derma brand-trioderma">
+                        <div class="ed-brand-logo-mark">
+                            <img src="trioderma.jpg" alt="Logo Mỹ phẩm Trioderma" loading="lazy">
                         </div>
-                    </div>
-
-                    <div class="ed-kpi-strip" style="margin-top:20px">
-                        <div class="ed-kpi-pill">
-                            <span class="ed-kpi-pill-label" data-vi="Doanh số" data-en="Revenue">Doanh số</span>
-                            <span class="ed-kpi-pill-value">+437%</span>
-                        </div>
-                        <div class="ed-kpi-pill">
-                            <span class="ed-kpi-pill-label" data-vi="Đơn hàng" data-en="Orders">Đơn hàng</span>
-                            <span class="ed-kpi-pill-value">+581%</span>
-                        </div>
-                        <div class="ed-kpi-pill ed-kpi-pill-highlight">
-                            <span class="ed-kpi-pill-label" data-vi="Định hướng" data-en="Focus">Định hướng</span>
-                            <span class="ed-kpi-pill-value">Hero SKU</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ed-case-tags">
-                    <span>Key SKU</span><span>Pricing</span><span>Ads Funnel</span><span>Shopee</span><span>Growth</span>
-                </div>
-            </div>
-
-            <!-- ===== CASE STUDY 2 ===== -->
-            <div class="ed-case-card project-item" data-category="performance" data-aos="fade-up">
-                <div class="ed-case-header">
-                    <span class="ed-case-number">02</span>
-                    <div class="ed-case-header-text">
-                        <div class="ed-case-meta">
-                            <span class="ed-case-label">CASE STUDY</span>
-                            <span class="ed-case-cat">Performance</span>
-                        </div>
-                        <h3 data-vi="Tối ưu hiệu quả quảng cáo: ROAS từ 5 lên 8.9" data-en="Ad performance optimization: ROAS from 5 to 8.9">Tối ưu hiệu quả quảng cáo: ROAS từ 5 lên 8.9</h3>
-                    </div>
-                </div>
-
-                <div class="ed-case-body">
-                    <div class="ed-case-narrative">
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-bookmark"></i> <span data-vi="Bối cảnh" data-en="Background">Bối cảnh</span></h4>
-                            <p data-vi="Scale doanh thu đồng thời kiểm soát tỷ lệ chi phí marketing cho ngành hàng Beauty & Health." data-en="Scale revenue while controlling marketing cost ratio for Beauty & Health.">Scale doanh thu đồng thời kiểm soát tỷ lệ chi phí marketing cho ngành hàng Beauty & Health.</p>
-                        </div>
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-bullseye"></i> <span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
-                            <ul>
-                                <li data-vi="Cải thiện hiệu quả quảng cáo qua cấu trúc funnel" data-en="Improve ad performance via funnel structure">Cải thiện hiệu quả quảng cáo qua cấu trúc funnel</li>
-                                <li data-vi="Tối ưu tỷ lệ chi phí marketing" data-en="Optimize marketing cost ratio">Tối ưu tỷ lệ chi phí marketing</li>
-                                <li data-vi="Hỗ trợ tăng trưởng doanh thu bền vững" data-en="Support sustainable revenue growth">Hỗ trợ tăng trưởng doanh thu bền vững</li>
-                            </ul>
-                        </div>
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-cogs"></i> <span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
-                            <ul>
-                                <li data-vi="Review cấu trúc campaign (Search, Discovery, Campaign)" data-en="Review campaign structure (Search, Discovery, Campaign)">Review cấu trúc campaign (Search, Discovery, Campaign)</li>
-                                <li data-vi="Tối ưu ads funnel theo vai trò SKU" data-en="Optimize ads funnel by SKU role">Tối ưu ads funnel theo vai trò SKU</li>
-                                <li data-vi="Kết hợp dữ liệu bán hàng, chuyển đổi và campaign" data-en="Combine sales, conversion, and campaign data">Kết hợp dữ liệu bán hàng, chuyển đổi và campaign</li>
-                                <li data-vi="Theo dõi theo chu kỳ ngày/tuần/tháng" data-en="Track day/week/month cycles">Theo dõi theo chu kỳ ngày/tuần/tháng</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="ed-case-results">
-                        <h4 class="ed-results-title"><i class="fas fa-trophy"></i> <span data-vi="Kết quả" data-en="Results">Kết quả</span></h4>
-                        <div class="ed-results-grid">
-                            <div class="ed-result-metric">
-                                <span class="metric-value">5 → 8.9</span>
-                                <span class="metric-unit">ROAS</span>
-                                <span class="metric-label" data-vi="Cải thiện hiệu suất QC" data-en="Ad efficiency improvement">Cải thiện hiệu suất QC</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value" data-vi="Kiểm soát tốt" data-en="Better Control">Kiểm soát tốt</span>
-                                <span class="metric-unit" data-vi="Chi phí MKT" data-en="MKT Cost">Chi phí MKT</span>
-                                <span class="metric-label" data-vi="Tỷ lệ chi phí marketing" data-en="Marketing cost ratio">Tỷ lệ chi phí marketing</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value" data-vi="Nhanh" data-en="Fast">Nhanh</span>
-                                <span class="metric-unit" data-vi="Ra quyết định" data-en="Decision">Ra quyết định</span>
-                                <span class="metric-label" data-vi="Theo ngày/tuần/tháng" data-en="Day/week/month tracking">Theo ngày/tuần/tháng</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value" data-vi="Bền vững" data-en="Sustainable">Bền vững</span>
-                                <span class="metric-unit">Growth</span>
-                                <span class="metric-label" data-vi="Tăng trưởng doanh thu" data-en="Revenue growth">Tăng trưởng doanh thu</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ads Showcase -->
-                <div class="ed-case-showcase">
-                    <h5 class="ed-showcase-title"><i class="fas fa-images"></i> <span data-vi="Minh họa quảng cáo" data-en="Ad Showcase">Minh họa quảng cáo</span></h5>
-                    <div class="ed-showcase-ads-grid">
-                        <!-- Product 1 -->
-                        <div>
-                            <p class="ed-ad-product-name"><i class="fas fa-tag"></i> Combo gel mụn + serum</p>
-                            <div class="ed-before-after">
-                                <div class="ed-showcase-item">
-                                    <span class="ed-showcase-label ed-showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
-                                    <div class="ed-showcase-img-wrap"><img src="assets/images/ads-combo-truoc.jpg" alt="Combo before"></div>
-                                </div>
-                                <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
-                                <div class="ed-showcase-item">
-                                    <span class="ed-showcase-label ed-showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
-                                    <div class="ed-showcase-img-wrap"><img src="assets/images/ads-combo-sau.jpg" alt="Combo after"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product 2 -->
-                        <div>
-                            <p class="ed-ad-product-name"><i class="fas fa-tag"></i> Kem chấm mụn Trioderma</p>
-                            <div class="ed-before-after">
-                                <div class="ed-showcase-item">
-                                    <span class="ed-showcase-label ed-showcase-label-before" data-vi="Trước" data-en="Before">Trước</span>
-                                    <div class="ed-showcase-img-wrap"><img src="assets/images/ads-kem-truoc.jpg" alt="Kem before"></div>
-                                </div>
-                                <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
-                                <div class="ed-showcase-item">
-                                    <span class="ed-showcase-label ed-showcase-label-after" data-vi="Sau" data-en="After">Sau</span>
-                                    <div class="ed-showcase-img-wrap"><img src="assets/images/ads-kem-sau.jpg" alt="Kem after"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product 3 — Monthly overview -->
-                        <div>
-                            <p class="ed-ad-product-name"><i class="fas fa-chart-bar"></i> <span data-vi="Tổng quan Ads theo tháng" data-en="Monthly Ads Overview">Tổng quan Ads theo tháng</span></p>
-                            <div class="ed-before-after">
-                                <div class="ed-showcase-item">
-                                    <span class="ed-showcase-label ed-showcase-label-before">11/2025</span>
-                                    <div class="ed-showcase-img-wrap"><img src="assets/images/ads-monthly-overview-truoc.jpg" alt="Monthly before"></div>
-                                </div>
-                                <div class="ed-showcase-arrow"><i class="fas fa-arrow-right"></i></div>
-                                <div class="ed-showcase-item">
-                                    <span class="ed-showcase-label ed-showcase-label-after">2/2026</span>
-                                    <div class="ed-showcase-img-wrap"><img src="assets/images/ads-monthly-overview-sau.jpg" alt="Monthly after"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ed-case-tags">
-                    <span>ROAS</span><span>Ads Funnel</span><span>Search</span><span>Discovery</span><span>Performance</span>
-                </div>
-            </div>
-
-            <!-- ===== CASE STUDY 3 ===== -->
-            <div class="ed-case-card project-item" data-category="launch" data-aos="fade-up">
-                <div class="ed-case-header">
-                    <span class="ed-case-number">03</span>
-                    <div class="ed-case-header-text">
-                        <div class="ed-case-meta">
-                            <span class="ed-case-label">CASE STUDY</span>
-                            <span class="ed-case-cat">Launch & Scale</span>
-                        </div>
-                        <h3 data-vi="Chiến lược SKU & Phát triển Assortment" data-en="SKU Strategy & Assortment Development">Chiến lược SKU & Phát triển Assortment</h3>
-                    </div>
-                </div>
-
-                <div class="ed-case-body">
-                    <div class="ed-case-narrative">
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-bookmark"></i> <span data-vi="Bối cảnh" data-en="Background">Bối cảnh</span></h4>
-                            <p data-vi="Tái cấu trúc assortment, chuyển dịch từ dòng cũ sang Trioderma mà không mất momentum." data-en="Restructure assortment, shifting from old line to Trioderma without losing momentum.">Tái cấu trúc assortment, chuyển dịch từ dòng cũ sang Trioderma mà không mất momentum.</p>
-                        </div>
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-bullseye"></i> <span data-vi="Mục tiêu" data-en="Goals">Mục tiêu</span></h4>
-                            <ul>
-                                <li data-vi="Xây dựng lại assortment theo mô hình Hero-Supporting-Growth SKU" data-en="Rebuild assortment with Hero-Supporting-Growth SKU model">Xây dựng lại assortment theo mô hình Hero-Supporting-Growth SKU</li>
-                                <li data-vi="Chuyển dịch doanh thu sang Trioderma mà không đứt momentum" data-en="Shift revenue to Trioderma without breaking momentum">Chuyển dịch doanh thu sang Trioderma mà không đứt momentum</li>
-                                <li data-vi="Tăng AOV và duy trì hiển thị ngành hàng" data-en="Increase AOV and maintain category visibility">Tăng AOV và duy trì hiển thị ngành hàng</li>
-                            </ul>
-                        </div>
-                        <div class="ed-phase-block">
-                            <h4 class="ed-phase-title"><i class="fas fa-cogs"></i> <span data-vi="Hành động" data-en="Actions">Hành động</span></h4>
-                            <ul>
-                                <li data-vi="Review và tái cấu trúc ~100 SKU" data-en="Reviewed and restructured ~100 SKUs">Review và tái cấu trúc ~100 SKU</li>
-                                <li data-vi="Xác định Hero SKU làm trụ cột doanh thu" data-en="Defined Hero SKUs as revenue pillars">Xác định Hero SKU làm trụ cột doanh thu</li>
-                                <li data-vi="Xây Growth SKU theo chiến lược assortment dựa trên dữ liệu" data-en="Built Growth SKUs with data-led assortment strategy">Xây Growth SKU theo chiến lược assortment dựa trên dữ liệu</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="ed-case-results">
-                        <h4 class="ed-results-title"><i class="fas fa-trophy"></i> <span data-vi="Kết quả" data-en="Results">Kết quả</span></h4>
-                        <div class="ed-results-grid">
-                            <div class="ed-result-metric">
-                                <span class="metric-value">1,000+</span>
-                                <span class="metric-unit" data-vi="lượt bán/SKU" data-en="sales/SKU">lượt bán/SKU</span>
-                                <span class="metric-label" data-vi="Doanh số mỗi SKU" data-en="Sales per SKU">Doanh số mỗi SKU</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value" data-vi="Top hiển thị" data-en="Top Visibility">Top hiển thị</span>
-                                <span class="metric-unit" data-vi="Duy trì" data-en="Maintained">Duy trì</span>
-                                <span class="metric-label" data-vi="Hiển thị ngành hàng" data-en="Category visibility">Hiển thị ngành hàng</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value">Better Mix</span>
-                                <span class="metric-unit" data-vi="Cơ cấu" data-en="Structure">Cơ cấu</span>
-                                <span class="metric-label" data-vi="Tối ưu cơ cấu doanh thu" data-en="Optimized revenue structure">Tối ưu cơ cấu doanh thu</span>
-                            </div>
-                            <div class="ed-result-metric">
-                                <span class="metric-value">AOV Up</span>
-                                <span class="metric-unit" data-vi="Tăng" data-en="Increased">Tăng</span>
-                                <span class="metric-label" data-vi="Giá trị đơn hàng TB" data-en="Avg order value">Giá trị đơn hàng TB</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Mix Showcase -->
-                <div class="ed-case-showcase">
-                    <h5 class="ed-showcase-title"><i class="fas fa-chart-bar"></i> <span data-vi="Product Mix — Trước & Sau" data-en="Product Mix — Before & After">Product Mix — Trước & Sau</span></h5>
-
-                    <div class="ed-mix-summary-grid">
-                        <div class="ed-mix-summary-card">
-                            <span class="ed-mix-summary-label" data-vi="Trước (Top 3 SKU)" data-en="Before (Top 3 SKU)">Trước (Top 3 SKU)</span>
-                            <span class="ed-mix-summary-value">221.63M</span>
-                        </div>
-                        <div class="ed-mix-summary-card ed-mix-card-after">
-                            <span class="ed-mix-summary-label" data-vi="Sau (Top 3 SKU)" data-en="After (Top 3 SKU)">Sau (Top 3 SKU)</span>
-                            <span class="ed-mix-summary-value">1,190.36M</span>
-                        </div>
-                        <div class="ed-mix-summary-card ed-mix-card-growth">
-                            <span class="ed-mix-summary-label" data-vi="Tăng trưởng" data-en="Growth">Tăng trưởng</span>
-                            <span class="ed-mix-summary-value">+437%</span>
-                        </div>
-                    </div>
-
-                    <div class="ed-mix-compare-grid">
-                        <div class="ed-mix-panel">
-                            <h6 class="ed-showcase-section-label" data-vi="Trước" data-en="Before">Trước</h6>
-                            <div class="ed-mix-row">
-                                <div class="ed-mix-row-head"><span>Sữa rửa mặt CeraVe</span><span>98.57M | 44.5%</span></div>
-                                <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-before" style="width:44.5%"></span></div>
-                            </div>
-                            <div class="ed-mix-row">
-                                <div class="ed-mix-row-head"><span>Kem chấm mụn Trioderma</span><span>65.22M | 29.4%</span></div>
-                                <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-before" style="width:29.4%"></span></div>
-                            </div>
-                            <div class="ed-mix-row">
-                                <div class="ed-mix-row-head"><span>Sữa rửa mặt CeraVe line 2</span><span>57.84M | 26.1%</span></div>
-                                <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-before" style="width:26.1%"></span></div>
-                            </div>
-                        </div>
-                        <div class="ed-mix-panel">
-                            <h6 class="ed-showcase-section-label" data-vi="Sau" data-en="After">Sau</h6>
-                            <div class="ed-mix-row">
-                                <div class="ed-mix-row-head"><span>Kem chấm mụn Trioderma</span><span>578.95M | 48.6%</span></div>
-                                <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-after" style="width:48.6%"></span></div>
-                            </div>
-                            <div class="ed-mix-row">
-                                <div class="ed-mix-row-head"><span>Combo gel mụn Trioderma</span><span>495.09M | 41.6%</span></div>
-                                <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-after" style="width:41.6%"></span></div>
-                            </div>
-                            <div class="ed-mix-row">
-                                <div class="ed-mix-row-head"><span>Serum Trioderma</span><span>116.32M | 9.8%</span></div>
-                                <div class="ed-mix-track"><span class="ed-mix-fill ed-mix-fill-after" style="width:9.8%"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ed-case-tags">
-                    <span>SKU Strategy</span><span>Assortment</span><span>Hero SKU</span><span>AOV</span><span>Product Mix</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==================== PLANNING & REPORTING — Dark Magazine ==================== -->
-    <section id="planning-portfolio" class="ed-planning">
-        <div class="container">
-            <div class="ed-section-header" data-aos="fade-up">
-                <p class="ed-section-sub"><span class="star">✦</span> Skill Set <span class="star">✦</span></p>
-                <h2 class="ed-section-title">Planning & Reporting Skills</h2>
-                <div class="ed-section-rule"></div>
-            </div>
-
-            <div class="ed-plan-intro" data-aos="fade-up" data-aos-delay="80">
-                <p data-vi="Kinh nghiệm trong việc lập kế hoạch kinh doanh, theo dõi hiệu suất bán hàng và xây dựng hệ thống báo cáo cho các kênh thương mại điện tử. Tham gia quản lý campaign, phân tích dữ liệu kinh doanh và tối ưu hiệu quả vận hành trên các sàn TMĐT." data-en="Experience in business planning, sales performance tracking, and reporting system development for e-commerce channels. Involved in campaign management, business data analysis, and operational performance optimization across marketplaces.">Kinh nghiệm trong việc lập kế hoạch kinh doanh, theo dõi hiệu suất bán hàng và xây dựng hệ thống báo cáo cho các kênh thương mại điện tử. Tham gia quản lý campaign, phân tích dữ liệu kinh doanh và tối ưu hiệu quả vận hành trên các sàn TMĐT.</p>
-                <div class="ed-plan-summary">
-                    <span>Sales Planning</span>
-                    <span>Performance Reporting</span>
-                    <span>Marketplace Management</span>
-                    <span>Dashboard Optimization</span>
-                </div>
-            </div>
-
-            <div class="ed-report-grid">
-                <article class="ed-report-card ed-report-card-featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ed-report-card-head">
-                        <span class="ed-report-number">01</span>
-                        <div>
-                            <p class="ed-report-eyebrow">Sales & Campaign Planning</p>
-                            <h3 data-vi="Lập kế hoạch bán hàng & Campaign" data-en="Sales & Campaign Planning">Lập kế hoạch bán hàng & Campaign</h3>
-                        </div>
-                    </div>
-                    <div class="ed-report-content">
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công việc thực hiện" data-en="Scope of work">Công việc thực hiện</h4>
-                            <ul>
-                                <li>Lập kế hoạch doanh thu theo tháng/quý</li>
-                                <li>Forecast doanh số dựa trên dữ liệu lịch sử và mùa campaign</li>
-                                <li>Xây dựng promotion calendar cho các campaign lớn (9.9, 11.11, 12.12)</li>
-                                <li>Theo dõi tiến độ campaign và điều chỉnh kế hoạch theo performance thực tế</li>
-                                <li>Phối hợp với team Marketing, Ads và Operations để triển khai campaign</li>
-                            </ul>
-                        </div>
-                        <div class="ed-report-block">
-                            <h4>KPI</h4>
-                            <div class="ed-report-tags">
-                                <span>GMV</span><span>Traffic</span><span>CVR</span><span>AOV</span><span>ROAS</span><span>Orders</span>
-                            </div>
-                        </div>
-                        <div class="ed-report-result">
-                            <strong data-vi="Kết quả" data-en="Results">Kết quả</strong>
-                            <p data-vi="Tăng trưởng GMV trong các campaign lớn và cải thiện tỷ lệ chuyển đổi thông qua tối ưu sản phẩm, promotion." data-en="Improved GMV during major campaigns and conversion rate through product and promotion optimization.">Tăng trưởng GMV trong các campaign lớn và cải thiện tỷ lệ chuyển đổi thông qua tối ưu sản phẩm, promotion.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="ed-report-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="ed-report-card-head">
-                        <span class="ed-report-number">02</span>
-                        <div>
-                            <p class="ed-report-eyebrow">Performance Reporting & Business Analysis</p>
-                            <h3 data-vi="Báo cáo hiệu suất & Phân tích kinh doanh" data-en="Performance Reporting & Business Analysis">Báo cáo hiệu suất & Phân tích kinh doanh</h3>
-                        </div>
-                    </div>
-                    <div class="ed-report-content">
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công việc thực hiện" data-en="Scope of work">Công việc thực hiện</h4>
-                            <ul>
-                                <li>Xây dựng báo cáo Daily / Weekly / Monthly performance</li>
-                                <li>Theo dõi hiệu suất bán hàng trên các sàn TMĐT</li>
-                                <li>Phân tích xu hướng doanh thu, traffic và hành vi mua hàng</li>
-                                <li>Đánh giá hiệu quả campaign và đề xuất hướng tối ưu</li>
-                                <li>Thực hiện post-campaign report và business review</li>
-                            </ul>
-                        </div>
-                        <div class="ed-report-block">
-                            <h4>Metrics</h4>
-                            <div class="ed-report-tags">
-                                <span>GMV</span><span>Orders</span><span>Traffic</span><span>CTR</span><span>CVR</span><span>ROAS</span><span>SKU/category revenue</span>
-                            </div>
-                        </div>
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công cụ" data-en="Tools">Công cụ</h4>
-                            <div class="ed-report-tags">
-                                <span>Excel (Pivot Table, Lookup, Basic Formula)</span>
-                                <span>Google Sheets</span>
-                                <span>Marketplace Seller Center</span>
-                                <span>AI-assisted reporting & data analysis tools</span>
-                            </div>
-                        </div>
-                        <div class="ed-report-result">
-                            <strong data-vi="Kết quả" data-en="Results">Kết quả</strong>
-                            <p data-vi="Tự động hóa reporting dashboard, giảm thời gian làm báo cáo và tăng khả năng theo dõi KPI theo thời gian thực." data-en="Automated reporting dashboards, reduced reporting time, and improved real-time KPI tracking.">Tự động hóa reporting dashboard, giảm thời gian làm báo cáo và tăng khả năng theo dõi KPI theo thời gian thực.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="ed-report-card" data-aos="fade-up" data-aos-delay="220">
-                    <div class="ed-report-card-head">
-                        <span class="ed-report-number">03</span>
-                        <div>
-                            <p class="ed-report-eyebrow">Marketplace Performance Management</p>
-                            <h3 data-vi="Quản lý hiệu suất sàn TMĐT" data-en="Marketplace Performance Management">Quản lý hiệu suất sàn TMĐT</h3>
-                        </div>
-                    </div>
-                    <div class="ed-report-content">
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công việc thực hiện" data-en="Scope of work">Công việc thực hiện</h4>
-                            <ul>
-                                <li>Theo dõi performance trên Shopee, TikTok Shop và Lazada</li>
-                                <li>Phân tích hiệu suất sản phẩm và ngành hàng</li>
-                                <li>Theo dõi đối thủ cạnh tranh và xu hướng thị trường</li>
-                                <li>Tối ưu hiển thị sản phẩm trong campaign</li>
-                                <li>Đề xuất chiến lược tăng trưởng cho từng nhóm SKU</li>
-                            </ul>
-                        </div>
-                        <div class="ed-report-result">
-                            <strong data-vi="Kết quả" data-en="Results">Kết quả</strong>
-                            <p data-vi="Tăng tỷ trọng doanh thu của các SKU chủ lực và tối ưu hiệu quả participation trong campaign của sàn." data-en="Increased revenue contribution from hero SKUs and optimized campaign participation efficiency.">Tăng tỷ trọng doanh thu của các SKU chủ lực và tối ưu hiệu quả participation trong campaign của sàn.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="ed-report-card" data-aos="fade-up" data-aos-delay="280">
-                    <div class="ed-report-card-head">
-                        <span class="ed-report-number">04</span>
-                        <div>
-                            <p class="ed-report-eyebrow">Inventory & Operations Reporting</p>
-                            <h3 data-vi="Báo cáo vận hành & Tồn kho" data-en="Inventory & Operations Reporting">Báo cáo vận hành & Tồn kho</h3>
-                        </div>
-                    </div>
-                    <div class="ed-report-content">
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công việc thực hiện" data-en="Scope of work">Công việc thực hiện</h4>
-                            <ul>
-                                <li>Theo dõi tình trạng tồn kho và OOS (Out of Stock)</li>
-                                <li>Kiểm soát stock aging và replenishment plan</li>
-                                <li>Phối hợp với team Supply Chain để đảm bảo availability</li>
-                                <li>Theo dõi tỷ lệ hoàn hàng/refund và SLA vận hành</li>
-                                <li>Hỗ trợ xử lý các vấn đề liên quan đến fulfillment</li>
-                            </ul>
-                        </div>
-                        <div class="ed-report-result">
-                            <strong data-vi="Kết quả" data-en="Results">Kết quả</strong>
-                            <p data-vi="Giảm tỷ lệ OOS trong giai đoạn campaign và cải thiện khả năng theo dõi inventory phục vụ sales planning." data-en="Reduced OOS during campaign periods and improved inventory tracking for sales planning.">Giảm tỷ lệ OOS trong giai đoạn campaign và cải thiện khả năng theo dõi inventory phục vụ sales planning.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="ed-report-card ed-report-card-wide" data-aos="fade-up" data-aos-delay="340">
-                    <div class="ed-report-card-head">
-                        <span class="ed-report-number">05</span>
-                        <div>
-                            <p class="ed-report-eyebrow">Dashboard & Process Optimization</p>
-                            <h3 data-vi="Dashboard & Tối ưu quy trình" data-en="Dashboard & Process Optimization">Dashboard & Tối ưu quy trình</h3>
-                        </div>
-                    </div>
-                    <div class="ed-report-content ed-report-content-split">
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công việc thực hiện" data-en="Scope of work">Công việc thực hiện</h4>
-                            <ul>
-                                <li>Xây dựng dashboard theo dõi sales và campaign performance</li>
-                                <li>Chuẩn hóa reporting template và KPI tracking</li>
-                                <li>Tự động hóa quy trình báo cáo</li>
-                                <li>Hỗ trợ tối ưu workflow giữa các team liên quan</li>
-                            </ul>
-                        </div>
-                        <div class="ed-report-block">
-                            <h4 data-vi="Công cụ" data-en="Tools">Công cụ</h4>
-                            <div class="ed-report-tags">
-                                <span>Excel Pivot</span><span>Power Query</span><span>Power BI</span><span>Google Data Studio</span><span>SQL</span>
-                            </div>
-                        </div>
-                        <div class="ed-report-result">
-                            <strong data-vi="Kết quả" data-en="Results">Kết quả</strong>
-                            <p data-vi="Giảm thời gian xử lý báo cáo thủ công và tăng khả năng theo dõi dữ liệu real-time cho team/business." data-en="Reduced manual reporting time and improved real-time data visibility for teams and business stakeholders.">Giảm thời gian xử lý báo cáo thủ công và tăng khả năng theo dõi dữ liệu real-time cho team/business.</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="ed-report-skills" data-aos="fade-up" data-aos-delay="420">
-                <h3 data-vi="Kỹ năng nổi bật" data-en="Key Skills">Kỹ năng nổi bật</h3>
-                <div class="ed-report-skill-list">
-                    <span>Sales Forecasting</span>
-                    <span>Campaign Planning</span>
-                    <span>Business Reporting</span>
-                    <span>Data Analysis</span>
-                    <span>Marketplace Management</span>
-                    <span>Dashboard Development</span>
-                    <span>KPI Tracking</span>
-                    <span>Business Planning</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== TOOLS — Minimal Editorial ==================== -->
-    <section id="tools" class="ed-tools">
-        <div class="container">
-            <div class="ed-section-header" data-aos="fade-up">
-                <p class="ed-section-sub"><span class="star">✦</span> <span data-vi="Công cụ" data-en="Tools">Công cụ</span> <span class="star">✦</span></p>
-                <h2 class="ed-section-title">Tools & Technologies</h2>
-                <div class="ed-section-rule"></div>
-            </div>
-
-            <div class="ed-tools-intro" data-aos="fade-up">
-                <p data-vi="Kết hợp nền tảng marketplace, spreadsheet, dashboard và AI để ra quyết định nhanh hơn, trực quan hơn, sắc bén hơn." data-en="Combining marketplace platforms, spreadsheets, dashboards, and AI for faster, more visual, sharper decisions.">Kết hợp nền tảng marketplace, spreadsheet, dashboard và AI để ra quyết định nhanh hơn, trực quan hơn, sắc bén hơn.</p>
-            </div>
-
-            <div class="ed-tools-table" data-aos="fade-up" data-aos-delay="120">
-                <div class="ed-tools-table-head">
-                    <span>Category</span>
-                    <span>Tools</span>
-                </div>
-
-                <div class="ed-tools-row">
-                    <div class="ed-tools-category"><i class="fas fa-store"></i> E-commerce</div>
-                    <div class="ed-tools-list">
-                        <span>Shopee</span>
-                        <span>TikTok Shop</span>
-                        <span>Lazada</span>
-                    </div>
-                </div>
-
-                <div class="ed-tools-row">
-                    <div class="ed-tools-category"><i class="fas fa-table"></i> Reporting</div>
-                    <div class="ed-tools-list">
-                        <span>Excel</span>
-                        <span>Google Sheets</span>
-                    </div>
-                </div>
-
-                <div class="ed-tools-row">
-                    <div class="ed-tools-category"><i class="fas fa-brain"></i> AI Tools</div>
-                    <div class="ed-tools-list">
-                        <span>Claude</span>
-                        <span>ChatGPT</span>
-                        <span>Gemini</span>
-                        <span>Midjourney</span>
-                        <span>NotebookLM</span>
-                    </div>
-                </div>
-
-                <div class="ed-tools-row">
-                    <div class="ed-tools-category"><i class="fas fa-cogs"></i> Automation</div>
-                    <div class="ed-tools-list">
-                        <span>Workflow Automation Tools</span>
-                    </div>
-                </div>
-
-                <div class="ed-tools-row">
-                    <div class="ed-tools-category"><i class="fas fa-chart-pie"></i> Dashboard</div>
-                    <div class="ed-tools-list">
-                        <span>KPI Dashboard</span>
-                        <span>Sales Tracking</span>
-                    </div>
-                </div>
-
-                <div class="ed-tools-row">
-                    <div class="ed-tools-category"><i class="fas fa-chart-line"></i> Analysis</div>
-                    <div class="ed-tools-list">
-                        <span>Performance Analysis</span>
-                        <span>Forecasting</span>
-                    </div>
+                        <p data-vi="Mỹ phẩm Trioderma" data-en="Trioderma Cosmetics">Mỹ phẩm Trioderma</p>
+                    </article>
                 </div>
             </div>
         </div>
@@ -1263,10 +1078,10 @@
             <div class="ed-cta-inner" data-aos="zoom-in" data-aos-delay="100">
                 <div class="ed-cta-content">
                     <h2 data-vi="Sẵn sàng trao đổi?" data-en="Ready to connect?">Sẵn sàng trao đổi?</h2>
-                    <p data-vi="Tôi luôn sẵn lòng thảo luận về cơ hội hợp tác trong lĩnh vực E-commerce." data-en="I'm always open to discuss collaboration opportunities in E-commerce.">Tôi luôn sẵn lòng thảo luận về cơ hội hợp tác trong lĩnh vực E-commerce.</p>
+                    <p data-vi="Tôi luôn sẵn lòng thảo luận về cơ hội hợp tác trong lĩnh vực E-commerce." data-en="I'm always open to discussing collaboration opportunities in e-commerce.">Tôi luôn sẵn lòng thảo luận về cơ hội hợp tác trong lĩnh vực E-commerce.</p>
                 </div>
                 <div class="ed-cta-actions">
-                    <a href="#contact" class="ed-btn-gold" data-vi="Liên hệ ngay" data-en="Contact Me">Liên hệ ngay</a>
+                    <a href="#contact" class="ed-btn-gold" data-vi="Liên hệ ngay" data-en="Contact me">Liên hệ ngay</a>
                     <a href="assets/Thanh-Tram-CV.pdf" download class="ed-btn-outline-cream">
                         <i class="fas fa-download"></i>
                         <span data-vi="Tải CV" data-en="Download CV">Tải CV</span>
@@ -1291,7 +1106,7 @@
                 <div class="ed-contact-visual" data-aos="fade-right">
                     <div class="ed-contact-quote">
                         <span class="ed-contact-quote-icon"><i class="fas fa-quote-left"></i></span>
-                        <blockquote data-vi="Tôi tin rằng tăng trưởng bền vững đến từ dữ liệu, quy trình và chiến lược sản phẩm phù hợp từng giai đoạn." data-en="I believe sustainable growth comes from data, process, and product strategy aligned to each stage.">Tôi tin rằng tăng trưởng bền vững đến từ dữ liệu, quy trình và chiến lược sản phẩm phù hợp từng giai đoạn.</blockquote>
+                        <blockquote data-vi="Tôi tin rằng tăng trưởng bền vững đến từ dữ liệu, quy trình và chiến lược sản phẩm phù hợp từng giai đoạn." data-en="I believe sustainable growth comes from data, process and product strategy aligned to each stage.">Tôi tin rằng tăng trưởng bền vững đến từ dữ liệu, quy trình và chiến lược sản phẩm phù hợp từng giai đoạn.</blockquote>
                         <cite>— Thanh Trâm</cite>
                     </div>
 
@@ -1303,11 +1118,18 @@
                                 <a href="mailto:thanhtram0934@gmail.com">thanhtram0934@gmail.com</a>
                             </div>
                         </div>
-                        <a class="ed-contact-info-item ed-contact-info-link" href="report.html">
-                            <span class="ed-contact-info-icon"><i class="fas fa-chart-pie"></i></span>
+                        <div class="ed-contact-info-item">
+                            <span class="ed-contact-info-icon"><i class="fab fa-linkedin-in"></i></span>
                             <div>
-                                <span class="label" data-vi="Dashboard mẫu" data-en="Dashboard sample">Dashboard mẫu</span>
-                                <span data-vi="Xem báo cáo: report.html" data-en="View report: report.html">Xem báo cáo: report.html</span>
+                                <span class="label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/tram-thanh/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tram-thanh</a>
+                            </div>
+                        </div>
+                        <a class="ed-contact-info-item ed-contact-info-link" href="assets/Thanh-Tram-CV.pdf" download>
+                            <span class="ed-contact-info-icon"><i class="fas fa-file-pdf"></i></span>
+                            <div>
+                                <span class="label">CV</span>
+                                <span data-vi="Tải CV bản PDF" data-en="Download the PDF résumé">Tải CV bản PDF</span>
                             </div>
                         </a>
                         <div class="ed-contact-info-item">
@@ -1317,19 +1139,10 @@
                                 <span data-vi="TP. Hồ Chí Minh, Việt Nam" data-en="Ho Chi Minh City, Vietnam">TP. Hồ Chí Minh, Việt Nam</span>
                             </div>
                         </div>
-                        <div class="ed-contact-info-item">
-                            <span class="ed-contact-info-icon"><i class="fab fa-linkedin-in"></i></span>
-                            <div>
-                                <span class="label">LinkedIn</span>
-                                <a href="https://www.linkedin.com/in/tram-thanh/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tram-thanh</a>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="ed-contact-social">
                         <a href="https://www.linkedin.com/in/tram-thanh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="mailto:thanhtram0934@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -1338,39 +1151,45 @@
                 <div class="ed-contact-form-panel" data-aos="fade-left">
                     <div class="ed-contact-form-header">
                         <h3 data-vi="Gửi tin nhắn" data-en="Send a message">Gửi tin nhắn</h3>
-                        <p data-vi="Tôi sẽ phản hồi trong thời gian sớm nhất." data-en="I will get back to you as soon as possible.">Tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+                        <p data-vi="Tin nhắn được gửi thẳng tới email của tôi — tôi sẽ phản hồi sớm nhất có thể." data-en="Messages go straight to my inbox — I'll reply as soon as I can.">Tin nhắn được gửi thẳng tới email của tôi — tôi sẽ phản hồi sớm nhất có thể.</p>
                     </div>
 
-                    <form id="contactForm" class="ed-contact-form">
+                    <form id="contactForm" class="ed-contact-form" action="https://formsubmit.co/ajax/thanhtram0934@gmail.com" method="POST">
                         <div class="mb-3">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="contactName" placeholder=" " required>
+                                <input type="text" class="form-control" id="contactName" name="name" placeholder=" " required>
                                 <label for="contactName" data-vi="Họ và tên *" data-en="Full name *">Họ và tên *</label>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="contactEmail" placeholder=" " required>
+                                <input type="email" class="form-control" id="contactEmail" name="email" placeholder=" " required>
                                 <label for="contactEmail">Email *</label>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="contactSubject" placeholder=" ">
+                                <input type="text" class="form-control" id="contactSubject" name="_subject" placeholder=" ">
                                 <label for="contactSubject" data-vi="Chủ đề" data-en="Subject">Chủ đề</label>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="form-floating">
-                                <textarea class="form-control" id="contactMessage" placeholder=" " style="height:140px" required></textarea>
+                                <textarea class="form-control" id="contactMessage" name="message" placeholder=" " style="height:140px" required></textarea>
                                 <label for="contactMessage" data-vi="Nội dung tin nhắn *" data-en="Your message *">Nội dung tin nhắn *</label>
                             </div>
                         </div>
+                        <!-- Honeypot chống spam -->
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+
                         <button type="submit" class="ed-btn-submit">
                             <i class="fas fa-paper-plane"></i>
                             <span data-vi="Gửi tin nhắn" data-en="Send Message">Gửi tin nhắn</span>
                         </button>
-                        <div id="formStatus" class="form-status mt-3"></div>
+                        <div id="formStatus" class="form-status mt-3" role="status" aria-live="polite"></div>
+                        <p class="ed-form-fallback" data-vi="Hoặc gửi thẳng email tới <a href='mailto:thanhtram0934@gmail.com'>thanhtram0934@gmail.com</a>" data-en="Or email me directly at <a href='mailto:thanhtram0934@gmail.com'>thanhtram0934@gmail.com</a>">Hoặc gửi thẳng email tới <a href="mailto:thanhtram0934@gmail.com">thanhtram0934@gmail.com</a></p>
                     </form>
                 </div>
             </div>
@@ -1382,13 +1201,12 @@
         <div class="container">
             <div class="ed-footer-inner">
                 <p class="ed-footer-text">
-                    © 2026 <strong>Thanh Trâm</strong> <span data-vi="— Tất cả quyền được bảo lưu." data-en="— All rights reserved.">— Tất cả quyền được bảo lưu.</span>
+                    © 2026 <strong>Thanh Trâm</strong> <span data-vi="— Senior E-commerce Executive" data-en="— Senior E-commerce Executive">— Senior E-commerce Executive</span>
                 </p>
                 <div class="ed-footer-social">
                     <a href="https://www.linkedin.com/in/tram-thanh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="mailto:thanhtram0934@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="assets/Thanh-Tram-CV.pdf" download aria-label="Download CV"><i class="fas fa-file-pdf"></i></a>
                 </div>
             </div>
         </div>
